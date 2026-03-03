@@ -36,11 +36,11 @@ export default function Home() {
                   Integration Coaching for Senior Leaders
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                  You Don&rsquo;t Need More Leadership Skills.{' '}
-                  <span className="text-gold-gradient">You Need Integration.</span>
+                  What If Pressure Made You{' '}
+                  <span className="text-gold-gradient">Stronger?</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
-                  Senior leaders don&rsquo;t fail because they lack skills. They fragment under pressure&mdash;body tightens, mind blanks, presence collapses. I help you rewire the operating system so pressure makes you stronger.
+                  Most leaders fragment under pressure&mdash;their body betrays them, their mind goes blank, their presence collapses. It doesn&rsquo;t have to be this way. I help senior leaders rewire so pressure becomes power.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button to="/contact" size="lg">
