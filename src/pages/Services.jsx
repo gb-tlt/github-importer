@@ -159,23 +159,22 @@ export default function Services() {
       </section>
 
       {/* Decision Framework */}
-      <section className="py-24 bg-navy-900">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('decisionFramework', 'title')}
             subtitle={c('decisionFramework', 'subtitle')}
-            light
           />
 
           <div className="grid md:grid-cols-2 gap-6">
             {frameworkItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800 h-full">
+                <div className="bg-white rounded-2xl p-8 border border-warm-200 h-full">
                   <h4 className="text-gold-400 font-semibold mb-4">{item.title}</h4>
                   <div className="space-y-3 text-sm">
-                    <p className="text-slate-300"><span className="text-white font-medium">FIT Cohort:</span> {item.fit}</p>
-                    <p className="text-slate-300"><span className="text-white font-medium">One-on-One:</span> {item.one}</p>
-                    <p className="text-slate-300"><span className="text-white font-medium">Life Coaching:</span> {item.life}</p>
+                    <p className="text-slate-700"><span className="text-navy-950 font-medium">FIT Cohort:</span> {item.fit}</p>
+                    <p className="text-slate-700"><span className="text-navy-950 font-medium">One-on-One:</span> {item.one}</p>
+                    <p className="text-slate-700"><span className="text-navy-950 font-medium">Life Coaching:</span> {item.life}</p>
                   </div>
                 </div>
               </ScrollReveal>

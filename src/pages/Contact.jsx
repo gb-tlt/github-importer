@@ -71,31 +71,31 @@ export default function Contact() {
       </section>
 
       {/* Application Form */}
-      <section className="py-24 bg-navy-900">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <div className="bg-navy-800 rounded-2xl p-8 md:p-10 border border-navy-800">
-                  <h2 className="font-display text-2xl font-bold text-white mb-2">{c('form', 'title')}</h2>
-                  <p className="text-slate-300 mb-8">{c('form', 'subtitle')}</p>
+                <div className="bg-white rounded-2xl p-8 md:p-10 border border-warm-200">
+                  <h2 className="font-display text-2xl font-bold text-navy-950 mb-2">{c('form', 'title')}</h2>
+                  <p className="text-slate-700 mb-8">{c('form', 'subtitle')}</p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-white mb-2">Your Name *</label>
+                        <label className="block text-sm font-medium text-navy-950 mb-2">Your Name *</label>
                         <input
                           type="text" name="name" required value={formData.name} onChange={handleChange}
-                          className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                          className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                           placeholder="Full name"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-white mb-2">Email Address *</label>
+                        <label className="block text-sm font-medium text-navy-950 mb-2">Email Address *</label>
                         <input
                           type="email" name="email" required value={formData.email} onChange={handleChange}
-                          className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                          className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -103,28 +103,28 @@ export default function Contact() {
 
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-white mb-2">Role / Title *</label>
+                        <label className="block text-sm font-medium text-navy-950 mb-2">Role / Title *</label>
                         <input
                           type="text" name="role" required value={formData.role} onChange={handleChange}
-                          className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                          className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                           placeholder="e.g., VP Engineering, Founder"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-white mb-2">Company / Industry</label>
+                        <label className="block text-sm font-medium text-navy-950 mb-2">Company / Industry</label>
                         <input
                           type="text" name="company" value={formData.company} onChange={handleChange}
-                          className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                          className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                           placeholder="Optional"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">Years of Leadership Experience</label>
+                      <label className="block text-sm font-medium text-navy-950 mb-2">Years of Leadership Experience</label>
                       <select
                         name="experience" value={formData.experience} onChange={handleChange}
-                        className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 focus:outline-none focus:border-gold-400 transition-colors"
                       >
                         <option value="">Select...</option>
                         <option value="5-10">5-10 years</option>
@@ -135,10 +135,10 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">Program Interest</label>
+                      <label className="block text-sm font-medium text-navy-950 mb-2">Program Interest</label>
                       <select
                         name="interest" value={formData.interest} onChange={handleChange}
-                        className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 focus:outline-none focus:border-gold-400 transition-colors"
                       >
                         <option value="">Not sure yet</option>
                         <option value="fit-cohort">FIT Leadership Cohort</option>
@@ -148,10 +148,10 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">What brings you here? * (3-5 sentences)</label>
+                      <label className="block text-sm font-medium text-navy-950 mb-2">What brings you here? * (3-5 sentences)</label>
                       <textarea
                         name="message" required value={formData.message} onChange={handleChange} rows={5}
-                        className="w-full px-4 py-3 bg-navy-900 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors resize-none"
                         placeholder="Share briefly what's happening in your leadership right now and what you're hoping to explore."
                       />
                     </div>
@@ -167,21 +167,21 @@ export default function Contact() {
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-6">
               <ScrollReveal delay={0.2}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800">
-                  <h3 className="font-display text-xl font-bold text-white mb-6">Direct Contact</h3>
+                <div className="bg-white rounded-2xl p-8 border border-warm-200">
+                  <h3 className="font-display text-xl font-bold text-navy-950 mb-6">Direct Contact</h3>
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
                       <Mail className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                       <div>
-                        <p className="text-white font-medium">Email</p>
-                        <p className="text-slate-300 text-sm">{c('sidebar', 'email')}</p>
+                        <p className="text-navy-950 font-medium">Email</p>
+                        <p className="text-slate-700 text-sm">{c('sidebar', 'email')}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <Clock className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                       <div>
-                        <p className="text-white font-medium">Response Time</p>
-                        <p className="text-slate-300 text-sm">{c('sidebar', 'responseTime')}</p>
+                        <p className="text-navy-950 font-medium">Response Time</p>
+                        <p className="text-slate-700 text-sm">{c('sidebar', 'responseTime')}</p>
                       </div>
                     </div>
                   </div>
@@ -189,13 +189,13 @@ export default function Contact() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800">
-                  <h3 className="font-display text-xl font-bold text-white mb-6">Connect</h3>
+                <div className="bg-white rounded-2xl p-8 border border-warm-200">
+                  <h3 className="font-display text-xl font-bold text-navy-950 mb-6">Connect</h3>
                   <div className="space-y-4">
-                    <a href={c('sidebar', 'linkedinUrl')} className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'linkedinUrl')} className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
                       <Linkedin className="w-5 h-5" /> LinkedIn
                     </a>
-                    <a href={c('sidebar', 'instagramUrl')} className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'instagramUrl')} className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
                       <Instagram className="w-5 h-5" /> Instagram
                     </a>
                   </div>
@@ -203,12 +203,12 @@ export default function Contact() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.4}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-gold-400/20">
+                <div className="bg-white rounded-2xl p-8 border border-gold-400/20">
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                     <div>
-                      <h4 className="text-white font-semibold mb-2">{c('confidentiality', 'title')}</h4>
-                      <p className="text-slate-300 text-sm leading-relaxed">
+                      <h4 className="text-navy-950 font-semibold mb-2">{c('confidentiality', 'title')}</h4>
+                      <p className="text-slate-700 text-sm leading-relaxed">
                         {c('confidentiality', 'text')}
                       </p>
                     </div>

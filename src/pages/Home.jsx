@@ -142,29 +142,28 @@ export default function Home() {
       </section>
 
       {/* Five Layers Framework */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('fiveLayers', 'title')}
             subtitle={c('fiveLayers', 'subtitle')}
-            light
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
             {layers.map((layer, i) => (
               <ScrollReveal key={layer.id} delay={i * 0.1}>
-                <div className="bg-navy-900 rounded-2xl p-8 border border-navy-800 hover:border-gold-400/30 transition-all duration-300 h-full group">
+                <div className="bg-white rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-all duration-300 h-full group">
                   <div className="text-gold-400 mb-4 group-hover:scale-110 transition-transform">
                     <LayerIcon type={layer.icon} className="w-10 h-10" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-white mb-1">{layer.name}</h3>
+                  <h3 className="font-display text-xl font-bold text-navy-950 mb-1">{layer.name}</h3>
                   <p className="text-gold-400/70 text-sm italic mb-4">{layer.sanskrit}</p>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">{layer.description}</p>
-                  <div className="border-t border-navy-800 pt-4 mt-auto">
-                    <p className="text-xs text-slate-300">
+                  <p className="text-slate-700 text-sm leading-relaxed mb-4">{layer.description}</p>
+                  <div className="border-t border-warm-200 pt-4 mt-auto">
+                    <p className="text-xs text-slate-700">
                       <span className="text-red-400/80">Fragmented:</span> {layer.fragmented}
                     </p>
-                    <p className="text-xs text-slate-300 mt-1">
+                    <p className="text-xs text-slate-700 mt-1">
                       <span className="text-green-400/80">Integrated:</span> {layer.integrated}
                     </p>
                   </div>
@@ -234,18 +233,17 @@ export default function Home() {
       <StatBar />
 
       {/* Social Proof */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('testimonials', 'title')}
             subtitle={c('testimonials', 'subtitle')}
-            light
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
             {testimonials.slice(0, 3).map((t, i) => (
               <ScrollReveal key={t.id || i} delay={i * 0.1}>
-                <TestimonialCard testimonial={t} />
+                <TestimonialCard testimonial={t} dark={false} />
               </ScrollReveal>
             ))}
           </div>

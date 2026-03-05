@@ -33,7 +33,7 @@ const adminPages = [
 
 function LazyPageEditor({ pageName, title, schemaImport }) {
   const [schema, setSchema] = useState(null)
-  useEffect(() => { schemaImport().then(setSchema) }, [])
+  useEffect(() => { setSchema(null); schemaImport().then(setSchema) }, [schemaImport])
   if (!schema) return <div className="text-slate-300">Loading...</div>
   return <PageEditor pageName={pageName} schema={schema} title={title} />
 }

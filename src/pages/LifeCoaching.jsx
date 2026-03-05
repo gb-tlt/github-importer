@@ -231,21 +231,20 @@ export default function LifeCoaching() {
       </section>
 
       {/* Eight Dimensions */}
-      <section id="dimensions" className="py-24 bg-navy-900">
+      <section id="dimensions" className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('dimensions', 'title')}
             subtitle={c('dimensions', 'subtitle')}
-            light
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dimensions.map(({ icon: Icon, title, text }, i) => (
               <ScrollReveal key={i} delay={i * 0.06}>
-                <div className="bg-navy-800 rounded-2xl p-6 border border-navy-800 hover:border-gold-400/30 transition-colors h-full">
+                <div className="bg-white rounded-2xl p-6 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
                   <Icon className="w-8 h-8 text-gold-400 mb-4" />
-                  <h3 className="font-display text-base font-bold text-white mb-2">{title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{text}</p>
+                  <h3 className="font-display text-base font-bold text-navy-950 mb-2">{title}</h3>
+                  <p className="text-slate-700 text-sm leading-relaxed">{text}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -254,18 +253,18 @@ export default function LifeCoaching() {
       </section>
 
       {/* What's Included + Investment */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading title={c('inclusions', 'title')} light />
+          <SectionHeading title={c('inclusions', 'title')} />
 
           <ScrollReveal>
-            <div className="bg-navy-900 rounded-2xl p-8 md:p-10 border border-navy-800 mb-8">
-              <h3 className="font-display text-lg font-bold text-white mb-6">{c('inclusions', 'programTitle')}</h3>
+            <div className="bg-warm-50 rounded-2xl p-8 md:p-10 border border-warm-200 mb-8">
+              <h3 className="font-display text-lg font-bold text-navy-950 mb-6">{c('inclusions', 'programTitle')}</h3>
               <ul className="space-y-4">
                 {inclusionItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
                     <span className="text-gold-400 mt-0.5 shrink-0">&#10003;</span>
-                    <p className="text-slate-300"><strong className="text-white">{item.label}</strong> {item.desc}</p>
+                    <p className="text-slate-700"><strong className="text-navy-950">{item.label}</strong> {item.desc}</p>
                   </li>
                 ))}
               </ul>
@@ -273,13 +272,13 @@ export default function LifeCoaching() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="bg-navy-900 rounded-2xl p-8 border-2 border-gold-400/30">
-              <h3 className="font-display text-xl font-bold text-white mb-3">{c('investment', 'title')}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-2">
+            <div className="bg-warm-50 rounded-2xl p-8 border-2 border-gold-400/30">
+              <h3 className="font-display text-xl font-bold text-navy-950 mb-3">{c('investment', 'title')}</h3>
+              <p className="text-slate-700 text-sm leading-relaxed mb-2">
                 {c('investment', 'description')}
               </p>
-              <p className="text-slate-300 text-sm">
-                <strong className="text-white">{c('investment', 'range')}</strong>
+              <p className="text-slate-700 text-sm">
+                <strong className="text-navy-950">{c('investment', 'range')}</strong>
               </p>
             </div>
           </ScrollReveal>

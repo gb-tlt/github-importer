@@ -172,12 +172,11 @@ export default function About() {
       </section>
 
       {/* Credentials */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('credentials', 'title')}
             subtitle={c('credentials', 'subtitle')}
-            light
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -185,10 +184,10 @@ export default function About() {
               const Icon = credentialIcons[cred.icon] || Briefcase
               return (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="bg-navy-900 rounded-2xl p-8 border border-navy-800 hover:border-gold-400/30 transition-colors h-full">
+                  <div className="bg-warm-50 rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
                     <Icon className="w-8 h-8 text-gold-400 mb-4" />
-                    <h3 className="font-display text-lg font-bold text-white mb-3">{cred.title}</h3>
-                    <p className="text-slate-300 text-sm leading-relaxed">{cred.description}</p>
+                    <h3 className="font-display text-lg font-bold text-navy-950 mb-3">{cred.title}</h3>
+                    <p className="text-slate-700 text-sm leading-relaxed">{cred.description}</p>
                   </div>
                 </ScrollReveal>
               )
@@ -198,16 +197,16 @@ export default function About() {
       </section>
 
       {/* Philosophy */}
-      <section className="py-24 bg-navy-900">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title={c('philosophy', 'title')} subtitle={c('philosophy', 'subtitle')} light />
+          <SectionHeading title={c('philosophy', 'title')} subtitle={c('philosophy', 'subtitle')} />
 
           <div className="grid md:grid-cols-2 gap-8">
             {philosophyItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800 h-full">
-                  <h3 className="font-display text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-slate-300 leading-relaxed">{item.text}</p>
+                <div className="bg-white rounded-2xl p-8 border border-warm-200 h-full">
+                  <h3 className="font-display text-xl font-bold text-navy-950 mb-3">{item.title}</h3>
+                  <p className="text-slate-700 leading-relaxed">{item.text}</p>
                 </div>
               </ScrollReveal>
             ))}

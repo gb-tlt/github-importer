@@ -234,20 +234,20 @@ export default function OneOnOne() {
       </section>
 
       {/* Modalities */}
-      <section className="py-24 bg-navy-900">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title={c('modalities', 'title')} subtitle={c('modalities', 'subtitle')} light />
+          <SectionHeading title={c('modalities', 'title')} subtitle={c('modalities', 'subtitle')} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mods.map(({ icon: Icon, title, text, items }, i) => (
               <ScrollReveal key={i} delay={i * 0.08}>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800 hover:border-gold-400/30 transition-colors h-full">
+                <div className="bg-white rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
                   <Icon className="w-8 h-8 text-gold-400 mb-4" />
-                  <h3 className="font-display text-lg font-bold text-white mb-2">{title}</h3>
-                  <p className="text-slate-300 text-sm mb-4">{text}</p>
+                  <h3 className="font-display text-lg font-bold text-navy-950 mb-2">{title}</h3>
+                  <p className="text-slate-700 text-sm mb-4">{text}</p>
                   <ul className="space-y-1.5">
                     {items.map((item, j) => (
-                      <li key={j} className="text-slate-300/80 text-sm flex items-start gap-2">
+                      <li key={j} className="text-slate-700/80 text-sm flex items-start gap-2">
                         <span className="w-1 h-1 rounded-full bg-gold-400/50 mt-2 shrink-0" /> {item}
                       </li>
                     ))}
@@ -260,18 +260,18 @@ export default function OneOnOne() {
       </section>
 
       {/* What's Included + Investment */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading title={c('inclusions', 'title')} light />
+          <SectionHeading title={c('inclusions', 'title')} />
 
           <ScrollReveal>
-            <div className="bg-navy-900 rounded-2xl p-8 md:p-10 border-2 border-gold-400/20 mb-8">
-              <h3 className="font-display text-xl font-bold text-white mb-6">{c('inclusions', 'packageTitle')}</h3>
+            <div className="bg-warm-50 rounded-2xl p-8 md:p-10 border-2 border-gold-400/20 mb-8">
+              <h3 className="font-display text-xl font-bold text-navy-950 mb-6">{c('inclusions', 'packageTitle')}</h3>
               <ul className="space-y-4">
                 {(c('inclusions', 'items') || []).map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
                     <span className="text-gold-400 mt-0.5 shrink-0">&#9733;</span>
-                    <p className="text-slate-300"><strong className="text-white">{item.label}</strong> {item.desc}</p>
+                    <p className="text-slate-700"><strong className="text-navy-950">{item.label}</strong> {item.desc}</p>
                   </li>
                 ))}
               </ul>
@@ -279,21 +279,21 @@ export default function OneOnOne() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="bg-navy-900 rounded-2xl p-8 border-2 border-gold-400">
-              <h3 className="font-display text-xl font-bold text-white mb-3">{c('investment', 'title')}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-2">
+            <div className="bg-warm-50 rounded-2xl p-8 border-2 border-gold-400">
+              <h3 className="font-display text-xl font-bold text-navy-950 mb-3">{c('investment', 'title')}</h3>
+              <p className="text-slate-700 text-sm leading-relaxed mb-2">
                 {c('investment', 'description')}
               </p>
-              <p className="text-slate-300 text-sm">
-                <strong className="text-white">Payment Options:</strong> {c('investment', 'payment')}
+              <p className="text-slate-700 text-sm">
+                <strong className="text-navy-950">Payment Options:</strong> {c('investment', 'payment')}
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2} className="mt-6">
-            <div className="bg-navy-900/50 rounded-2xl p-6 border border-gold-400/20">
-              <p className="text-slate-300 text-sm leading-relaxed">
-                <strong className="text-white">Important:</strong> {c('investment', 'disclaimer')}
+            <div className="bg-warm-100 rounded-2xl p-6 border border-gold-400/20">
+              <p className="text-slate-700 text-sm leading-relaxed">
+                <strong className="text-navy-950">Important:</strong> {c('investment', 'disclaimer')}
               </p>
             </div>
           </ScrollReveal>

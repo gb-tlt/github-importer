@@ -125,19 +125,19 @@ export default function Resources() {
       </section>
 
       {/* Explore by Topic */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title={c('categories', 'title')} subtitle={c('categories', 'subtitle')} light />
+          <SectionHeading title={c('categories', 'title')} subtitle={c('categories', 'subtitle')} />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
               <ScrollReveal key={i} delay={i * 0.08}>
-                <div className="bg-navy-900 rounded-2xl p-6 border border-navy-800 hover:border-gold-400/30 transition-colors cursor-pointer text-center h-full">
+                <div className="bg-white rounded-2xl p-6 border border-warm-200 hover:border-gold-400/30 transition-colors cursor-pointer text-center h-full">
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${cat.color}`}>
                     {cat.tag}
                   </span>
-                  <h3 className="font-display text-lg font-bold text-white mb-2">{cat.title}</h3>
-                  <p className="text-slate-300 text-sm">{cat.desc}</p>
+                  <h3 className="font-display text-lg font-bold text-navy-950 mb-2">{cat.title}</h3>
+                  <p className="text-slate-700 text-sm">{cat.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -173,20 +173,20 @@ export default function Resources() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-24 bg-navy-950">
+      <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-navy-900 rounded-2xl p-10 md:p-14 border border-gold-400/20 text-center">
+            <div className="bg-warm-50 rounded-2xl p-10 md:p-14 border border-gold-400/20 text-center">
               <div className="w-12 h-0.5 bg-gold-400 mx-auto mb-6" />
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">{c('newsletter', 'title')}</h2>
-              <p className="text-slate-300 mb-8">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-navy-950 mb-3">{c('newsletter', 'title')}</h2>
+              <p className="text-slate-700 mb-8">
                 {c('newsletter', 'subtitle')}
               </p>
               <form onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing!') }} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="flex-1 px-4 py-3 bg-navy-800 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                  className="flex-1 px-4 py-3 bg-white border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                 />
                 <input
                   type="email"
@@ -194,11 +194,11 @@ export default function Resources() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 bg-navy-800 border border-navy-800 rounded-lg text-white placeholder-slate-300/50 focus:outline-none focus:border-gold-400 transition-colors"
+                  className="flex-1 px-4 py-3 bg-white border border-warm-200 rounded-lg text-navy-950 placeholder-slate-700/50 focus:outline-none focus:border-gold-400 transition-colors"
                 />
                 <Button type="submit" size="md">Subscribe</Button>
               </form>
-              <p className="text-slate-300/50 text-xs mt-4">{c('newsletter', 'note')}</p>
+              <p className="text-slate-700/50 text-xs mt-4">{c('newsletter', 'note')}</p>
             </div>
           </ScrollReveal>
         </div>
