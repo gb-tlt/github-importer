@@ -1,18 +1,21 @@
 import ScrollReveal from './ScrollReveal'
+import { useContent } from '../../hooks/useContent'
 
-const stats = [
+const defaultStats = [
   { value: '500+', label: 'Leaders Coached' },
   { value: '15+', label: 'Years Experience' },
   { value: '50+', label: 'Global Organizations' },
   { value: '6', label: 'Modalities Integrated' },
 ]
 
-export default function StatBar({ dark = true, items = stats }) {
+export default function StatBar({ dark = true, items }) {
+  const { content } = useContent('global')
+  const stats = items || content?.stats?.items || defaultStats
   return (
     <section className={`py-16 ${dark ? 'bg-navy-900 border-y border-navy-800' : 'bg-warm-50 border-y border-warm-200'}`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {items.map((stat, index) => (
+          {stats.map((stat, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <div className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-gold-400 mb-2">

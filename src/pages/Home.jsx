@@ -9,11 +9,33 @@ import StatBar from '../components/ui/StatBar'
 import CTASection from '../components/ui/CTASection'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import LayerIcon from '../components/icons/LayerIcons'
-import { services } from '../data/services'
-import { testimonials } from '../data/testimonials'
-import { layers } from '../data/layers'
+import { services as defaultServices } from '../data/services'
+import { testimonials as defaultTestimonials } from '../data/testimonials'
+import { layers as defaultLayers } from '../data/layers'
+import { useContent } from '../hooks/useContent'
+import { useCollection } from '../hooks/useCollection'
+
+const defaults = {
+  hero: { badge: 'Integration Coaching for Senior Leaders', headline: 'What If Pressure Made You ', headlineGold: 'Stronger?', subtext: 'Most leaders fragment under pressure\u2014their body betrays them, their mind goes blank, their presence collapses. It doesn\u2019t have to be this way. I help senior leaders rewire so pressure becomes power.', ctaPrimary: 'Book a Discovery Session', ctaSecondary: 'Explore Programs' },
+  problem: { title: 'The Real Problem No One Talks About', subtitle: "You're brilliant in calm. But when real pressure hits, something breaks.", cards: [{ title: 'Your Body Betrays You', text: 'Tension floods in. Breathing gets shallow. Your posture collapses. The body remembers every past failure and re-enacts it under scrutiny.' }, { title: 'Your Mind Goes Blank', text: 'You had the perfect response prepared. But in the moment, words vanish. You over-explain, ramble, or freeze. The brilliant strategist disappears.' }, { title: 'Your Presence Collapses', text: "The room feels your fragmentation. Your team senses it. The board sees it. You look composed outside, but you're drowning inside." }] },
+  fiveLayers: { title: 'The Five Layers of Integration', subtitle: 'Based on the Pancha Kosha framework from Yoga Sutras, adapted for modern leadership. We work at every layer, not just the surface.' },
+  programs: { title: 'Three Pathways to Integration', subtitle: "Same methodology. Different formats. All three are powerful\u2014which is the right fit for your situation?", linkText: 'Compare All Programs' },
+  differentiation: { title: 'This Is Not Traditional Executive Coaching', subtitle: 'Most coaching scratches the surface. Integration goes to the foundation.', colLeft: 'Traditional Executive Coaching', colRight: 'Integration Coaching', rows: [['Focuses on skills, behaviors, communication', 'Focuses on body, energy, nervous system, values, identity'], ['Works on what you DO (surface)', 'Works on how you ARE (foundation)'], ['Mostly talk-based, cognitive', 'Multi-modal: somatic, energy, psychological, spiritual'], ['30-45 minute sessions, often monthly', '60-120 minute sessions, intensive work'], ['Generic curriculum applied to all', 'Fully customized to YOUR fragmentation pattern'], ['Avoids pressure (calm environment only)', 'Uses pressure as training ground'], ['Professional but distant relationship', 'Deep trust, vulnerability required, direct access']] },
+  testimonials: { title: 'What Leaders Say', subtitle: 'Real transformations from real leaders. Names anonymized for confidentiality.' },
+  leadMagnet: { badge: 'Free Assessment', title: 'Take the Leadership Integration Audit', subtitle: '20 questions. 5 minutes. Discover where you fragment across the Five Layers and receive personalized integration practices.', ctaText: 'Start the Free Audit', note: 'No spam. Just clarity on your leadership pattern.' },
+  cta: { heading: 'Ready to Stop Fragmenting?', subtext: "Book a 45-minute clarity call. We'll map your fragmentation pattern and I'll tell you honestly whether this is the right path for you.", buttonText: 'Book a Discovery Session' },
+}
 
 export default function Home() {
+  const { content } = useContent('home')
+  const { data: servicesData } = useCollection('services')
+  const { data: testimonialsData } = useCollection('testimonials')
+  const { data: layersData } = useCollection('layers')
+
+  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+  const services = servicesData?.items || defaultServices
+  const testimonials = testimonialsData?.items || defaultTestimonials
+  const layers = layersData?.items || defaultLayers
   return (
     <>
       {/* Hero */}
@@ -33,21 +55,21 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">
-                  Integration Coaching for Senior Leaders
+                  {c('hero', 'badge')}
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                  What If Pressure Made You{' '}
-                  <span className="text-gold-gradient">Stronger?</span>
+                  {c('hero', 'headline')}{' '}
+                  <span className="text-gold-gradient">{c('hero', 'headlineGold')}</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
-                  Most leaders fragment under pressure&mdash;their body betrays them, their mind goes blank, their presence collapses. It doesn&rsquo;t have to be this way. I help senior leaders rewire so pressure becomes power.
+                  {c('hero', 'subtext')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button to="/contact" size="lg">
-                    Book a Discovery Session
+                    {c('hero', 'ctaPrimary')}
                   </Button>
                   <Button to="/services" variant="secondary" size="lg">
-                    Explore Programs
+                    {c('hero', 'ctaSecondary')}
                   </Button>
                 </div>
               </motion.div>
@@ -63,7 +85,7 @@ export default function Home() {
               <div className="relative">
                 <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 border border-gold-400/20 overflow-hidden shadow-2xl shadow-gold-400/5">
                   <img
-                    src="/gowtham.jpg"
+                    src={c('hero', 'heroImage') || '/gowtham.jpg'}
                     alt="Gowtham Balaji - Leadership Integration Coach"
                     className="w-full h-full object-cover object-top"
                   />
@@ -92,26 +114,13 @@ export default function Home() {
       <section className="py-24 bg-navy-900">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="The Real Problem No One Talks About"
-            subtitle="You're brilliant in calm. But when real pressure hits, something breaks."
+            title={c('problem', 'title')}
+            subtitle={c('problem', 'subtitle')}
             light
           />
 
           <div className="grid md:grid-cols-3 gap-8 mt-4">
-            {[
-              {
-                title: 'Your Body Betrays You',
-                text: 'Tension floods in. Breathing gets shallow. Your posture collapses. The body remembers every past failure and re-enacts it under scrutiny.',
-              },
-              {
-                title: 'Your Mind Goes Blank',
-                text: 'You had the perfect response prepared. But in the moment, words vanish. You over-explain, ramble, or freeze. The brilliant strategist disappears.',
-              },
-              {
-                title: 'Your Presence Collapses',
-                text: 'The room feels your fragmentation. Your team senses it. The board sees it. You look composed outside, but you\'re drowning inside.',
-              },
-            ].map((item, i) => (
+            {(c('problem', 'cards') || []).map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800 hover:border-gold-400/30 transition-colors h-full">
                   <div className="w-10 h-0.5 bg-gold-400 mb-6" />
@@ -136,8 +145,8 @@ export default function Home() {
       <section className="py-24 bg-navy-950">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="The Five Layers of Integration"
-            subtitle="Based on the Pancha Kosha framework from Yoga Sutras, adapted for modern leadership. We work at every layer, not just the surface."
+            title={c('fiveLayers', 'title')}
+            subtitle={c('fiveLayers', 'subtitle')}
             light
           />
 
@@ -170,8 +179,8 @@ export default function Home() {
       <section className="py-24 bg-navy-900">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="Three Pathways to Integration"
-            subtitle="Same methodology. Different formats. All three are powerful\u2014which is the right fit for your situation?"
+            title={c('programs', 'title')}
+            subtitle={c('programs', 'subtitle')}
             light
           />
 
@@ -183,7 +192,7 @@ export default function Home() {
 
           <ScrollReveal className="text-center mt-10">
             <Link to="/services" className="inline-flex items-center gap-2 text-gold-400 font-semibold hover:text-gold-300 transition-colors">
-              Compare All Programs <ArrowRight className="w-4 h-4" />
+              {c('programs', 'linkText')} <ArrowRight className="w-4 h-4" />
             </Link>
           </ScrollReveal>
         </div>
@@ -193,8 +202,8 @@ export default function Home() {
       <section className="py-24 bg-navy-950">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
-            title="This Is Not Traditional Executive Coaching"
-            subtitle="Most coaching scratches the surface. Integration goes to the foundation."
+            title={c('differentiation', 'title')}
+            subtitle={c('differentiation', 'subtitle')}
             light
           />
 
@@ -203,20 +212,12 @@ export default function Home() {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-gold-400/30">
-                    <th className="py-4 pr-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">Traditional Executive Coaching</th>
-                    <th className="py-4 pl-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">Integration Coaching</th>
+                    <th className="py-4 pr-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">{c('differentiation', 'colLeft')}</th>
+                    <th className="py-4 pl-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">{c('differentiation', 'colRight')}</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
-                  {[
-                    ['Focuses on skills, behaviors, communication', 'Focuses on body, energy, nervous system, values, identity'],
-                    ['Works on what you DO (surface)', 'Works on how you ARE (foundation)'],
-                    ['Mostly talk-based, cognitive', 'Multi-modal: somatic, energy, psychological, spiritual'],
-                    ['30-45 minute sessions, often monthly', '60-120 minute sessions, intensive work'],
-                    ['Generic curriculum applied to all', 'Fully customized to YOUR fragmentation pattern'],
-                    ['Avoids pressure (calm environment only)', 'Uses pressure as training ground'],
-                    ['Professional but distant relationship', 'Deep trust, vulnerability required, direct access'],
-                  ].map(([trad, integ], i) => (
+                  {(c('differentiation', 'rows') || []).map(([trad, integ], i) => (
                     <tr key={i} className="border-b border-navy-800">
                       <td className="py-4 pr-6 text-slate-300/70">{trad}</td>
                       <td className="py-4 pl-6 text-white font-medium">{integ}</td>
@@ -236,14 +237,14 @@ export default function Home() {
       <section className="py-24 bg-navy-950">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="What Leaders Say"
-            subtitle="Real transformations from real leaders. Names anonymized for confidentiality."
+            title={c('testimonials', 'title')}
+            subtitle={c('testimonials', 'subtitle')}
             light
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
             {testimonials.slice(0, 3).map((t, i) => (
-              <ScrollReveal key={t.id} delay={i * 0.1}>
+              <ScrollReveal key={t.id || i} delay={i * 0.1}>
                 <TestimonialCard testimonial={t} />
               </ScrollReveal>
             ))}
@@ -257,18 +258,18 @@ export default function Home() {
           <ScrollReveal>
             <div className="bg-navy-800 rounded-2xl p-10 md:p-16 border border-gold-400/20">
               <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-4">
-                Free Assessment
+                {c('leadMagnet', 'badge')}
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-                Take the Leadership Integration Audit
+                {c('leadMagnet', 'title')}
               </h2>
               <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                20 questions. 5 minutes. Discover where you fragment across the Five Layers and receive personalized integration practices.
+                {c('leadMagnet', 'subtitle')}
               </p>
               <Button to="/resources" size="lg">
-                Start the Free Audit
+                {c('leadMagnet', 'ctaText')}
               </Button>
-              <p className="text-slate-300/60 text-sm mt-4">No spam. Just clarity on your leadership pattern.</p>
+              <p className="text-slate-300/60 text-sm mt-4">{c('leadMagnet', 'note')}</p>
             </div>
           </ScrollReveal>
         </div>
@@ -276,9 +277,9 @@ export default function Home() {
 
       {/* Final CTA */}
       <CTASection
-        heading="Ready to Stop Fragmenting?"
-        subtext="Book a 45-minute clarity call. We'll map your fragmentation pattern and I'll tell you honestly whether this is the right path for you."
-        buttonText="Book a Discovery Session"
+        heading={c('cta', 'heading')}
+        subtext={c('cta', 'subtext')}
+        buttonText={c('cta', 'buttonText')}
         buttonTo="/contact"
       />
     </>

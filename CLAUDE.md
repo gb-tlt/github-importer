@@ -7,10 +7,11 @@ Website for **Gowtham Balaji**, a leadership integration coach who helps senior 
 
 ## Tech Stack
 - **React 19** + **Vite 7** (module-based, JSX)
-- **React Router v7** (client-side routing, 8 pages)
+- **React Router v7** (client-side routing, 8 public pages + admin panel)
 - **Tailwind CSS v4** (with `@tailwindcss/vite` plugin, custom theme in `src/index.css`)
 - **Framer Motion** (scroll-reveal animations, mobile menu transitions)
 - **Lucide React** (icon library)
+- **Firebase** (Firestore for content, Auth for admin login, Storage for images)
 - **Deployment**: Netlify (SPA redirect in `netlify.toml`)
 
 ## Design System
@@ -25,35 +26,38 @@ https://github.com/dhananjay1208/TLT.git (branch: `main`)
 ## File Structure
 ```
 src/
+  firebase/
+    config.js         Firebase initialization (Firestore, Auth, Storage)
+  contexts/
+    ContentContext.jsx Batch-loads all Firestore content, provides to app
+    AuthContext.jsx    Firebase Auth state management
+  hooks/
+    useContent.js     useContent(pageName) - page content with fallback
+    useCollection.js  useCollection(name) - shared collection data
+    useAdmin.js       Write operations (save doc, upload image)
   components/
-    layout/       Navbar.jsx, Footer.jsx, Layout.jsx
-    ui/           Button, SectionHeading, ProgramCard, TestimonialCard,
-                  FAQAccordion, CTASection, StatBar, ScrollReveal, ScrollToTop
-    icons/        LayerIcons.jsx (5 custom SVG icons for Five Layers)
-  pages/
-    Home.jsx          /
-    About.jsx         /about
-    Services.jsx      /services
-    FitCohort.jsx     /services/fit-cohort
-    OneOnOne.jsx      /services/one-on-one
-    LifeCoaching.jsx  /services/life-coaching
-    Resources.jsx     /resources
-    Contact.jsx       /contact
-  data/
-    services.js       Program details, pricing, features
-    testimonials.js   Placeholder testimonials (6 total, tagged by program)
-    faq.js            FAQ data for each program + contact page
-    layers.js         Five Layers framework data
-    credentials.js    Certifications and credentials
-  App.jsx             Router setup with Layout wrapper
+    layout/           Navbar.jsx, Footer.jsx, Layout.jsx
+    ui/               Button, SectionHeading, ProgramCard, TestimonialCard,
+                      FAQAccordion, CTASection, StatBar, ScrollReveal, ScrollToTop
+    icons/            LayerIcons.jsx (5 custom SVG icons for Five Layers)
+  pages/              8 public pages (all use useContent/useCollection hooks)
+  data/               Hardcoded fallback data (services, testimonials, faq, layers, credentials)
+  admin/              CMS admin panel (lazy-loaded, code-split)
+    AdminLayout.jsx   Auth guard + sidebar layout
+    AdminLogin.jsx    Email/password login
+    AdminDashboard.jsx Overview with quick links
+    editors/
+      PageEditor.jsx        Schema-driven page content editor
+      CollectionEditor.jsx  Services, testimonials, FAQs, layers, credentials
+    fields/                 Reusable field components (Text, TextArea, Array, ObjectArray, Table, Image)
+    schemas/                Field definitions for each page + collections
+    components/             AdminSidebar, SaveButton, SectionCard, Toast
+  App.jsx             Router with providers + admin routes
   main.jsx            Entry point
   index.css           Tailwind directives + custom theme + global styles
-public/
-  gowtham.jpg         Coach's photo (used on Home hero + About page)
-  favicon.svg         Gold "T" on navy background
-index.html            Entry HTML with Google Fonts preconnect
-vite.config.js        Vite + React + Tailwind plugins
-netlify.toml          SPA redirect config
+scripts/
+  seed-firestore.js   Populate Firestore with current content (run once)
+.env.example          Firebase config template
 ```
 
 ## Three Programs
@@ -80,6 +84,24 @@ netlify.toml          SPA redirect config
 Original HTML prototypes are in project root (not committed to git):
 - `1 TLT-HOME-PAGE-V5-PREMIUM.html` through `8 TLT-SERVICES-HUB-V3.html`
 - `TLT_Website_Content_v2.docx`, `8-Jan GB.docx`
+
+## CMS Admin Panel
+- **URL**: `/admin` (redirects to `/admin/login` if not authenticated)
+- **Auth**: Single admin account via Firebase Auth (email/password)
+- **Architecture**: Schema-driven - each page has a schema defining editable fields, rendered by a generic PageEditor
+- **Content flow**: Firestore docs -> ContentContext -> useContent() hook -> pages (with hardcoded fallbacks)
+- **Collections**: `content/` (9 docs, one per page + global) and `collections/` (5 docs for shared data)
+- **Fallback**: All pages keep hardcoded defaults - site works even if Firebase is unreachable
+- **Code-split**: Admin routes are lazy-loaded, zero impact on public bundle
+- **Seed script**: `node scripts/seed-firestore.js` populates Firestore with current content (requires .env with Firebase keys)
+
+## Firebase Setup (Required)
+1. Create Firebase project at console.firebase.google.com
+2. Enable Firestore, Authentication (Email/Password), and Storage
+3. Create admin user in Authentication console
+4. Copy config to `.env` (see `.env.example`)
+5. Set Firestore rules: public read, authenticated write
+6. Run seed script once: `node scripts/seed-firestore.js`
 
 ## Notes
 - All testimonials are placeholder (realistic titles, anonymized). Replace with real ones when available.

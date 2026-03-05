@@ -4,12 +4,42 @@ import SectionHeading from '../components/ui/SectionHeading'
 import FAQAccordion from '../components/ui/FAQAccordion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import Button from '../components/ui/Button'
-import { contactFAQ } from '../data/faq'
+import { contactFAQ as defaultFAQ } from '../data/faq'
+import { useContent } from '../hooks/useContent'
+import { useCollection } from '../hooks/useCollection'
+
+const defaults = {
+  hero: {
+    badge: 'Contact',
+    title: "Let\u2019s Have a Conversation",
+    subtitle: "Whether you\u2019re curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I\u2019m here.",
+  },
+  form: {
+    title: 'Book a Clarity Call',
+    subtitle: '45 minutes to understand your challenges, explore fit, and answer your questions. No obligation.',
+    submitText: 'Request Clarity Call',
+  },
+  sidebar: {
+    email: 'gowtham@theleadershiptattva.com',
+    responseTime: 'Within 24-48 hours',
+    linkedinUrl: '#',
+    instagramUrl: '#',
+  },
+  confidentiality: {
+    title: 'Confidentiality',
+    text: 'All conversations are strictly confidential. Your information is never shared. Coaching conversations are protected by professional confidentiality protocols.',
+  },
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '', email: '', role: '', company: '', experience: '', interest: '', message: '',
   })
+
+  const { content } = useContent('contact')
+  const { data: faqData } = useCollection('faq')
+  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+  const faq = faqData?.contact || defaultFAQ
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -29,12 +59,12 @@ export default function Contact() {
         </div>
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">Contact</span>
+            <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">{c('hero', 'badge')}</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Let&rsquo;s Have a Conversation
+              {c('hero', 'title')}
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              Whether you&rsquo;re curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I&rsquo;m here.
+              {c('hero', 'subtitle')}
             </p>
           </ScrollReveal>
         </div>
@@ -48,8 +78,8 @@ export default function Contact() {
             <div className="lg:col-span-3">
               <ScrollReveal>
                 <div className="bg-navy-800 rounded-2xl p-8 md:p-10 border border-navy-800">
-                  <h2 className="font-display text-2xl font-bold text-white mb-2">Book a Clarity Call</h2>
-                  <p className="text-slate-300 mb-8">45 minutes to understand your challenges, explore fit, and answer your questions. No obligation.</p>
+                  <h2 className="font-display text-2xl font-bold text-white mb-2">{c('form', 'title')}</h2>
+                  <p className="text-slate-300 mb-8">{c('form', 'subtitle')}</p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid md:grid-cols-2 gap-5">
@@ -127,7 +157,7 @@ export default function Contact() {
                     </div>
 
                     <Button type="submit" className="w-full" size="lg">
-                      Request Clarity Call
+                      {c('form', 'submitText')}
                     </Button>
                   </form>
                 </div>
@@ -144,14 +174,14 @@ export default function Contact() {
                       <Mail className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <p className="text-slate-300 text-sm">gowtham@theleadershiptattva.com</p>
+                        <p className="text-slate-300 text-sm">{c('sidebar', 'email')}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <Clock className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                       <div>
                         <p className="text-white font-medium">Response Time</p>
-                        <p className="text-slate-300 text-sm">Within 24-48 hours</p>
+                        <p className="text-slate-300 text-sm">{c('sidebar', 'responseTime')}</p>
                       </div>
                     </div>
                   </div>
@@ -162,10 +192,10 @@ export default function Contact() {
                 <div className="bg-navy-800 rounded-2xl p-8 border border-navy-800">
                   <h3 className="font-display text-xl font-bold text-white mb-6">Connect</h3>
                   <div className="space-y-4">
-                    <a href="#" className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'linkedinUrl')} className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
                       <Linkedin className="w-5 h-5" /> LinkedIn
                     </a>
-                    <a href="#" className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'instagramUrl')} className="flex items-center gap-3 text-slate-300 hover:text-gold-400 transition-colors">
                       <Instagram className="w-5 h-5" /> Instagram
                     </a>
                   </div>
@@ -177,9 +207,9 @@ export default function Contact() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-gold-400 mt-1 shrink-0" />
                     <div>
-                      <h4 className="text-white font-semibold mb-2">Confidentiality</h4>
+                      <h4 className="text-white font-semibold mb-2">{c('confidentiality', 'title')}</h4>
                       <p className="text-slate-300 text-sm leading-relaxed">
-                        All conversations are strictly confidential. Your information is never shared. Coaching conversations are protected by professional confidentiality protocols.
+                        {c('confidentiality', 'text')}
                       </p>
                     </div>
                   </div>
@@ -194,7 +224,7 @@ export default function Contact() {
       <section className="py-24 bg-navy-950">
         <div className="max-w-3xl mx-auto px-6">
           <SectionHeading title="What Happens on a Clarity Call?" light />
-          <FAQAccordion items={contactFAQ} dark />
+          <FAQAccordion items={faq} dark />
         </div>
       </section>
     </>

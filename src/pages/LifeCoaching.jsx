@@ -5,8 +5,10 @@ import TestimonialCard from '../components/ui/TestimonialCard'
 import CTASection from '../components/ui/CTASection'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import Button from '../components/ui/Button'
-import { lifeCoachingFAQ } from '../data/faq'
-import { testimonials } from '../data/testimonials'
+import { lifeCoachingFAQ as defaultFAQ } from '../data/faq'
+import { testimonials as defaultTestimonials } from '../data/testimonials'
+import { useContent } from '../hooks/useContent'
+import { useCollection } from '../hooks/useCollection'
 
 const dimensions = [
   { icon: Target, title: 'Purpose & Meaning', text: 'What actually matters to you? Beyond titles, compensation, status\u2014what is your genuine contribution? We clarify your purpose and design your life around it.' },
@@ -28,8 +30,104 @@ const inflectionPoints = [
   { quote: "I feel disconnected from what matters.", desc: 'You\'re going through the motions. Presence, joy, meaning\u2014all gone.' },
 ]
 
+const defaults = {
+  hero: {
+    badge: 'HOLISTIC \u2022 EXISTENTIAL \u2022 WHOLE-LIFE',
+    title: 'Life Coaching',
+    subtitle: 'When Leadership Feels Hollow and You Need to Realign Work with Life, Values, and Meaning',
+    highlights: [
+      'Whole-life alignment at inflection points',
+      'Values clarification & purpose discovery',
+      'Relationship and life rhythm design',
+      'Existential exploration & meaning-making',
+      'Custom duration & format (typically 4 months)',
+    ],
+    ctaPrimary: 'Request Exploratory Call',
+    ctaSecondary: 'Learn More',
+  },
+  priceBox: {
+    price: '\u20B94-8L + GST',
+    duration: 'Custom (typically 4 months)',
+    note: 'Pricing varies based on scope and format',
+    ctaText: 'Request Call',
+  },
+  inflectionPoints: {
+    title: 'This Is For Leaders at Inflection Points',
+    subtitle: "You're not broken. You're at a threshold. Your outer success no longer matches your inner truth.",
+    items: inflectionPoints,
+  },
+  idealFor: {
+    title: 'Who Is This For?',
+    subtitle: "Life Coaching is existential work. It's for leaders ready to question everything and redesign their life-leadership system.",
+    items: [
+      'Leaders at major life transitions (40s, 50s, post-exit)',
+      'Those experiencing existential crisis or emptiness',
+      'Leaders whose values and actions are misaligned',
+      'Those questioning career, role, or life path',
+      'Leaders whose relationships are suffering due to work',
+      'Those seeking meaning, not just performance',
+      'Leaders ready to redesign their whole life',
+      'People open to existential and spiritual exploration',
+    ],
+  },
+  notFor: {
+    items: [
+      'Leaders seeking leadership skills only (see FIT or One-on-One)',
+      'Those wanting quick answers or action plans',
+      'Leaders uncomfortable with deep questioning',
+      'Those seeking business strategy',
+      'Leaders who aren\'t ready to change their life',
+      'People wanting validation for staying the same',
+      'Those unwilling to face hard truths',
+      'Leaders looking for surface-level fixes',
+    ],
+  },
+  dimensions: {
+    title: 'What Life Coaching Addresses',
+    subtitle: "Holistic work across all dimensions of your life. We don't compartmentalize 'work' and 'life'\u2014we integrate them.",
+  },
+  inclusions: {
+    title: "What's Included (Custom Format)",
+    programTitle: 'Typical 4-Month Program',
+    items: [
+      { label: '12-16 Sessions:', desc: '90-120 minutes each \u2022 Custom frequency (weekly, biweekly, or intensive blocks)' },
+      { label: 'Life Audit:', desc: 'Comprehensive assessment across all dimensions \u2022 Values, time, relationships, health, meaning' },
+      { label: 'Values Clarification:', desc: 'Deep work on what you truly stand for and how to align your life with it' },
+      { label: 'Purpose Discovery:', desc: 'Existential exploration \u2022 Meaning-making \u2022 Contribution design' },
+      { label: 'Relationship Work:', desc: 'Marriage, family, friendships \u2022 Communication patterns \u2022 Repair and redesign' },
+      { label: 'Life Rhythm Design:', desc: 'Time audit \u2022 Energy management \u2022 Sustainable rhythms' },
+      { label: 'Spiritual/Philosophical Work:', desc: 'Existential questions \u2022 Practices for grounding \u2022 Meaning frameworks' },
+      { label: 'Integration Support:', desc: 'Between-session resources \u2022 Check-ins \u2022 Ongoing guidance' },
+    ],
+  },
+  investment: {
+    title: 'Investment: \u20B94-8 Lakh + GST (Custom)',
+    description: 'Pricing varies based on scope, duration, and format. Some leaders need 3 months, others need 6.',
+    range: 'Typical Range: \u20B94L for 3-month focused work, up to \u20B98L for 6-month comprehensive transformation.',
+  },
+  cta: {
+    heading: 'Ready to Explore?',
+    subtext: "Life coaching is deeply personal. Let's have an exploratory conversation to see if this is the right path for you. The exploratory call is 60 minutes.",
+    buttonText: 'Begin a Confidential Conversation',
+  },
+}
+
 export default function LifeCoaching() {
+  const { content } = useContent('lifeCoaching')
+  const { data: testimonialsData } = useCollection('testimonials')
+  const { data: faqData } = useCollection('faq')
+
+  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+
+  const testimonials = testimonialsData?.items || defaultTestimonials
   const lifeTestimonials = testimonials.filter(t => t.program === 'life-coaching')
+  const faq = faqData?.lifeCoaching || defaultFAQ
+
+  const heroHighlights = c('hero', 'highlights')
+  const inflectionItems = c('inflectionPoints', 'items')
+  const idealForItems = c('idealFor', 'items')
+  const notForItems = c('notFor', 'items')
+  const inclusionItems = c('inclusions', 'items')
 
   return (
     <>
@@ -43,32 +141,32 @@ export default function LifeCoaching() {
             <div className="lg:col-span-2">
               <ScrollReveal>
                 <span className="inline-block px-4 py-1.5 bg-gold-400/20 text-gold-400 text-sm font-semibold rounded-full mb-6">
-                  HOLISTIC \u2022 EXISTENTIAL \u2022 WHOLE-LIFE
+                  {c('hero', 'badge')}
                 </span>
-                <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Life Coaching</h1>
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{c('hero', 'title')}</h1>
                 <p className="text-xl text-slate-300 mb-6">
-                  When Leadership Feels Hollow and You Need to Realign Work with Life, Values, and Meaning
+                  {c('hero', 'subtitle')}
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {['Whole-life alignment at inflection points', 'Values clarification & purpose discovery', 'Relationship and life rhythm design', 'Existential exploration & meaning-making', 'Custom duration & format (typically 4 months)'].map((item, i) => (
+                  {heroHighlights.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-300">
                       <span className="text-gold-400">&#10003;</span> {item}
                     </li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-4">
-                  <Button to="/contact">Request Exploratory Call</Button>
-                  <Button href="#dimensions" variant="secondary">Learn More</Button>
+                  <Button to="/contact">{c('hero', 'ctaPrimary')}</Button>
+                  <Button href="#dimensions" variant="secondary">{c('hero', 'ctaSecondary')}</Button>
                 </div>
               </ScrollReveal>
             </div>
 
             <ScrollReveal delay={0.2}>
               <div className="bg-navy-800 rounded-2xl p-8 border-2 border-gold-400/30">
-                <div className="text-3xl font-bold text-gold-400 font-display mb-1">{'\u20B9'}4-8L + GST</div>
-                <p className="text-slate-300 mb-2">Custom (typically 4 months)</p>
-                <p className="text-slate-300 text-sm mb-6">Pricing varies based on scope and format</p>
-                <Button to="/contact" className="w-full">Request Call</Button>
+                <div className="text-3xl font-bold text-gold-400 font-display mb-1">{c('priceBox', 'price')}</div>
+                <p className="text-slate-300 mb-2">{c('priceBox', 'duration')}</p>
+                <p className="text-slate-300 text-sm mb-6">{c('priceBox', 'note')}</p>
+                <Button to="/contact" className="w-full">{c('priceBox', 'ctaText')}</Button>
               </div>
             </ScrollReveal>
           </div>
@@ -79,13 +177,13 @@ export default function LifeCoaching() {
       <section className="py-24 bg-navy-900">
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeading
-            title="This Is For Leaders at Inflection Points"
-            subtitle="You're not broken. You're at a threshold. Your outer success no longer matches your inner truth."
+            title={c('inflectionPoints', 'title')}
+            subtitle={c('inflectionPoints', 'subtitle')}
             light
           />
 
           <div className="space-y-4">
-            {inflectionPoints.map((point, i) => (
+            {inflectionItems.map((point, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="bg-navy-800 rounded-xl p-6 border border-navy-800 hover:border-gold-400/20 transition-colors">
                   <p className="font-display text-lg text-white italic mb-2">&ldquo;{point.quote}&rdquo;</p>
@@ -100,23 +198,14 @@ export default function LifeCoaching() {
       {/* Ideal For / Not For */}
       <section className="py-24 bg-navy-950">
         <div className="max-w-5xl mx-auto px-6">
-          <SectionHeading title="Who Is This For?" subtitle="Life Coaching is existential work. It's for leaders ready to question everything and redesign their life-leadership system." light />
+          <SectionHeading title={c('idealFor', 'title')} subtitle={c('idealFor', 'subtitle')} light />
 
           <div className="grid md:grid-cols-2 gap-8">
             <ScrollReveal>
               <div className="bg-navy-900 rounded-2xl p-8 border border-green-500/20 h-full">
                 <h3 className="font-display text-xl font-bold text-white mb-4">Ideal For</h3>
                 <ul className="space-y-3">
-                  {[
-                    'Leaders at major life transitions (40s, 50s, post-exit)',
-                    'Those experiencing existential crisis or emptiness',
-                    'Leaders whose values and actions are misaligned',
-                    'Those questioning career, role, or life path',
-                    'Leaders whose relationships are suffering due to work',
-                    'Those seeking meaning, not just performance',
-                    'Leaders ready to redesign their whole life',
-                    'People open to existential and spiritual exploration',
-                  ].map((item, i) => (
+                  {idealForItems.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
                       <span className="text-green-400 mt-0.5 shrink-0">&#10003;</span> {item}
                     </li>
@@ -129,16 +218,7 @@ export default function LifeCoaching() {
               <div className="bg-navy-900 rounded-2xl p-8 border border-red-500/20 h-full">
                 <h3 className="font-display text-xl font-bold text-white mb-4">Not For</h3>
                 <ul className="space-y-3">
-                  {[
-                    'Leaders seeking leadership skills only (see FIT or One-on-One)',
-                    'Those wanting quick answers or action plans',
-                    'Leaders uncomfortable with deep questioning',
-                    'Those seeking business strategy',
-                    'Leaders who aren\'t ready to change their life',
-                    'People wanting validation for staying the same',
-                    'Those unwilling to face hard truths',
-                    'Leaders looking for surface-level fixes',
-                  ].map((item, i) => (
+                  {notForItems.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
                       <span className="text-red-400/70 mt-0.5 shrink-0">&#10007;</span> {item}
                     </li>
@@ -154,8 +234,8 @@ export default function LifeCoaching() {
       <section id="dimensions" className="py-24 bg-navy-900">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="What Life Coaching Addresses"
-            subtitle="Holistic work across all dimensions of your life. We don't compartmentalize 'work' and 'life'\u2014we integrate them."
+            title={c('dimensions', 'title')}
+            subtitle={c('dimensions', 'subtitle')}
             light
           />
 
@@ -176,22 +256,13 @@ export default function LifeCoaching() {
       {/* What's Included + Investment */}
       <section className="py-24 bg-navy-950">
         <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading title="What's Included (Custom Format)" light />
+          <SectionHeading title={c('inclusions', 'title')} light />
 
           <ScrollReveal>
             <div className="bg-navy-900 rounded-2xl p-8 md:p-10 border border-navy-800 mb-8">
-              <h3 className="font-display text-lg font-bold text-white mb-6">Typical 4-Month Program</h3>
+              <h3 className="font-display text-lg font-bold text-white mb-6">{c('inclusions', 'programTitle')}</h3>
               <ul className="space-y-4">
-                {[
-                  { label: '12-16 Sessions:', desc: '90-120 minutes each \u2022 Custom frequency (weekly, biweekly, or intensive blocks)' },
-                  { label: 'Life Audit:', desc: 'Comprehensive assessment across all dimensions \u2022 Values, time, relationships, health, meaning' },
-                  { label: 'Values Clarification:', desc: 'Deep work on what you truly stand for and how to align your life with it' },
-                  { label: 'Purpose Discovery:', desc: 'Existential exploration \u2022 Meaning-making \u2022 Contribution design' },
-                  { label: 'Relationship Work:', desc: 'Marriage, family, friendships \u2022 Communication patterns \u2022 Repair and redesign' },
-                  { label: 'Life Rhythm Design:', desc: 'Time audit \u2022 Energy management \u2022 Sustainable rhythms' },
-                  { label: 'Spiritual/Philosophical Work:', desc: 'Existential questions \u2022 Practices for grounding \u2022 Meaning frameworks' },
-                  { label: 'Integration Support:', desc: 'Between-session resources \u2022 Check-ins \u2022 Ongoing guidance' },
-                ].map((item, i) => (
+                {inclusionItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
                     <span className="text-gold-400 mt-0.5 shrink-0">&#10003;</span>
                     <p className="text-slate-300"><strong className="text-white">{item.label}</strong> {item.desc}</p>
@@ -203,12 +274,12 @@ export default function LifeCoaching() {
 
           <ScrollReveal delay={0.1}>
             <div className="bg-navy-900 rounded-2xl p-8 border-2 border-gold-400/30">
-              <h3 className="font-display text-xl font-bold text-white mb-3">Investment: {'\u20B9'}4-8 Lakh + GST (Custom)</h3>
+              <h3 className="font-display text-xl font-bold text-white mb-3">{c('investment', 'title')}</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-2">
-                Pricing varies based on scope, duration, and format. Some leaders need 3 months, others need 6.
+                {c('investment', 'description')}
               </p>
               <p className="text-slate-300 text-sm">
-                <strong className="text-white">Typical Range:</strong> {'\u20B9'}4L for 3-month focused work, up to {'\u20B9'}8L for 6-month comprehensive transformation.
+                <strong className="text-white">{c('investment', 'range')}</strong>
               </p>
             </div>
           </ScrollReveal>
@@ -233,14 +304,14 @@ export default function LifeCoaching() {
       <section className="py-24 bg-navy-950">
         <div className="max-w-3xl mx-auto px-6">
           <SectionHeading title="Frequently Asked Questions" light />
-          <FAQAccordion items={lifeCoachingFAQ} dark />
+          <FAQAccordion items={faq} dark />
         </div>
       </section>
 
       <CTASection
-        heading="Ready to Explore?"
-        subtext="Life coaching is deeply personal. Let's have an exploratory conversation to see if this is the right path for you. The exploratory call is 60 minutes."
-        buttonText="Begin a Confidential Conversation"
+        heading={c('cta', 'heading')}
+        subtext={c('cta', 'subtext')}
+        buttonText={c('cta', 'buttonText')}
         buttonTo="/contact"
       />
     </>

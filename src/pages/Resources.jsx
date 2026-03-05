@@ -3,50 +3,79 @@ import { BarChart3, Zap, CheckCircle, ArrowRight } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import Button from '../components/ui/Button'
+import { useContent } from '../hooks/useContent'
 
-const assessments = [
-  {
-    icon: BarChart3,
-    title: 'Leadership Integration Audit',
-    description: '20-question assessment mapping where you fragment across the Five Layers (body, energy, mind, judgment, values). Receive personalized report + integration practices.',
-    cta: 'Take the Audit',
-    note: 'Email required for results',
-    premium: true,
+const defaults = {
+  hero: {
+    badge: 'Resources',
+    title: 'Insights for Leaders Who Want Depth',
+    subtitle: 'Assessments, articles, and frameworks to help you navigate pressure and build integrated leadership. No fluff. Just depth.',
   },
-  {
-    icon: Zap,
-    title: 'Pressure Pattern Diagnostic',
-    description: 'Identify your specific fragmentation pattern under pressure. Do you freeze? Over-control? Collapse? Fragment intellectually? Get clarity on YOUR pattern.',
-    cta: 'Discover Your Pattern',
-    note: '5-minute assessment',
+  assessments: {
+    title: 'Free Leadership Assessments',
+    subtitle: 'Understand where you fragment under pressure. 5-minute assessments, instant insights.',
+    items: [
+      {
+        icon: BarChart3,
+        title: 'Leadership Integration Audit',
+        description: '20-question assessment mapping where you fragment across the Five Layers (body, energy, mind, judgment, values). Receive personalized report + integration practices.',
+        cta: 'Take the Audit',
+        note: 'Email required for results',
+        premium: true,
+      },
+      {
+        icon: Zap,
+        title: 'Pressure Pattern Diagnostic',
+        description: 'Identify your specific fragmentation pattern under pressure. Do you freeze? Over-control? Collapse? Fragment intellectually? Get clarity on YOUR pattern.',
+        cta: 'Discover Your Pattern',
+        note: '5-minute assessment',
+      },
+      {
+        icon: CheckCircle,
+        title: 'Five-Layer Readiness Check',
+        description: 'Are you ready for deep integration work? This 10-question check helps you assess your readiness for transformation.',
+        cta: 'Check Your Readiness',
+        note: 'Instant results',
+      },
+    ],
   },
-  {
-    icon: CheckCircle,
-    title: 'Five-Layer Readiness Check',
-    description: 'Are you ready for deep integration work? This 10-question check helps you assess your readiness for transformation.',
-    cta: 'Check Your Readiness',
-    note: 'Instant results',
+  categories: {
+    title: 'Explore by Topic',
+    subtitle: 'Browse insights organized by what matters most to you.',
+    items: [
+      { tag: 'PRESSURE', color: 'bg-red-500/10 text-red-400', title: 'Leadership Under Pressure', desc: 'Decision-making under stress, presence in crisis, managing team anxiety, board challenges' },
+      { tag: 'METHODOLOGY', color: 'bg-blue-500/10 text-blue-400', title: 'Five Layers Framework', desc: 'Body, energy, mind, judgment, values integration. Layer 3 vs Layer 1 work.' },
+      { tag: 'PRACTICES', color: 'bg-green-500/10 text-green-400', title: 'Integration Practices', desc: 'Somatic practices, breathwork, daily rituals, sustainable integration' },
+      { tag: 'STORIES', color: 'bg-purple-500/10 text-purple-400', title: 'Real Stories & Case Studies', desc: 'Client transformations, leadership journeys, lessons learned' },
+    ],
   },
-]
-
-const categories = [
-  { tag: 'PRESSURE', color: 'bg-red-500/10 text-red-400', title: 'Leadership Under Pressure', desc: 'Decision-making under stress, presence in crisis, managing team anxiety, board challenges' },
-  { tag: 'METHODOLOGY', color: 'bg-blue-500/10 text-blue-400', title: 'Five Layers Framework', desc: 'Body, energy, mind, judgment, values integration. Layer 3 vs Layer 1 work.' },
-  { tag: 'PRACTICES', color: 'bg-green-500/10 text-green-400', title: 'Integration Practices', desc: 'Somatic practices, breathwork, daily rituals, sustainable integration' },
-  { tag: 'STORIES', color: 'bg-purple-500/10 text-purple-400', title: 'Real Stories & Case Studies', desc: 'Client transformations, leadership journeys, lessons learned' },
-]
-
-const articles = [
-  { category: 'Pressure', color: 'bg-red-500/10 text-red-400', title: 'Why Smart Leaders Make Dumb Decisions Under Pressure', desc: 'You\'re brilliant in calm. But when the board challenges you publicly, something breaks. Here\'s why your nervous system fragments.', read: '8 min read', date: 'Jan 2026' },
-  { category: 'Methodology', color: 'bg-blue-500/10 text-blue-400', title: 'Layer 3 vs Layer 1: Why Surface Coaching Fails Leaders', desc: 'Most coaching works on techniques (Layer 1). Real transformation happens at Layer 3 and deeper: body, energy, nervous system, identity.', read: '12 min read', date: 'Jan 2026' },
-  { category: 'Practice', color: 'bg-green-500/10 text-green-400', title: 'The 5-Minute Integration Practice for Busy Leaders', desc: 'You don\'t need an hour. This somatic practice rewires your nervous system in 5 minutes. Do it before high-stakes meetings.', read: '6 min read', date: 'Dec 2025' },
-  { category: 'Story', color: 'bg-purple-500/10 text-purple-400', title: 'How a CEO Stopped Fragmenting in Board Meetings', desc: 'She was brilliant but would go blank when challenged publicly. Here\'s how she rewired her operating system through somatic work.', read: '10 min read', date: 'Dec 2025' },
-  { category: 'Methodology', color: 'bg-blue-500/10 text-blue-400', title: 'The Body Never Lies: Somatic Intelligence in Leadership', desc: 'Your body knows you\'re fragmenting before your mind does. Learn to read the signals and intervene early.', read: '9 min read', date: 'Nov 2025' },
-  { category: 'Pressure', color: 'bg-red-500/10 text-red-400', title: 'Presence Under Fire: Leading Through Crisis Without Collapsing', desc: 'When your team is panicking, they need your integrated presence. Here\'s how to stay grounded when chaos hits.', read: '11 min read', date: 'Nov 2025' },
-]
+  articles: {
+    title: 'Latest Insights',
+    subtitle: 'New perspectives on integration, leadership, and pressure.',
+    items: [
+      { category: 'Pressure', color: 'bg-red-500/10 text-red-400', title: 'Why Smart Leaders Make Dumb Decisions Under Pressure', desc: 'You\'re brilliant in calm. But when the board challenges you publicly, something breaks. Here\'s why your nervous system fragments.', read: '8 min read', date: 'Jan 2026' },
+      { category: 'Methodology', color: 'bg-blue-500/10 text-blue-400', title: 'Layer 3 vs Layer 1: Why Surface Coaching Fails Leaders', desc: 'Most coaching works on techniques (Layer 1). Real transformation happens at Layer 3 and deeper: body, energy, nervous system, identity.', read: '12 min read', date: 'Jan 2026' },
+      { category: 'Practice', color: 'bg-green-500/10 text-green-400', title: 'The 5-Minute Integration Practice for Busy Leaders', desc: 'You don\'t need an hour. This somatic practice rewires your nervous system in 5 minutes. Do it before high-stakes meetings.', read: '6 min read', date: 'Dec 2025' },
+      { category: 'Story', color: 'bg-purple-500/10 text-purple-400', title: 'How a CEO Stopped Fragmenting in Board Meetings', desc: 'She was brilliant but would go blank when challenged publicly. Here\'s how she rewired her operating system through somatic work.', read: '10 min read', date: 'Dec 2025' },
+      { category: 'Methodology', color: 'bg-blue-500/10 text-blue-400', title: 'The Body Never Lies: Somatic Intelligence in Leadership', desc: 'Your body knows you\'re fragmenting before your mind does. Learn to read the signals and intervene early.', read: '9 min read', date: 'Nov 2025' },
+      { category: 'Pressure', color: 'bg-red-500/10 text-red-400', title: 'Presence Under Fire: Leading Through Crisis Without Collapsing', desc: 'When your team is panicking, they need your integrated presence. Here\'s how to stay grounded when chaos hits.', read: '11 min read', date: 'Nov 2025' },
+    ],
+  },
+  newsletter: {
+    title: 'Stay Connected',
+    subtitle: 'Join 500+ leaders receiving weekly insights on integration and leadership.',
+    note: 'We respect your inbox. Unsubscribe anytime.',
+  },
+}
 
 export default function Resources() {
   const [email, setEmail] = useState('')
+  const { content } = useContent('resources')
+  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+
+  const assessments = c('assessments', 'items')
+  const categories = c('categories', 'items')
+  const articles = c('articles', 'items')
 
   return (
     <>
@@ -57,12 +86,12 @@ export default function Resources() {
         </div>
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">Resources</span>
+            <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">{c('hero', 'badge')}</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Insights for Leaders Who Want Depth
+              {c('hero', 'title')}
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              Assessments, articles, and frameworks to help you navigate pressure and build integrated leadership. No fluff. Just depth.
+              {c('hero', 'subtitle')}
             </p>
           </ScrollReveal>
         </div>
@@ -72,8 +101,8 @@ export default function Resources() {
       <section className="py-24 bg-navy-900">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
-            title="Free Leadership Assessments"
-            subtitle="Understand where you fragment under pressure. 5-minute assessments, instant insights."
+            title={c('assessments', 'title')}
+            subtitle={c('assessments', 'subtitle')}
             light
           />
 
@@ -98,7 +127,7 @@ export default function Resources() {
       {/* Explore by Topic */}
       <section className="py-24 bg-navy-950">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title="Explore by Topic" subtitle="Browse insights organized by what matters most to you." light />
+          <SectionHeading title={c('categories', 'title')} subtitle={c('categories', 'subtitle')} light />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, i) => (
@@ -119,7 +148,7 @@ export default function Resources() {
       {/* Latest Articles */}
       <section className="py-24 bg-navy-900">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title="Latest Insights" subtitle="New perspectives on integration, leadership, and pressure." light />
+          <SectionHeading title={c('articles', 'title')} subtitle={c('articles', 'subtitle')} light />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, i) => (
@@ -134,7 +163,7 @@ export default function Resources() {
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="font-display text-lg font-bold text-white mb-2">{article.title}</h3>
                     <p className="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">{article.desc}</p>
-                    <p className="text-slate-300/50 text-xs">{article.read} \u2022 {article.date}</p>
+                    <p className="text-slate-300/50 text-xs">{article.read} &bull; {article.date}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -149,9 +178,9 @@ export default function Resources() {
           <ScrollReveal>
             <div className="bg-navy-900 rounded-2xl p-10 md:p-14 border border-gold-400/20 text-center">
               <div className="w-12 h-0.5 bg-gold-400 mx-auto mb-6" />
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">Stay Connected</h2>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">{c('newsletter', 'title')}</h2>
               <p className="text-slate-300 mb-8">
-                Join 500+ leaders receiving weekly insights on integration and leadership.
+                {c('newsletter', 'subtitle')}
               </p>
               <form onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing!') }} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                 <input
@@ -169,7 +198,7 @@ export default function Resources() {
                 />
                 <Button type="submit" size="md">Subscribe</Button>
               </form>
-              <p className="text-slate-300/50 text-xs mt-4">We respect your inbox. Unsubscribe anytime.</p>
+              <p className="text-slate-300/50 text-xs mt-4">{c('newsletter', 'note')}</p>
             </div>
           </ScrollReveal>
         </div>
