@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../firebase/config'
+import { supabase } from '../../supabase/config'
 import { useAdmin } from '../../hooks/useAdmin'
 import { ObjectArrayField } from '../fields'
 import SectionCard from '../components/SectionCard'
@@ -19,13 +18,12 @@ export default function CollectionEditor() {
   useEffect(() => {
     async function load() {
       try {
-        const names = ['services', 'testimonials', 'faq', 'layers', 'credentials']
-        const results = await Promise.all(
-          names.map((n) => getDoc(doc(db, 'collections', n)))
-        )
+        const { data: rows } = await supabase
+          .from('collections')
+          .select('id, data')
         const allData = {}
-        results.forEach((snap, i) => {
-          if (snap.exists()) allData[names[i]] = snap.data()
+        ;(rows || []).forEach((row) => {
+          allData[row.id] = row.data
         })
         setData(allData)
       } catch (err) {

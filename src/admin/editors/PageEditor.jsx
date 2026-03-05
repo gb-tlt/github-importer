@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../firebase/config'
+import { supabase } from '../../supabase/config'
 import { useAdmin } from '../../hooks/useAdmin'
 import { TextField, TextAreaField, ArrayField, ObjectArrayField, TableField, ImageUploadField } from '../fields'
 import SectionCard from '../components/SectionCard'
@@ -26,8 +25,12 @@ export default function PageEditor({ pageName, schema, title }) {
   useEffect(() => {
     async function load() {
       try {
-        const snap = await getDoc(doc(db, 'content', pageName))
-        if (snap.exists()) setData(snap.data())
+        const { data: row } = await supabase
+          .from('content')
+          .select('data')
+          .eq('id', pageName)
+          .single()
+        if (row?.data) setData(row.data)
       } catch (err) {
         console.warn('Failed to load content:', err.message)
       }

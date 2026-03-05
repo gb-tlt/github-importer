@@ -11,7 +11,7 @@ Website for **Gowtham Balaji**, a leadership integration coach who helps senior 
 - **Tailwind CSS v4** (with `@tailwindcss/vite` plugin, custom theme in `src/index.css`)
 - **Framer Motion** (scroll-reveal animations, mobile menu transitions)
 - **Lucide React** (icon library)
-- **Firebase** (Firestore for content, Auth for admin login, Storage for images)
+- **Supabase** (Postgres/JSONB for content, Auth for admin login, Storage for images)
 - **Deployment**: Netlify (SPA redirect in `netlify.toml`)
 
 ## Design System
@@ -26,11 +26,11 @@ https://github.com/dhananjay1208/TLT.git (branch: `main`)
 ## File Structure
 ```
 src/
-  firebase/
-    config.js         Firebase initialization (Firestore, Auth, Storage)
+  supabase/
+    config.js         Supabase client initialization
   contexts/
-    ContentContext.jsx Batch-loads all Firestore content, provides to app
-    AuthContext.jsx    Firebase Auth state management
+    ContentContext.jsx Batch-loads all Supabase content, provides to app
+    AuthContext.jsx    Supabase Auth state management
   hooks/
     useContent.js     useContent(pageName) - page content with fallback
     useCollection.js  useCollection(name) - shared collection data
@@ -56,7 +56,7 @@ src/
   main.jsx            Entry point
   index.css           Tailwind directives + custom theme + global styles
 scripts/
-  seed-firestore.js   Populate Firestore with current content (run once)
+  seed-supabase.js    Populate Supabase with current content (run once)
 .env.example          Firebase config template
 ```
 
@@ -89,19 +89,20 @@ Original HTML prototypes are in project root (not committed to git):
 - **URL**: `/admin` (redirects to `/admin/login` if not authenticated)
 - **Auth**: Single admin account via Firebase Auth (email/password)
 - **Architecture**: Schema-driven - each page has a schema defining editable fields, rendered by a generic PageEditor
-- **Content flow**: Firestore docs -> ContentContext -> useContent() hook -> pages (with hardcoded fallbacks)
-- **Collections**: `content/` (9 docs, one per page + global) and `collections/` (5 docs for shared data)
-- **Fallback**: All pages keep hardcoded defaults - site works even if Firebase is unreachable
+- **Content flow**: Supabase tables -> ContentContext -> useContent() hook -> pages (with hardcoded fallbacks)
+- **Tables**: `content` (9 rows, one per page + global) and `collections` (5 rows for shared data), both with `id TEXT PK` + `data JSONB`
+- **Fallback**: All pages keep hardcoded defaults - site works even if Supabase is unreachable
 - **Code-split**: Admin routes are lazy-loaded, zero impact on public bundle
-- **Seed script**: `node scripts/seed-firestore.js` populates Firestore with current content (requires .env with Firebase keys)
+- **Seed script**: `node scripts/seed-supabase.js` populates Supabase with current content (requires .env with Supabase keys)
 
-## Firebase Setup (Required)
-1. Create Firebase project at console.firebase.google.com
-2. Enable Firestore, Authentication (Email/Password), and Storage
-3. Create admin user in Authentication console
-4. Copy config to `.env` (see `.env.example`)
-5. Set Firestore rules: public read, authenticated write
-6. Run seed script once: `node scripts/seed-firestore.js`
+## Supabase Setup (Required)
+1. Create Supabase project at supabase.com
+2. Run SQL to create tables: `CREATE TABLE content (id TEXT PRIMARY KEY, data JSONB NOT NULL);` and same for `collections`
+3. Enable RLS with policies: public SELECT, authenticated ALL
+4. Create admin user in Authentication > Users
+5. Create `media` storage bucket (public)
+6. Copy project URL + anon key to `.env` (see `.env.example`)
+7. Run seed script once: `node scripts/seed-supabase.js` (use service role key for seeding)
 
 ## Notes
 - All testimonials are placeholder (realistic titles, anonymized). Replace with real ones when available.
