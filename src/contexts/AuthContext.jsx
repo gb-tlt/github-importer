@@ -8,6 +8,11 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
       setLoading(false)
@@ -20,8 +25,8 @@ export function AuthProvider({ children }) {
     return () => subscription.unsubscribe()
   }, [])
 
-  const login = (email, password) => supabase.auth.signInWithPassword({ email, password })
-  const logout = () => supabase.auth.signOut()
+  const login = (email, password) => supabase?.auth.signInWithPassword({ email, password })
+  const logout = () => supabase?.auth.signOut()
 
   return (
     <AuthContext.Provider value={{ user, loading, login, logout }}>

@@ -10,6 +10,10 @@ export function ContentProvider({ children }) {
 
   useEffect(() => {
     async function loadContent() {
+      if (!supabase) {
+        setLoading(false)
+        return
+      }
       try {
         const [contentRes, collectionsRes] = await Promise.all([
           supabase.from('content').select('id, data'),
