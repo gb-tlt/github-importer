@@ -42,6 +42,12 @@ export const aboutSchema = {
       { key: 'image', label: 'Photo', type: 'image', path: 'images/about' },
       { key: 'name', label: 'Name', type: 'text' },
       { key: 'role', label: 'Role / Title', type: 'text' },
+      { key: 'chapters', label: 'Biography Chapters', type: 'objectArray', fields: [
+        { key: 'label', label: 'Chapter Label', type: 'text' },
+        { key: 'paragraphs', label: 'Paragraphs (HTML allowed)', type: 'array' },
+        { key: 'practiceLabel', label: 'Practice List Label (optional)', type: 'text' },
+        { key: 'practiceItems', label: 'Practice Items (optional)', type: 'array' },
+      ]},
       { key: 'detailLabel', label: 'Detail Label', type: 'text' },
       { key: 'detailText', label: 'Detail Text', type: 'textarea' },
     ],

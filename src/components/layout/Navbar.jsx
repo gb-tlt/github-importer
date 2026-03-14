@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-18">
           <Link to="/" className="flex items-center">
-            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-10 md:h-12 w-auto" />
+            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-24 md:h-28 w-auto" />
           </Link>
 
           {/* Desktop nav */}

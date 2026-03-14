@@ -37,7 +37,7 @@ export const layers = [
   },
   {
     id: 'identity',
-    name: 'Identity & Spiritual',
+    name: 'Identity & Purpose',
     sanskrit: 'Anandamaya Kosha',
     description: 'Purpose, meaning, existential grounding. When integrated: unshakeable sense of self, leadership from wholeness, pressure becomes privilege.',
     fragmented: 'Identity crisis, hollow success, existential drift',

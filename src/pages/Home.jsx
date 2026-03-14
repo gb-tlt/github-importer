@@ -238,7 +238,7 @@ export default function Home() {
                   key={logo.name}
                   src={logo.src}
                   alt={logo.name}
-                  className="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-90 grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-60 hover:opacity-90 grayscale hover:grayscale-0 transition-all duration-300"
                 />
               ))}
             </div>
