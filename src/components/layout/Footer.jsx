@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/">
-              <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-10 w-auto" />
+              <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-24 md:h-28 w-auto" />
             </Link>
             <p className="text-slate-300 mt-4 text-sm leading-relaxed">
               {f('tagline')}
