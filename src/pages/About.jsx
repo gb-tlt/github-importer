@@ -128,7 +128,7 @@ export default function About() {
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3 }} />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_60%,rgba(240,222,160,0.04)_0%,transparent_55%)] pointer-events-none" />
         <div className="relative z-10 max-w-[1100px] mx-auto px-6 py-40">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-[700px]">
             <ScrollReveal>
               <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">{c('hero', 'badge')}</p>
               <h1 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-normal text-warm-50 mb-6">
@@ -137,13 +137,6 @@ export default function About() {
               <p className="text-[1.08rem] text-warm-50/70 leading-[1.85] max-w-[600px]">
                 {c('hero', 'subtitle')}
               </p>
-            </ScrollReveal>
-            <ScrollReveal className="hidden lg:flex justify-center">
-              <img
-                src="/images/gowtham-seated.png"
-                alt="Gowtham Balaji"
-                className="max-h-[480px] w-auto object-contain drop-shadow-[0_20px_50px_rgba(240,222,160,0.15)]"
-              />
             </ScrollReveal>
           </div>
         </div>
@@ -237,9 +230,9 @@ export default function About() {
           <ScrollReveal>
             <div className="sticky top-[120px] w-full max-lg:max-w-[300px] max-lg:mx-auto max-lg:relative max-lg:top-auto">
               <img
-                src={c('founder', 'image') || '/gowtham.jpg'}
+                src="/images/gowtham-seated.png"
                 alt="Gowtham Balaji"
-                className="w-full aspect-[4/5] object-cover border border-navy-950/10"
+                className="w-full object-contain border border-navy-950/10"
               />
             </div>
           </ScrollReveal>
