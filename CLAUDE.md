@@ -1,7 +1,7 @@
 # The Leadership Tattva - Website
 
 ## Project Overview
-Website for **Gowtham Balaji**, a leadership integration coach who helps senior leaders (CXOs, VPs, Directors) stop fragmenting under pressure. His methodology blends Eastern wisdom (Advaita Vedanta, Yoga Sutras, somatic work, energy healing) with modern leadership coaching across Five Layers: Body, Energy, Mind, Judgment/Values, and Identity/Spiritual.
+Website for **Gowtham Balaji**, a leadership integration coach who helps senior leaders (CXOs, VPs, Directors) stop fragmenting under pressure. His methodology blends Eastern wisdom (Advaita Vedanta, Yoga Sutras, somatic work, energy healing) with modern leadership coaching across Five Layers: Body, Energy, Mind, Judgment/Values, and Identity/Purpose.
 
 **Business Goal**: Position Gowtham as a premium, credible executive coach and convert senior leader visitors into discovery call bookings.
 
@@ -28,9 +28,9 @@ https://github.com/dhananjay1208/TLT.git (branch: `main`)
 ```
 public/
   favicon.png             TLT square logo (browser tab icon)
-  gowtham.jpg             Coach headshot (used in Home hero + About founder section)
+  gowtham.jpg             Coach headshot (used in Home hero)
   images/
-    gowtham-seated.png    Seated professional photo (About hero)
+    gowtham-seated.png    Seated professional photo (About founder section)
     operating-system.png  Leadership OS wireframe diagram (Home philosophy section)
     bg-hero.png           Navy-to-orange gradient texture (all page heroes)
     bg-dark.png           Dark navy radial texture (dark sections, optional)
@@ -44,7 +44,7 @@ public/
       flow-state.png          Energy layer
       mental-peace.png        Mind layer
       decision-making.png     Judgment layer
-      peace-alignment.png     Identity/Spiritual layer
+      peace-alignment.png     Identity/Purpose layer
       group-session.png       FIT Cohort program card
       1-1-session.png         One-on-One program card
       family-harmony.png      Life Coaching program card
@@ -102,11 +102,12 @@ scripts/
 - OneOnOne modalities and LifeCoaching dimensions use icon image paths (not Lucide components)
 - `ProgramCard` component auto-maps program icons by `service.id` via internal `programIconMap`
 - Contact form is a pre-qualification application (name, role, company, experience, program interest, message)
-- Photos use `object-cover object-top` for proper face framing
+- About page hero is text-only (no photo); founder photo (`gowtham-seated.png`) appears in The Founder section
+- Photos use `object-cover object-top` for proper face framing (except founder photo which uses `object-contain`)
 
 ## Image Assets
 - **Brand logos**: `public/images/logo-horizontal.png` (Navbar/Footer), `public/favicon.png` (browser tab)
-- **Coach photos**: `public/gowtham.jpg` (headshot, Home hero + About founder), `public/images/gowtham-seated.png` (seated, About hero)
+- **Coach photos**: `public/gowtham.jpg` (headshot, Home hero), `public/images/gowtham-seated.png` (seated, About founder section)
 - **Section backgrounds**: `bg-hero.png` (all heroes), `bg-dark.png` (dark sections), `bg-warm.png` (beige sections)
 - **Operating System diagram**: `public/images/operating-system.png` (Home philosophy section, 3D float effect)
 - **3D Vector icons**: 25 custom icons in `public/images/icons/` — used for Five Layers, program cards, modalities, dimensions
