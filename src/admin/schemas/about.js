@@ -7,48 +7,55 @@ export const aboutSchema = {
       { key: 'subtitle', label: 'Subtitle', type: 'text' },
     ],
   },
-  story: {
-    label: 'Story Section',
+  observed: {
+    label: 'What We Observed Section',
     fields: [
-      { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'image', label: 'Photo', type: 'image', path: 'images/about' },
-      { key: 'paragraphs', label: 'Story Paragraphs', type: 'array', placeholder: 'Add a paragraph...' },
-      { key: 'pullQuote', label: 'Pull Quote', type: 'textarea' },
-      { key: 'closing', label: 'Closing Paragraph', type: 'textarea' },
-      { key: 'tagline', label: 'Tagline (gold italic)', type: 'text' },
-    ],
-  },
-  credentials: {
-    label: 'Credentials Section',
-    fields: [
+      { key: 'label', label: 'Section Label', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
       { key: 'subtitle', label: 'Subtitle', type: 'text' },
+      { key: 'problems', label: 'What Keeps Breaking', type: 'objectArray', fields: [
+        { key: 'bold', label: 'Bold Lead', type: 'text' },
+        { key: 'text', label: 'Description', type: 'textarea' },
+      ]},
+      { key: 'works', label: 'What Actually Works', type: 'objectArray', fields: [
+        { key: 'bold', label: 'Bold Lead', type: 'text' },
+        { key: 'text', label: 'Description', type: 'textarea' },
+      ]},
+      { key: 'closing', label: 'Closing Highlight', type: 'text' },
+      { key: 'closingText', label: 'Closing Body', type: 'textarea' },
     ],
   },
   philosophy: {
     label: 'Philosophy Section',
     fields: [
       { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'subtitle', label: 'Subtitle', type: 'text' },
-      { key: 'items', label: 'Philosophy Items', type: 'objectArray', fields: [
+      { key: 'subtitle', label: 'Section Label', type: 'text' },
+      { key: 'items', label: 'Philosophy Cards', type: 'objectArray', fields: [
         { key: 'title', label: 'Title', type: 'text' },
         { key: 'text', label: 'Description', type: 'textarea' },
       ]},
     ],
   },
-  differentiation: {
-    label: 'Differentiation Table',
+  founder: {
+    label: 'Founder Section',
     fields: [
-      { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'colLeft', label: 'Left Column Header', type: 'text' },
-      { key: 'colRight', label: 'Right Column Header', type: 'text' },
-      { key: 'rows', label: 'Comparison Rows', type: 'table', columns: ['Traditional', 'My Approach'] },
+      { key: 'image', label: 'Photo', type: 'image', path: 'images/about' },
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'role', label: 'Role / Title', type: 'text' },
+      { key: 'detailLabel', label: 'Detail Label', type: 'text' },
+      { key: 'detailText', label: 'Detail Text', type: 'textarea' },
     ],
   },
-  personalTouch: {
-    label: 'Personal Touch Section',
+  lineage: {
+    label: 'Lineage Section',
     fields: [
-      { key: 'text', label: 'Text', type: 'textarea' },
+      { key: 'label', label: 'Section Label', type: 'text' },
+      { key: 'title', label: 'Section Title', type: 'text' },
+      { key: 'subtitle', label: 'Subtitle', type: 'text' },
+      { key: 'people', label: 'Teachers / Mentors', type: 'objectArray', fields: [
+        { key: 'name', label: 'Name', type: 'text' },
+        { key: 'desc', label: 'Tradition / Discipline', type: 'text' },
+      ]},
     ],
   },
   cta: {

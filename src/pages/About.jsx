@@ -1,212 +1,229 @@
-import { Briefcase, Award, Heart, Zap, Brain, BookOpen } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import CTASection from '../components/ui/CTASection'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import { useContent } from '../hooks/useContent'
-import { useCollection } from '../hooks/useCollection'
-import { credentials as defaultCredentials } from '../data/credentials'
-
-const credentialIcons = { briefcase: Briefcase, award: Award, heart: Heart, zap: Zap, brain: Brain, book: BookOpen }
 
 const defaults = {
   hero: {
     badge: 'About',
-    title: 'The Man Behind the Method',
-    subtitle: 'From corporate fragmentation to helping leaders integrate under pressure',
+    title: 'Why The Leadership Tattva Exists',
+    subtitle: 'We exist because the most capable leaders fragment under pressure — and no one is addressing why.',
   },
-  story: {
-    title: 'My Story: From Fragmentation to Integration',
-    image: '/gowtham.jpg',
-    paragraphs: [
-      "I spent many years in corporate leadership roles\u2014leading operations, strategy, and more. On paper, I was succeeding. Inside, I was fragmenting.",
-      "I made solid decisions when there was time. I was fairly articulate in meetings with not-so-big-leaders. I could lead in calm. But when real pressure hit\u2014scrutiny, crisis decisions, high-stakes presentations to clients, vendors\u2014something broke. My body would tighten. My mind would blank. My presence would collapse. I looked composed on the outside, but I was drowning inside.",
-      "Slowly, the pressure seeped into my relationship back home with my wife\u2014I was becoming an annoying husband, an irritated father. I could see my health, happiness, and personal fulfillment slowly slipping away from my hands.",
-      "I tried everything: I quit corporate, built a farm with cows and natural farming. I listened to books, podcasts, audio books, interviews. I explored mindfulness techniques, some form of therapy. Frankly, all these helped, but they didn\u2019t fix the core issue. I was still fragmenting under pressure.",
-      "Then I discovered body-based work, yoga therapy, energy healing, yoga sutras, Mahabharata, and trauma-informed coaching. I learned that my fragmentation wasn\u2019t happening only at the behavioral level\u2014it was happening at the foundational levels: body, energy, nervous system, emotional layer, in my identity, and my spiritual level too.",
-      "When I addressed each one of these slowly over time, everything changed. My body stopped betraying me. My mind stayed clear under pressure. My decisions became grounded in judgment, not reaction. I didn\u2019t just learn techniques\u2014I rewired my operating system.",
+  observed: {
+    label: 'What We Saw',
+    title: 'The Pattern No One Was Naming',
+    subtitle: 'After working with hundreds of senior leaders, we noticed the same thing again and again.',
+    problems: [
+      { bold: 'The body betrays first.', text: 'Tension, shallow breathing, collapsed posture — before the mind even registers pressure, the nervous system has already fragmented.' },
+      { bold: 'The mind goes blank second.', text: "The brilliant strategist who had the perfect answer prepared can't access it when the room is watching." },
+      { bold: 'Presence collapses third.', text: 'The team senses it. The board sees it. Composed outside, drowning inside.' },
+      { bold: "Skills-based coaching doesn't fix it.", text: 'Leaders try communication training, executive coaching, leadership workshops. The techniques work in calm. They vanish under pressure.' },
+      { bold: 'The damage spreads beyond work.', text: 'The same fragmentation that shows up in boardrooms enters relationships, health, and sense of self.' },
     ],
-    pullQuote: 'With practice, these days, pressure makes me more calm, sharp, intuitive and powerful\u2014all while being fully aligned and authentic to myself, nurturing my family and being aligned to business goals.',
-    closing: "If I can do it, every leader can do it. Every leader deserves an uncompromising, honourable and joyful life. I now help other senior leaders do what I did: stop fragmenting, start integrating. Live a thriving life in every aspect of it.",
-    tagline: 'May every tough situation make you stronger from within.',
-  },
-  credentials: {
-    title: 'Background & Training',
-    subtitle: 'I bring together leadership experience, coaching certifications, and depth modalities to serve senior leaders.',
+    works: [
+      { bold: 'Start with the body, not the mind.', text: 'Nervous system regulation, somatic awareness, and physical grounding create the foundation everything else is built on.' },
+      { bold: 'Work at every layer simultaneously.', text: 'Body, energy, mind, judgment, purpose — the Panchakosha framework addresses all five, not just the cognitive surface.' },
+      { bold: 'Indic wisdom meets modern neuroscience.', text: "The Yoga Sutras, Sankhya, Navarasa, and the Bhagavad Gita aren't ancient philosophy — they're precision tools for how the human system operates under stress." },
+      { bold: 'Use pressure as the training ground.', text: "Integration that hasn't been tested under real stakes isn't integration. We simulate and work within high-pressure moments, not away from them." },
+      { bold: 'Daily practice rewires permanently.', text: 'Not weekend workshops. Not quarterly offsites. Daily, embodied practice that changes the operating system at the structural level.' },
+    ],
+    closing: 'This is what The Leadership Tattva was built on.',
+    closingText: "Not a theory. Not a borrowed framework. A methodology built from the ground up — rooted in the intelligence traditions of this land, validated by the neuroscience of this era, and proven with hundreds of leaders who stopped fragmenting and started leading from stability.",
   },
   philosophy: {
-    title: 'My Coaching Philosophy',
-    subtitle: 'These principles guide how I work with leaders.',
+    title: 'What Guides Our Work',
+    subtitle: 'Our Principles',
     items: [
       {
         title: 'Integration Over Performance',
-        text: "Most coaching optimizes for performance. I optimize for integration. When you're integrated, presence expands, and performance appears naturally.",
+        text: "Most coaching optimises for performance. We optimise for integration. When you're integrated, performance appears naturally. When you chase performance without integration, you fragment.",
       },
       {
-        title: 'Layer 3 and Deeper, Not Layer 1',
-        text: "I don't teach techniques (Layer 1). I work at Layer 3 and deeper: body, energy, mind, judgment, values, identity, spiritual. When the foundation is solid, techniques emerge organically.",
+        title: 'Practice Over Theory',
+        text: "Understanding doesn't create change. Daily practice does. We don't give you frameworks to think about. We give you practices to embody. Daily rigor, not weekend inspiration.",
       },
       {
         title: 'Pressure Is a Privilege',
-        text: "Pressure isn't the problem. Pressure is a privilege. It reveals where you fragment. I use pressure as a diagnostic tool and as a training ground.",
-      },
-      {
-        title: 'Multi-Modal Approach',
-        text: "One size doesn't fit all. Some leaders need somatic work. Some need energy healing. Some need psychological processing. I customize the modality to what serves you.",
-      },
-      {
-        title: 'Honesty Over Politeness',
-        text: "I'll tell you the truth, not what you want to hear. If this work isn't right for you, I'll say so. If you're not ready, I'll say so. Honesty serves you better than niceness.",
-      },
-      {
-        title: 'Long-Term Rewiring',
-        text: "This isn't a 3-session fix. Integration takes time. I work with leaders who are ready to commit to 3-6 months of deep work. Quick fixes don't rewire operating systems.",
+        text: "Pressure isn't the problem. Pressure is the training ground. It reveals exactly where you fragment. We use it as a diagnostic and as a forge — because integration that hasn't been tested under fire isn't integration.",
       },
     ],
   },
-  differentiation: {
-    title: 'How This Differs from Other Coaching',
-    colLeft: 'Traditional Executive Coaching',
-    colRight: 'My Approach (Integration Coaching)',
-    rows: [
-      ['Focuses on skills, behaviors, communication', 'Focuses on body, energy, nervous system, values, identity, spiritual'],
-      ['Works on what you DO (Layer 1)', 'Works on how you ARE (Layer 3 and deeper)'],
-      ['Mostly talk-based, cognitive', 'Multi-modal: somatic, energy, psychological, trauma, spiritual'],
-      ['30-45 minute sessions, often monthly', '60-120 minute sessions, intensive work'],
-      ['Generic curriculum applied to all clients', 'Fully customized to YOUR fragmentation pattern'],
-      ['Avoids pressure (calm environment only)', 'Uses pressure as training ground (simulation-based)'],
-      ['Professional but distant relationship', 'Deep trust, vulnerability required, direct access'],
+  founder: {
+    image: '/gowtham.jpg',
+    name: 'Gowtham Balaji',
+    role: 'Founder, The Leadership Tattva',
+    chapters: [
+      {
+        label: 'The Fragmentation',
+        paragraphs: [
+          'Gowtham spent years in corporate leadership — leading operations, strategy, and teams. He made solid decisions when there was time. He was articulate in low-stakes meetings. He could lead in calm.',
+          "But when real pressure hit — scrutiny, crisis decisions, high-stakes presentations — something broke. His body would tighten. His mind would blank. His presence would collapse. <strong>He was succeeding on paper and fragmenting inside.</strong> The pressure seeped into his relationships, his health, his sense of self.",
+        ],
+      },
+      {
+        label: 'The Search',
+        paragraphs: [
+          "He left corporate life, built a farm in Tiruvannamalai, and began studying what actually fixes the system underneath. Not one tradition, but many — yoga therapy, somatic work, energy healing, Advaita Vedanta, the Yoga Sutras, depth psychology, neuroscience. He trained under teachers who carried these traditions with rigour, not as weekend retreats but as lived practice.",
+        ],
+      },
+      {
+        label: 'What Changed',
+        paragraphs: [
+          'When he addressed each layer — body, energy, mind, judgment, purpose — slowly and with discipline, everything shifted.',
+        ],
+        practiceLabel: "What Gowtham's own practice produced",
+        practiceItems: [
+          'His body stopped betraying him under scrutiny — grounded posture, steady breathing became the default, not the effort',
+          'His mind stayed clear under pressure — no blanking, no over-explaining, no freezing',
+          'His decisions became grounded in judgment, not reaction — conviction replaced people-pleasing',
+          'Pressure started making him calmer, sharper, more intuitive — not less',
+          'His relationships, health, and sense of purpose realigned — integration spread beyond leadership into every domain of life',
+        ],
+      },
+      {
+        label: 'The Work Now',
+        paragraphs: [
+          "When Gowtham brought this integrated methodology to senior leaders — CXOs, founders, VPs from companies like Google, Amazon, Barclays, and Apollo Hospitals — the same shifts appeared. Leaders who had tried five executive coaches and found none that stuck began reporting permanent changes within weeks.",
+          '<strong>If I can do it, every leader can do it. Every leader deserves an uncompromising, honourable and joyful life.</strong>',
+        ],
+      },
     ],
+    detailLabel: 'Where the work happens',
+    detailText: 'From a farm in Tiruvannamalai, Tamil Nadu — far from the noise, close to the work. Sessions begin at 5:30 AM. The environment is intentional.',
   },
-  personalTouch: {
-    text: 'Outside of coaching, I tend to my farm with cows and natural farming practices. I live with my family and draw deep inspiration from Tiruvannamalai, a sacred site that informs much of my spiritual grounding. Everything I teach, I practice.',
+  lineage: {
+    label: 'Gratitude',
+    title: 'Grateful to Our Gurus, Teachers & Mentors',
+    subtitle: 'This work stands on the shoulders of teachers and traditions.',
+    people: [
+      { name: 'Raghu Ananthanarayanan', desc: 'Yoga & Leadership' },
+      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
+      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
+      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
+      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
+    ],
   },
   cta: {
-    heading: 'Ready to Explore If This Work Fits You?',
-    subtext: "Book a 45-minute clarity call. We'll map your fragmentation pattern and I'll tell you honestly whether this is the right path for you.",
-    buttonText: 'Book Your Clarity Call',
+    heading: "If This Resonates, Let's Talk.",
+    subtext: "Book a clarity call — a 45-minute conversation to understand your pattern and see if there's a fit.",
+    buttonText: 'Book a Clarity Call',
   },
 }
 
 export default function About() {
   const { content } = useContent('about')
-  const { data: credentialsData } = useCollection('credentials')
 
   const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
 
-  const storyParagraphs = c('story', 'paragraphs') || defaults.story.paragraphs
+  const problems = c('observed', 'problems') || defaults.observed.problems
+  const works = c('observed', 'works') || defaults.observed.works
   const philosophyItems = c('philosophy', 'items') || defaults.philosophy.items
-  const diffRows = c('differentiation', 'rows') || defaults.differentiation.rows
-  const credentials = credentialsData?.items || defaultCredentials
+  const chapters = c('founder', 'chapters') || defaults.founder.chapters
+  const lineagePeople = c('lineage', 'people') || defaults.lineage.people
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-24 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full bg-gold-400/20 blur-3xl" />
-        </div>
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <ScrollReveal>
-            <span className="inline-block text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">{c('hero', 'badge')}</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {c('hero', 'title')}
-            </h1>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              {c('hero', 'subtitle')}
-            </p>
-          </ScrollReveal>
+      {/* 1. Hero */}
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-navy-950 via-[#0d0240] to-[#203460] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3 }} />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_60%,rgba(240,222,160,0.04)_0%,transparent_55%)] pointer-events-none" />
+        <div className="relative z-10 max-w-[1100px] mx-auto px-6 py-40">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">{c('hero', 'badge')}</p>
+              <h1 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-normal text-warm-50 mb-6">
+                {c('hero', 'title')}
+              </h1>
+              <p className="text-[1.08rem] text-warm-50/70 leading-[1.85] max-w-[600px]">
+                {c('hero', 'subtitle')}
+              </p>
+            </ScrollReveal>
+            <ScrollReveal className="hidden lg:flex justify-center">
+              <img
+                src="/images/gowtham-seated.png"
+                alt="Gowtham Balaji"
+                className="max-h-[480px] w-auto object-contain drop-shadow-[0_20px_50px_rgba(240,222,160,0.15)]"
+              />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-24 bg-navy-900">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            <ScrollReveal className="lg:col-span-1">
-              <div className="rounded-2xl overflow-hidden border border-gold-400/20 shadow-2xl shadow-gold-400/5 sticky top-28">
-                <img
-                  src={c('story', 'image') || '/gowtham.jpg'}
-                  alt="Gowtham Balaji - Leadership Integration Coach"
-                  className="w-full aspect-square object-cover object-top"
-                />
-                <div className="bg-navy-800 p-4 text-center">
-                  <p className="text-white font-display text-lg font-semibold">Gowtham Balaji</p>
-                  <p className="text-slate-300 text-sm mt-1">Leadership Integration Coach</p>
-                  <div className="w-8 h-0.5 bg-gold-400 mx-auto mt-3" />
-                </div>
+      {/* 2. What We Observed */}
+      <section className="py-28 px-6 bg-white">
+        <div className="max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">{c('observed', 'label')}</p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 mb-2">{c('observed', 'title')}</h2>
+            <p className="text-[0.98rem] text-navy-950/55 mb-12 max-w-[650px]">{c('observed', 'subtitle')}</p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Left: What Keeps Breaking */}
+            <ScrollReveal>
+              <div>
+                <p className="font-display text-[0.65rem] tracking-[0.2em] uppercase font-medium text-gold-400 mb-6">What Keeps Breaking</p>
+                {problems.map((item, i) => (
+                  <div key={i} className="flex gap-4 mb-6 items-start">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0 mt-[0.55rem]" />
+                    <p className="text-[0.92rem] leading-[1.8] text-navy-950/55">
+                      <strong className="text-navy-950 font-medium">{item.bold}</strong> {item.text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
 
-            <div className="lg:col-span-2 space-y-6">
+            {/* Right: What Actually Works */}
+            <ScrollReveal>
+              <div>
+                <p className="font-display text-[0.65rem] tracking-[0.2em] uppercase font-medium text-[#5a9e6f] mb-6">What Actually Works</p>
+                {works.map((item, i) => (
+                  <div key={i} className="flex gap-4 mb-6 items-start">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] shrink-0 mt-[0.55rem]" />
+                    <p className="text-[0.92rem] leading-[1.8] text-navy-950/55">
+                      <strong className="text-navy-950 font-medium">{item.bold}</strong> {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Divider + Closing */}
+            <div className="col-span-full">
               <ScrollReveal>
-                <h2 className="font-display text-3xl font-bold text-white mb-6">
-                  {c('story', 'title')}
-                </h2>
+                <div className="w-full h-px bg-navy-950/10 mb-12" />
               </ScrollReveal>
-
-              {storyParagraphs.map((text, i) => (
-                <ScrollReveal key={i} delay={i * 0.05}>
-                  <p className="text-slate-300 leading-relaxed text-lg">{text}</p>
-                </ScrollReveal>
-              ))}
-
               <ScrollReveal>
-                <div className="bg-navy-800 rounded-2xl p-8 border border-gold-400/20 mt-8">
-                  <p className="text-white text-lg leading-relaxed font-display italic">
-                    &ldquo;{c('story', 'pullQuote')}&rdquo;
+                <div className="max-w-[700px] py-8 px-10 bg-warm-50 border-l-[3px] border-gold-400">
+                  <p className="text-[0.95rem] leading-[1.85] text-navy-950">
+                    <span className="text-gold-400 font-medium">{c('observed', 'closing')}</span> {c('observed', 'closingText')}
                   </p>
                 </div>
-              </ScrollReveal>
-
-              <ScrollReveal>
-                <p className="text-slate-300 leading-relaxed text-lg">
-                  <strong className="text-white">{c('story', 'closing')}</strong>
-                </p>
-                <p className="text-gold-400 font-display italic text-lg mt-4">
-                  {c('story', 'tagline')}
-                </p>
               </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Credentials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading
-            title={c('credentials', 'title')}
-            subtitle={c('credentials', 'subtitle')}
-          />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {credentials.map((cred, i) => {
-              const Icon = credentialIcons[cred.icon] || Briefcase
-              return (
-                <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="bg-warm-50 rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
-                    <Icon className="w-8 h-8 text-gold-400 mb-4" />
-                    <h3 className="font-display text-lg font-bold text-navy-950 mb-3">{cred.title}</h3>
-                    <p className="text-slate-700 text-sm leading-relaxed">{cred.description}</p>
-                  </div>
-                </ScrollReveal>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-24 bg-warm-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title={c('philosophy', 'title')} subtitle={c('philosophy', 'subtitle')} />
-
-          <div className="grid md:grid-cols-2 gap-8">
+      {/* 3. Philosophy */}
+      <section className="py-28 px-6 bg-warm-50">
+        <div className="max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6 text-center">{c('philosophy', 'subtitle')}</p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 text-center mb-14">{c('philosophy', 'title')}</h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-8">
             {philosophyItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-white rounded-2xl p-8 border border-warm-200 h-full">
-                  <h3 className="font-display text-xl font-bold text-navy-950 mb-3">{item.title}</h3>
-                  <p className="text-slate-700 leading-relaxed">{item.text}</p>
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="group relative bg-white p-10 border border-navy-950/10 transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(9,1,52,0.1),0_4px_12px_rgba(250,110,35,0.08)] hover:border-transparent cursor-default">
+                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold-400 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
+                  <h3 className="font-display text-[0.9rem] font-medium text-navy-950 mb-3 leading-[1.35]">{item.title}</h3>
+                  <p className="text-[0.88rem] leading-[1.8] text-navy-950/55">{item.text}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -214,51 +231,99 @@ export default function About() {
         </div>
       </section>
 
-      {/* Differentiation */}
-      <section className="py-24 bg-navy-950">
-        <div className="max-w-5xl mx-auto px-6">
-          <SectionHeading title={c('differentiation', 'title')} light />
+      {/* 4. The Founder */}
+      <section className="py-28 px-6 bg-white">
+        <div className="max-w-[1000px] mx-auto grid lg:grid-cols-[320px_1fr] gap-16 items-start">
+          <ScrollReveal>
+            <div className="sticky top-[120px] w-full max-lg:max-w-[300px] max-lg:mx-auto max-lg:relative max-lg:top-auto">
+              <img
+                src={c('founder', 'image') || '/gowtham.jpg'}
+                alt="Gowtham Balaji"
+                className="w-full aspect-[4/5] object-cover border border-navy-950/10"
+              />
+            </div>
+          </ScrollReveal>
+
+          <div>
+            <ScrollReveal>
+              <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">The Founder</p>
+            </ScrollReveal>
+            <ScrollReveal>
+              <h2 className="font-display text-[clamp(1.5rem,2.5vw,2rem)] font-normal text-navy-950 mb-1">{c('founder', 'name')}</h2>
+              <p className="text-[0.85rem] text-navy-950/55 italic mb-10">{c('founder', 'role')}</p>
+            </ScrollReveal>
+
+            {chapters.map((chapter, ci) => (
+              <ScrollReveal key={ci}>
+                <div className="mb-10">
+                  <p className="font-display text-[0.65rem] tracking-[0.2em] uppercase font-medium text-gold-400 mb-3">{chapter.label}</p>
+                  {chapter.paragraphs.map((para, pi) => (
+                    <p
+                      key={pi}
+                      className="text-[0.95rem] leading-[1.95] text-navy-950/55 mb-4 [&_strong]:text-navy-950 [&_strong]:font-medium"
+                      dangerouslySetInnerHTML={{ __html: para }}
+                    />
+                  ))}
+
+                  {chapter.practiceItems && (
+                    <div className="mt-4 py-8 px-10 bg-warm-50 border-l-[3px] border-gold-400">
+                      <p className="font-display text-[0.65rem] tracking-[0.2em] uppercase font-medium text-gold-400 mb-4">{chapter.practiceLabel}</p>
+                      {chapter.practiceItems.map((item, pi) => (
+                        <div key={pi} className="flex gap-3 mb-3 items-start">
+                          <div className="w-[5px] h-[5px] rounded-full bg-gold-400 shrink-0 mt-2" />
+                          <p className="text-[0.9rem] leading-[1.75] text-navy-950/55">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
+
+            <ScrollReveal>
+              <div className="mt-8 pt-6 border-t border-navy-950/10">
+                <p className="font-display text-[0.65rem] tracking-[0.2em] uppercase text-gold-400 mb-2">{c('founder', 'detailLabel')}</p>
+                <p className="text-[0.88rem] leading-[1.8] text-navy-950/55">{c('founder', 'detailText')}</p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Lineage */}
+      <section className="py-28 px-6 bg-warm-50">
+        <div className="max-w-[900px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">{c('lineage', 'label')}</p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 mb-2">{c('lineage', 'title')}</h2>
+            <p className="text-[0.95rem] text-navy-950/55 italic mb-16">{c('lineage', 'subtitle')}</p>
+          </ScrollReveal>
 
           <ScrollReveal>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-gold-400/30">
-                    <th className="py-4 pr-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">{c('differentiation', 'colLeft')}</th>
-                    <th className="py-4 pl-6 text-gold-400 font-semibold text-sm uppercase tracking-wide">{c('differentiation', 'colRight')}</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {diffRows.map(([trad, mine], i) => (
-                    <tr key={i} className="border-b border-navy-800">
-                      <td className="py-4 pr-6 text-slate-300/70">{trad}</td>
-                      <td className="py-4 pl-6 text-white font-medium">{mine}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="flex justify-center gap-12 flex-wrap">
+              {lineagePeople.map((person, i) => (
+                <div key={i} className="group text-center max-w-[140px] transition-all duration-400 hover:-translate-y-1 cursor-default">
+                  <div className="w-[100px] h-[100px] rounded-full mx-auto mb-4 bg-white border-2 border-gold-300/40 group-hover:border-gold-400 transition-colors duration-300 flex items-center justify-center text-[0.55rem] text-navy-950/55 tracking-[0.05em] uppercase font-display overflow-hidden">
+                    Photo
+                  </div>
+                  <p className="font-display text-[0.75rem] font-medium text-navy-950 mb-0.5">{person.name}</p>
+                  <p className="text-[0.72rem] text-navy-950/55 leading-[1.5]">{person.desc}</p>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Personal Touch */}
-      <section className="py-24 bg-navy-900">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <ScrollReveal>
-            <div className="w-12 h-0.5 bg-gold-400 mx-auto mb-8" />
-            <p className="text-slate-300 text-lg leading-relaxed">
-              {c('personalTouch', 'text')}
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
+      {/* 6. CTA */}
       <CTASection
         heading={c('cta', 'heading')}
         subtext={c('cta', 'subtext')}
         buttonText={c('cta', 'buttonText')}
         buttonTo="/contact"
+        dark
       />
     </>
   )

@@ -25,7 +25,11 @@ export function AuthProvider({ children }) {
     return () => subscription.unsubscribe()
   }, [])
 
-  const login = (email, password) => supabase?.auth.signInWithPassword({ email, password })
+  const login = async (email, password) => {
+    if (!supabase) throw new Error('Supabase is not configured')
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+  }
   const logout = () => supabase?.auth.signOut()
 
   return (

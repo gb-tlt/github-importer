@@ -146,6 +146,156 @@ const content = {
     sidebar: { email: 'gowtham@theleadershiptattva.com', responseTime: 'Within 24-48 hours', linkedinUrl: '#', instagramUrl: '#' },
     confidentiality: { title: 'Confidentiality', text: 'All conversations are strictly confidential. Your information is never shared.' },
   },
+  fitCohort: {
+    hero: {
+      label: 'Flagship Program',
+      title: 'Eight Weeks That Rewire How You Lead Under Pressure',
+      subtitle: 'The Fundamentals of Integration Training. A small-cohort intensive for senior leaders done with surface-level development.',
+      ctaText: 'Apply for Next Cohort',
+    },
+    problem: {
+      label: 'The Reality',
+      title: "You've Tried Leadership Development. It Didn't Stick.",
+      paragraphs: [
+        "You've done the workshops. Read the books. Hired the coaches. And in calm moments, it all made sense. <strong>But under real pressure — the board room, the crisis call, the high-stakes conversation — everything reverted.</strong>",
+        "The problem was never the training. The problem was the layer it was working on. Skills installed on a fragmented operating system crash the moment pressure hits. FIT works at the operating system level.",
+      ],
+    },
+    outcomes: {
+      label: 'What You Walk Away With',
+      title: 'What FIT Produces in You',
+      subtitle: 'Three structural shifts and the daily foundation that sustains them.',
+      groups: [
+        {
+          label: 'The Three Shifts',
+          items: [
+            {
+              number: '01',
+              title: 'Earn the Right — From Within',
+              subtitle: 'Stop questioning whether you belong in the room.',
+              content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. FIT closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours — not because someone gave it to you, but because you claimed it from the inside out.</p>",
+            },
+            {
+              number: '02',
+              title: 'Know Your Leadership Location',
+              subtitle: 'See the full map of who you serve, what they need, and what you need.',
+              content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong> — the full ecosystem of demands, relationships, and stakes around them.</p><p>After FIT, you'll know:</p><ul><li>Who you're truly serving — and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake — and how to address it directly</li><li>What you need from your team — and how to ask for it clearly</li><li>Where your real role lies — beyond the job description</li></ul>",
+            },
+            {
+              number: '03',
+              title: 'Set Yourself Up for Success — Every Day',
+              subtitle: 'No more trial and error. No more seeking external validation.',
+              content: "<p>You stop relying on trial and error to figure out what works. You stop waiting for your boss, your board, or your team to tell you you're doing a good job.</p><p><strong>You design your day so you show up ready, not reactive.</strong> Your morning preparation, your energy management, your pre-meeting ritual — all become intentional systems, not hopeful improvisation. You know you're doing a good job because your internal compass is calibrated, not because someone validated you externally.</p>",
+            },
+          ],
+        },
+        {
+          label: 'The Foundation Underneath',
+          items: [
+            {
+              number: '—',
+              title: 'Your Inner Voices — Recognised and Redirected',
+              subtitle: 'The internal narratives that run your decisions, made visible.',
+              content: "<p>Every leader has inner voices — the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In FIT, you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
+            },
+            {
+              number: '—',
+              title: "Your Body — What Works for It, What Doesn't",
+              subtitle: 'Somatic intelligence that keeps you grounded under pressure.',
+              content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>FIT teaches you to read your body's signals and regulate in real-time — in 10 to 30 seconds, invisible to the room.</strong></p>",
+            },
+            {
+              number: '—',
+              title: 'Your Day — Designed, Not Improvised',
+              subtitle: 'Energy cycles, office demands, and home needs — aligned into one rhythm.',
+              content: "<p>Most leaders let their calendar design their day. FIT flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong> — so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
+            },
+          ],
+        },
+      ],
+    },
+    journey: {
+      label: 'The Full Arc',
+      title: 'Your Journey Through FIT',
+      subtitle: 'From first conversation to confirmed transformation.',
+      phases: [
+        {
+          phaseLabel: 'Phase 1 — Discovery',
+          title: 'Clarity Call',
+          body: 'A 30-minute conversation where <strong>we qualify each other</strong>. We map your fragmentation pattern. You assess whether this approach resonates. Not a sales pitch — a mutual diagnostic.',
+        },
+        {
+          phaseLabel: 'Phase 2 — Preparation',
+          title: 'Orientation & Preparatory Work',
+          body: 'Once enrolled, you go through an orientation process and complete preparatory work before the program begins. <strong>You arrive on day one already engaged, not cold.</strong>',
+        },
+        {
+          phaseLabel: 'Phase 3 — The Intensive',
+          title: 'Weekend Intensive + 8 Weeks of Wednesday Sessions',
+          body: 'A full-day weekend intensive launches the cohort. Then <strong>8 weeks of Wednesday sessions, 5:30 AM – 8:00 AM</strong>, with a small group of 5–8 leaders seeking similar transformation. Parallel 1-on-1 attention from Gowtham throughout. Triad accountability groups keep you practising between sessions.',
+        },
+        {
+          phaseLabel: 'Phase 4 — Integration',
+          title: '100-Day Plan',
+          body: 'At the end of 8 weeks, we meet to build your <strong>100-day integration plan</strong> — a structured roadmap for applying what you\'ve rewired into your real-world leadership context.',
+        },
+        {
+          phaseLabel: 'Phase 5 — Real-World Testing',
+          title: '100 Days of Supported Practice',
+          body: 'For 100 days after the program, you can <strong>check back in with Gowtham for 1-on-1 attention</strong>. This ensures the operating system rewiring holds under real pressure. The shift is confirmed not in a practice environment — but in your actual leadership.',
+        },
+      ],
+    },
+    numbers: {
+      label: 'The Data',
+      title: 'What the Numbers Show',
+      items: [
+        { value: '0%', label: 'Dropout rate', sublabel: 'across all cohorts' },
+        { value: '120', label: 'Minute sessions', sublabel: '(designed for 75)' },
+        { value: '5–8', label: 'Leaders per cohort', sublabel: 'No place to hide' },
+        { value: 'Week 3', label: 'Integration shifts', sublabel: 'become visible' },
+      ],
+    },
+    who: {
+      label: 'Is This For You?',
+      title: 'Is FIT Right for You?',
+      intro: 'FIT is for CXOs, founders, VPs, and directors earning ₹30L+ who:',
+      items: [
+        'Have succeeded through talent but recognise their inconsistency under pressure',
+        'Have tried leadership development before and found it didn\'t stick when stakes rose',
+        'Are willing to start at 5:30 AM and commit to daily practice',
+        'Want depth, not breadth — a small group of peers, not a lecture hall',
+        'Are ready to be seen, challenged, and held to a standard',
+      ],
+    },
+    testimonials: {
+      label: 'From FIT Graduates',
+      title: 'What FIT Graduates Say',
+      items: [
+        {
+          text: "I had tried individual coaching before but it didn't stick. FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
+          role: 'VP Engineering',
+          company: 'Global Tech Company',
+        },
+        {
+          text: "I went from managing two projects with crippling anxiety to handling five with calm. I can't unsee what I've seen. The cohort created a field of trust I didn't know was possible with people I'd just met.",
+          role: 'VP, Technology',
+          company: 'Enterprise SaaS',
+        },
+      ],
+    },
+    investment: {
+      label: 'Investment',
+      title: 'Investment',
+      price: '₹1–1.5L + GST',
+      note: "This is not a course fee. It's an investment in permanent change. The methodology doesn't teach you something to remember. It rewires how your system operates. That shift doesn't expire.",
+    },
+    cta: {
+      heading: 'Applications for the Next Cohort Are Open',
+      body: "It starts with a clarity call — a 30-minute conversation to understand your pattern and see if FIT is the right path.",
+      buttonText: 'Apply Now',
+    },
+  },
 }
 
 // ─── Collections Documents (shared data) ─────────────────────────────────────

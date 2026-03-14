@@ -40,6 +40,7 @@ export const servicesSchema = {
         { key: 'one', label: 'One-on-One', type: 'text' },
         { key: 'life', label: 'Life Coaching', type: 'text' },
       ]},
+      { key: 'closingText', label: 'Closing Text', type: 'text' },
     ],
   },
   cta: {

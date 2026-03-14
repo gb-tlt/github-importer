@@ -1,4 +1,3 @@
-import { Target, Scale, Heart, Clock, Briefcase, Sprout, Activity, RefreshCw } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import FAQAccordion from '../components/ui/FAQAccordion'
 import TestimonialCard from '../components/ui/TestimonialCard'
@@ -11,14 +10,14 @@ import { useContent } from '../hooks/useContent'
 import { useCollection } from '../hooks/useCollection'
 
 const dimensions = [
-  { icon: Target, title: 'Purpose & Meaning', text: 'What actually matters to you? Beyond titles, compensation, status\u2014what is your genuine contribution? We clarify your purpose and design your life around it.' },
-  { icon: Scale, title: 'Values Alignment', text: 'What do you stand for? Are you living by those values, or violating them? We audit your values and realign your choices with what you truly believe.' },
-  { icon: Heart, title: 'Relationships', text: 'Marriage, family, friendships. How have they been affected by your leadership? We redesign relationship patterns and create sustainable connection.' },
-  { icon: Clock, title: 'Life Rhythm & Time', text: 'How you spend your time reveals what you value. We audit your calendar, energy patterns, and design a sustainable life rhythm.' },
-  { icon: Briefcase, title: 'Work-Life Integration', text: 'Not balance (that\'s a myth)\u2014integration. How can your leadership serve your life, not consume it? We redesign the whole system.' },
-  { icon: Sprout, title: 'Health & Vitality', text: 'Physical, mental, emotional health. Are you depleted? We address foundations: sleep, nutrition, movement, energy management.' },
-  { icon: Activity, title: 'Spiritual Grounding', text: 'For leaders seeking deeper anchoring. Existential questions, spiritual practices, philosophical frameworks. Meaning beyond achievement.' },
-  { icon: RefreshCw, title: 'Transition Design', text: 'If you\'re changing roles, careers, or life chapters, we design the transition intentionally. Not reactive\u2014proactive and aligned.' },
+  { icon: '/images/icons/peace-alignment.png', title: 'Purpose & Meaning', text: 'What actually matters to you? Beyond titles, compensation, status\u2014what is your genuine contribution? We clarify your purpose and design your life around it.' },
+  { icon: '/images/icons/integration.png', title: 'Values Alignment', text: 'What do you stand for? Are you living by those values, or violating them? We audit your values and realign your choices with what you truly believe.' },
+  { icon: '/images/icons/family-harmony.png', title: 'Relationships', text: 'Marriage, family, friendships. How have they been affected by your leadership? We redesign relationship patterns and create sustainable connection.' },
+  { icon: '/images/icons/flow-state.png', title: 'Life Rhythm & Time', text: 'How you spend your time reveals what you value. We audit your calendar, energy patterns, and design a sustainable life rhythm.' },
+  { icon: '/images/icons/professional-growth.png', title: 'Work-Life Integration', text: 'Not balance (that\'s a myth)\u2014integration. How can your leadership serve your life, not consume it? We redesign the whole system.' },
+  { icon: '/images/icons/physical-vitality.png', title: 'Health & Vitality', text: 'Physical, mental, emotional health. Are you depleted? We address foundations: sleep, nutrition, movement, energy management.' },
+  { icon: '/images/icons/upward-evolution.png', title: 'Spiritual Grounding', text: 'For leaders seeking deeper anchoring. Existential questions, spiritual practices, philosophical frameworks. Meaning beyond achievement.' },
+  { icon: '/images/icons/evolution.png', title: 'Transition Design', text: 'If you\'re changing roles, careers, or life chapters, we design the transition intentionally. Not reactive\u2014proactive and aligned.' },
 ]
 
 const inflectionPoints = [
@@ -133,6 +132,7 @@ export default function LifeCoaching() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 bg-navy-950 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-gold-400/20 blur-3xl" />
         </div>
@@ -239,10 +239,10 @@ export default function LifeCoaching() {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dimensions.map(({ icon: Icon, title, text }, i) => (
+            {dimensions.map(({ icon, title, text }, i) => (
               <ScrollReveal key={i} delay={i * 0.06}>
                 <div className="bg-white rounded-2xl p-6 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
-                  <Icon className="w-8 h-8 text-gold-400 mb-4" />
+                  <img src={icon} alt={title} className="w-12 h-12 object-contain mb-4" />
                   <h3 className="font-display text-base font-bold text-navy-950 mb-2">{title}</h3>
                   <p className="text-slate-700 text-sm leading-relaxed">{text}</p>
                 </div>

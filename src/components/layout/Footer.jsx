@@ -20,8 +20,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="font-display text-xl font-bold text-white">
-              The Leadership <span className="text-gold-400">Tattva</span>
+            <Link to="/">
+              <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-10 w-auto" />
             </Link>
             <p className="text-slate-300 mt-4 text-sm leading-relaxed">
               {f('tagline')}

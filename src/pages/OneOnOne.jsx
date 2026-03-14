@@ -1,4 +1,3 @@
-import { Heart, Zap, Brain, Target, Sparkles, BarChart3 } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import FAQAccordion from '../components/ui/FAQAccordion'
 import TestimonialCard from '../components/ui/TestimonialCard'
@@ -20,12 +19,12 @@ const sessionPhases = [
 ]
 
 const modalities = [
-  { icon: Heart, title: 'Somatic & Body Work', text: 'Your body holds fragmentation patterns.', items: ['Somatic experiencing practices', 'Breathwork and pranayama', 'Yoga therapy applications', 'Body-based trauma release', 'Nervous system regulation'] },
-  { icon: Zap, title: 'Energy Healing', text: 'Reiki master-level work for leaders under pressure.', items: ['Energy assessment and clearing', 'Chakra balancing for leadership', 'Depletion vs vitality diagnosis', 'Practical energy management', 'Grounding practices'] },
-  { icon: Brain, title: 'Psychological Processing', text: 'Depth psychology for leaders.', items: ['Shadow work and blind spots', 'Emotional healing and trauma-informed work', 'Identity and self-authorship', 'Relationship patterns', 'Cognitive reframing under pressure'] },
-  { icon: Target, title: 'Purpose & Values', text: 'Existential work for meaningful leadership.', items: ['Purpose discovery and clarification', 'Values alignment audits', 'Life-leadership integration', 'Meaning-making under pressure', 'Legacy and contribution'] },
-  { icon: Sparkles, title: 'Spiritual & Philosophical', text: 'For leaders seeking deeper grounding.', items: ['Advaita Vedanta teachings', 'Yoga Sutras applications', 'Past-life regression (where appropriate)', 'Spiritual practices for leadership', 'Existential integration'] },
-  { icon: BarChart3, title: 'Leadership Application', text: 'Bringing it all into your actual leadership.', items: ['Real-time case work', 'Pressure simulation and practice', 'Decision-making frameworks', 'Team and relationship dynamics', 'Sustainable integration practices'] },
+  { icon: '/images/icons/physical-vitality.png', title: 'Somatic & Body Work', text: 'Your body holds fragmentation patterns.', items: ['Somatic experiencing practices', 'Breathwork and pranayama', 'Yoga therapy applications', 'Body-based trauma release', 'Nervous system regulation'] },
+  { icon: '/images/icons/flow-state.png', title: 'Energy Healing', text: 'Reiki master-level work for leaders under pressure.', items: ['Energy assessment and clearing', 'Chakra balancing for leadership', 'Depletion vs vitality diagnosis', 'Practical energy management', 'Grounding practices'] },
+  { icon: '/images/icons/mental-peace.png', title: 'Psychological Processing', text: 'Depth psychology for leaders.', items: ['Shadow work and blind spots', 'Emotional healing and trauma-informed work', 'Identity and self-authorship', 'Relationship patterns', 'Cognitive reframing under pressure'] },
+  { icon: '/images/icons/clarity-change.png', title: 'Purpose & Values', text: 'Existential work for meaningful leadership.', items: ['Purpose discovery and clarification', 'Values alignment audits', 'Life-leadership integration', 'Meaning-making under pressure', 'Legacy and contribution'] },
+  { icon: '/images/icons/nervous-system.png', title: 'Spiritual & Philosophical', text: 'For leaders seeking deeper grounding.', items: ['Advaita Vedanta teachings', 'Yoga Sutras applications', 'Past-life regression (where appropriate)', 'Spiritual practices for leadership', 'Existential integration'] },
+  { icon: '/images/icons/track-progress.png', title: 'Leadership Application', text: 'Bringing it all into your actual leadership.', items: ['Real-time case work', 'Pressure simulation and practice', 'Decision-making frameworks', 'Team and relationship dynamics', 'Sustainable integration practices'] },
 ]
 
 const defaults = {
@@ -127,6 +126,7 @@ export default function OneOnOne() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 bg-navy-950 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-gold-400/20 blur-3xl" />
         </div>
@@ -239,10 +239,10 @@ export default function OneOnOne() {
           <SectionHeading title={c('modalities', 'title')} subtitle={c('modalities', 'subtitle')} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mods.map(({ icon: Icon, title, text, items }, i) => (
+            {mods.map(({ icon, title, text, items }, i) => (
               <ScrollReveal key={i} delay={i * 0.08}>
                 <div className="bg-white rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
-                  <Icon className="w-8 h-8 text-gold-400 mb-4" />
+                  <img src={icon} alt={title} className="w-12 h-12 object-contain mb-4" />
                   <h3 className="font-display text-lg font-bold text-navy-950 mb-2">{title}</h3>
                   <p className="text-slate-700 text-sm mb-4">{text}</p>
                   <ul className="space-y-1.5">

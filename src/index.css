@@ -59,3 +59,29 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* FIT Cohort accordion content list bullets */
+.accordion-content-html li {
+  position: relative;
+  padding-left: 1rem;
+}
+.accordion-content-html li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold-400);
+}
+
+/* Philosophy section float animation */
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}

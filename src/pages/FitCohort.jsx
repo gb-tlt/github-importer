@@ -1,345 +1,512 @@
-import { Users, Flame, Activity, Handshake, Mountain, Globe } from 'lucide-react'
-import SectionHeading from '../components/ui/SectionHeading'
-import FAQAccordion from '../components/ui/FAQAccordion'
-import TestimonialCard from '../components/ui/TestimonialCard'
-import CTASection from '../components/ui/CTASection'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
-import Button from '../components/ui/Button'
+import { Link } from 'react-router-dom'
 import { useContent } from '../hooks/useContent'
-import { useCollection } from '../hooks/useCollection'
-import { fitCohortFAQ as defaultFAQ } from '../data/faq'
-import { testimonials as defaultTestimonials } from '../data/testimonials'
-
-const iconMap = { Users, Flame, Activity, Handshake, Mountain, Globe }
 
 const defaults = {
   hero: {
-    badge: 'START HERE \u2022 MOST ACCESSIBLE ENTRY POINT',
-    title: 'FIT Leadership Cohort',
-    subtitle: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure',
-    highlights: [
-      '10-week intensive (1-8-1 structure)',
-      '5-8 senior leaders per cohort',
-      'Opening & closing retreats',
-      'Peer learning & accountability triads',
-      'Lifetime community access',
-    ],
-    ctaPrimary: 'Apply for Next Cohort',
-    ctaSecondary: 'See Full Program',
+    label: 'Flagship Program',
+    title: 'Eight Weeks That Rewire How You Lead Under Pressure',
+    subtitle: 'The Fundamentals of Integration Training. A small-cohort intensive for senior leaders done with surface-level development.',
+    ctaText: 'Apply for Next Cohort',
   },
-  priceBox: {
-    price: '\u20B91-1.5L + GST',
-    schedule: '10 weeks \u2022 Wed 5:30 AM IST',
-    nextCohort: 'Next cohort starts: March 2026',
-    ctaText: 'Apply Now',
-  },
-  idealFor: {
-    title: 'Who Is This For?',
-    subtitle: "FIT is designed for proven leaders who fragment under real pressure\u2014not because they lack capability, but because their operating system hasn't been integrated.",
-    items: [
-      'Directors, VPs, Senior Managers with 8-15+ years experience',
-      'Leaders who are capable in calm but collapse under scrutiny',
-      'Those who want peer learning and community',
-      'Leaders ready to be vulnerable in a trusted group',
-      'People who thrive with accountability and mirrors',
-      'Those seeking sustainable transformation (not quick fixes)',
-      'Leaders willing to commit 10 weeks + 2 retreat weekends',
+  problem: {
+    label: 'The Reality',
+    title: "You've Tried Leadership Development. It Didn't Stick.",
+    paragraphs: [
+      "You've done the workshops. Read the books. Hired the coaches. And in calm moments, it all made sense. <strong>But under real pressure — the board room, the crisis call, the high-stakes conversation — everything reverted.</strong>",
+      "The problem was never the training. The problem was the layer it was working on. Skills installed on a fragmented operating system crash the moment pressure hits. FIT works at the operating system level.",
     ],
   },
-  notFor: {
-    items: [
-      'Leaders who need intensive 1-to-1 work (see One-on-One)',
-      'Those uncomfortable with group vulnerability',
-      'Leaders seeking business strategy consulting',
-      'People wanting quick fixes or techniques only',
-      'Those unable to commit to Wed 5:30 AM IST schedule',
-      'Leaders currently under deep psychiatric treatment',
-      'Those unwilling to do inter-session practice work',
-    ],
-  },
-  timeline: {
-    title: 'The 1-8-1 Structure',
-    subtitle: 'One opening retreat, eight intensive training weeks, one closing integration retreat.',
-    items: [
+  outcomes: {
+    label: 'What You Walk Away With',
+    title: 'What FIT Produces in You',
+    subtitle: 'Three structural shifts and the daily foundation that sustains them.',
+    groups: [
       {
-        week: 'WEEK 1',
-        label: 'Opening Retreat',
-        title: 'Foundation & Diagnosis',
-        description: '2-day immersive weekend retreat. Map your fragmentation pattern. Understand the Five Layers. Build trust with your cohort. Conduct pressure simulations. Create personalized integration plan.',
-      },
-      {
-        week: 'WEEKS 2-9',
-        label: '8 Training Weeks',
-        title: 'Layer-by-Layer Integration',
-        description: 'Weekly 75-90 minute sessions every Wednesday 5:30 AM IST. Each week focuses on one layer with teaching, practice, peer feedback, simulation exercises, and triad accountability check-ins.',
-        layers: [
-          'Week 2: Body & Somatic Intelligence',
-          'Week 3: Energy Management & Vitality',
-          'Week 4: Mental Clarity Under Pressure',
-          'Week 5: Judgment & Decision-Making',
-          'Week 6: Values & Integrity Alignment',
-          'Week 7: Identity & Self-Authorship',
-          'Week 8: Relationships & Leadership Presence',
-          'Week 9: Spiritual Grounding',
+        label: 'The Three Shifts',
+        items: [
+          {
+            number: '01',
+            title: 'Earn the Right — From Within',
+            subtitle: 'Stop questioning whether you belong in the room.',
+            content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. FIT closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours — not because someone gave it to you, but because you claimed it from the inside out.</p>",
+          },
+          {
+            number: '02',
+            title: 'Know Your Leadership Location',
+            subtitle: 'See the full map of who you serve, what they need, and what you need.',
+            content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong> — the full ecosystem of demands, relationships, and stakes around them.</p><p>After FIT, you'll know:</p><ul><li>Who you're truly serving — and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake — and how to address it directly</li><li>What you need from your team — and how to ask for it clearly</li><li>Where your real role lies — beyond the job description</li></ul>",
+          },
+          {
+            number: '03',
+            title: 'Set Yourself Up for Success — Every Day',
+            subtitle: 'No more trial and error. No more seeking external validation.',
+            content: "<p>You stop relying on trial and error to figure out what works. You stop waiting for your boss, your board, or your team to tell you you're doing a good job.</p><p><strong>You design your day so you show up ready, not reactive.</strong> Your morning preparation, your energy management, your pre-meeting ritual — all become intentional systems, not hopeful improvisation. You know you're doing a good job because your internal compass is calibrated, not because someone validated you externally.</p>",
+          },
         ],
       },
       {
-        week: 'WEEK 10',
-        label: 'Closing Retreat',
-        title: 'Integration & Sustainability',
-        description: '2-day integration weekend retreat. Synthesize all layers. Run final pressure simulations to test integration. Create post-cohort sustainability plan. Graduate ceremony. Transition into lifetime alumni community.',
+        label: 'The Foundation Underneath',
+        items: [
+          {
+            number: '—',
+            title: 'Your Inner Voices — Recognised and Redirected',
+            subtitle: 'The internal narratives that run your decisions, made visible.',
+            content: "<p>Every leader has inner voices — the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In FIT, you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
+          },
+          {
+            number: '—',
+            title: "Your Body — What Works for It, What Doesn't",
+            subtitle: 'Somatic intelligence that keeps you grounded under pressure.',
+            content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>FIT teaches you to read your body's signals and regulate in real-time — in 10 to 30 seconds, invisible to the room.</strong></p>",
+          },
+          {
+            number: '—',
+            title: 'Your Day — Designed, Not Improvised',
+            subtitle: 'Energy cycles, office demands, and home needs — aligned into one rhythm.',
+            content: "<p>Most leaders let their calendar design their day. FIT flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong> — so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
+          },
+        ],
       },
     ],
   },
-  features: {
-    title: 'What Makes FIT Different',
-    subtitle: "This isn't typical executive coaching or leadership training.",
-    items: [
-      { icon: Users, title: 'Peer Learning Power', text: 'Your fragmentation patterns are mirrored in your peers. Seeing your patterns in others creates profound "aha" moments that 1-to-1 coaching can\'t replicate.' },
-      { icon: Flame, title: 'Pressure Simulations', text: 'We don\'t just talk about pressure\u2014we create it. Board challenges, crisis scenarios, high-stakes presentations. You practice integration under real conditions.' },
-      { icon: Activity, title: 'Multi-Modal Approach', text: 'Somatic work, breathwork, energy practices, psychological processing, values alignment. Integration happens across all Five Layers, not just cognitive.' },
-      { icon: Handshake, title: 'Triad Accountability', text: 'You\'re paired with 2 other leaders in a triad. Weekly check-ins between sessions. This peer accountability makes the work stick.' },
-      { icon: Mountain, title: 'Retreat Bookends', text: 'Opening retreat builds trust and diagnoses patterns. Closing retreat integrates learning and ensures sustainability. Deeper work happens in immersive settings.' },
-      { icon: Globe, title: 'Lifetime Community', text: 'FIT graduates join a lifetime alumni network. Monthly meetups, shared resources, ongoing support. Integration is a journey, not a 10-week event.' },
+  journey: {
+    label: 'The Full Arc',
+    title: 'Your Journey Through FIT',
+    subtitle: 'From first conversation to confirmed transformation.',
+    phases: [
+      {
+        phaseLabel: 'Phase 1 — Discovery',
+        title: 'Clarity Call',
+        body: 'A 30-minute conversation where <strong>we qualify each other</strong>. We map your fragmentation pattern. You assess whether this approach resonates. Not a sales pitch — a mutual diagnostic.',
+      },
+      {
+        phaseLabel: 'Phase 2 — Preparation',
+        title: 'Orientation & Preparatory Work',
+        body: 'Once enrolled, you go through an orientation process and complete preparatory work before the program begins. <strong>You arrive on day one already engaged, not cold.</strong>',
+      },
+      {
+        phaseLabel: 'Phase 3 — The Intensive',
+        title: 'Weekend Intensive + 8 Weeks of Wednesday Sessions',
+        body: 'A full-day weekend intensive launches the cohort. Then <strong>8 weeks of Wednesday sessions, 5:30 AM – 8:00 AM</strong>, with a small group of 5–8 leaders seeking similar transformation. Parallel 1-on-1 attention from Gowtham throughout. Triad accountability groups keep you practising between sessions.',
+      },
+      {
+        phaseLabel: 'Phase 4 — Integration',
+        title: '100-Day Plan',
+        body: 'At the end of 8 weeks, we meet to build your <strong>100-day integration plan</strong> — a structured roadmap for applying what you\'ve rewired into your real-world leadership context.',
+      },
+      {
+        phaseLabel: 'Phase 5 — Real-World Testing',
+        title: '100 Days of Supported Practice',
+        body: 'For 100 days after the program, you can <strong>check back in with Gowtham for 1-on-1 attention</strong>. This ensures the operating system rewiring holds under real pressure. The shift is confirmed not in a practice environment — but in your actual leadership.',
+      },
     ],
   },
-  inclusions: {
-    title: "What's Included",
+  numbers: {
+    label: 'The Data',
+    title: 'What the Numbers Show',
     items: [
-      { label: 'Opening Retreat (Week 1):', desc: '2-day immersive weekend \u2022 Fragmentation diagnosis \u2022 Five Layers introduction \u2022 Cohort bonding' },
-      { label: '8 Weekly Group Sessions:', desc: '75-90 minutes each \u2022 Wednesday 5:30 AM IST \u2022 Layer-by-layer training \u2022 Pressure simulations' },
-      { label: 'Closing Retreat (Week 10):', desc: '2-day integration weekend \u2022 Final simulations \u2022 Sustainability planning \u2022 Graduation' },
-      { label: '1 Personal Session:', desc: '60 minutes 1-to-1 with Gowtham \u2022 Your specific pattern \u2022 Personalized guidance' },
-      { label: 'Triad Accountability:', desc: 'Weekly check-ins with 2 peer leaders \u2022 Between-session support' },
-      { label: 'Digital Resources:', desc: 'Guided practices \u2022 Frameworks \u2022 Reading materials \u2022 Session recordings' },
-      { label: 'Lifetime Alumni Access:', desc: 'Monthly alumni meetups \u2022 Private community \u2022 Ongoing resources' },
+      { value: '0%', label: 'Dropout rate', sublabel: 'across all cohorts' },
+      { value: '120', label: 'Minute sessions', sublabel: '(designed for 75)' },
+      { value: '5–8', label: 'Leaders per cohort', sublabel: 'No place to hide' },
+      { value: 'Week 3', label: 'Integration shifts', sublabel: 'become visible' },
+    ],
+  },
+  who: {
+    label: 'Is This For You?',
+    title: 'Is FIT Right for You?',
+    intro: 'FIT is for CXOs, founders, VPs, and directors earning ₹30L+ who:',
+    items: [
+      'Have succeeded through talent but recognise their inconsistency under pressure',
+      'Have tried leadership development before and found it didn\'t stick when stakes rose',
+      'Are willing to start at 5:30 AM and commit to daily practice',
+      'Want depth, not breadth — a small group of peers, not a lecture hall',
+      'Are ready to be seen, challenged, and held to a standard',
+    ],
+  },
+  testimonials: {
+    label: 'From FIT Graduates',
+    title: 'What FIT Graduates Say',
+    items: [
+      {
+        text: "I had tried individual coaching before but it didn't stick. FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
+        role: 'VP Engineering',
+        company: 'Global Tech Company',
+      },
+      {
+        text: "I went from managing two projects with crippling anxiety to handling five with calm. I can't unsee what I've seen. The cohort created a field of trust I didn't know was possible with people I'd just met.",
+        role: 'VP, Technology',
+        company: 'Enterprise SaaS',
+      },
     ],
   },
   investment: {
+    label: 'Investment',
     title: 'Investment',
-    price: '\u20B91-1.5 Lakh + GST',
-    includes: 'Includes: All sessions, both retreats (accommodation + meals), digital resources, 1-to-1 session, lifetime community access.',
-    excludes: 'Not included: Travel to retreat locations.',
+    price: '₹1–1.5L + GST',
+    note: "This is not a course fee. It's an investment in permanent change. The methodology doesn't teach you something to remember. It rewires how your system operates. That shift doesn't expire.",
   },
   cta: {
-    heading: 'Ready to Stop Fragmenting?',
-    subtext: 'Applications for March 2026 cohort are now open. Limited to 8 leaders.',
-    buttonText: 'Apply for March 2026 Cohort',
+    heading: 'Applications for the Next Cohort Are Open',
+    body: "It starts with a clarity call — a 30-minute conversation to understand your pattern and see if FIT is the right path.",
+    buttonText: 'Apply Now',
   },
+}
+
+function AccordionItem({ item, isOpen, onToggle }) {
+  return (
+    <div
+      className={`bg-white border transition-all duration-400 overflow-hidden ${
+        isOpen
+          ? 'border-gold-400/20 shadow-lg shadow-navy-950/8'
+          : 'border-navy-950/10 hover:shadow-md hover:shadow-navy-950/6 hover:border-transparent'
+      }`}
+    >
+      <button
+        onClick={onToggle}
+        className="w-full flex justify-between items-center px-6 py-5 md:px-8 md:py-6 cursor-pointer text-left hover:bg-gold-400/[0.02] transition-colors"
+      >
+        <span className="font-display text-xl text-gold-300 font-normal mr-4 min-w-[30px] hidden md:inline">
+          {item.number}
+        </span>
+        <div className="flex-1">
+          <div className="font-display text-sm md:text-[0.9rem] font-medium text-navy-950 leading-snug mb-0.5">
+            {item.title}
+          </div>
+          <div className="text-[0.82rem] text-navy-950/55 leading-relaxed">
+            {item.subtitle}
+          </div>
+        </div>
+        <div
+          className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 ml-4 text-sm transition-all duration-300 ${
+            isOpen
+              ? 'bg-gold-400 border-gold-400 text-white rotate-45'
+              : 'border-navy-950/10 text-gold-400'
+          }`}
+        >
+          +
+        </div>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="overflow-hidden"
+          >
+            <div
+              className="accordion-content-html px-6 pb-6 md:px-8 md:pb-8 md:pl-[4.2rem] [&>p]:text-[0.88rem] [&>p]:leading-[1.85] [&>p]:text-navy-950/55 [&>p]:mb-3 [&_strong]:text-navy-950 [&_strong]:font-medium [&>ul]:list-none [&>ul]:flex [&>ul]:flex-col [&>ul]:gap-1.5 [&>ul]:mt-2 [&_li]:text-[0.85rem] [&_li]:leading-[1.75] [&_li]:text-navy-950/55"
+              dangerouslySetInnerHTML={{ __html: item.content }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
 }
 
 export default function FitCohort() {
   const { content } = useContent('fitCohort')
-  const { data: testimonialsData } = useCollection('testimonials')
-  const { data: faqData } = useCollection('faq')
+  const [openAccordions, setOpenAccordions] = useState({})
 
   const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
 
-  const testimonials = testimonialsData?.items || defaultTestimonials
-  const cohortTestimonials = testimonials.filter(t => t.program === 'fit-cohort')
-  const faq = faqData?.fitCohort || defaultFAQ
+  const toggleAccordion = (groupIndex, itemIndex) => {
+    setOpenAccordions(prev => {
+      const key = `${groupIndex}-${itemIndex}`
+      const currentOpen = prev[groupIndex]
+      if (currentOpen === itemIndex) {
+        return { ...prev, [groupIndex]: null }
+      }
+      return { ...prev, [groupIndex]: itemIndex }
+    })
+  }
 
-  // For features, resolve icon strings from CMS to components
-  const featureItems = (c('features', 'items') || []).map(f => ({
-    ...f,
-    icon: typeof f.icon === 'string' ? (iconMap[f.icon] || Users) : f.icon,
-  }))
-
-  const timelineItems = c('timeline', 'items') || []
-  const inclusionItems = c('inclusions', 'items') || []
+  const outcomeGroups = c('outcomes', 'groups') || []
+  const journeyPhases = c('journey', 'phases') || []
+  const numberItems = c('numbers', 'items') || []
+  const whoItems = c('who', 'items') || []
+  const testimonialItems = c('testimonials', 'items') || []
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-24 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gold-400/20 blur-3xl" />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
-            <div className="lg:col-span-2">
-              <ScrollReveal>
-                <span className="inline-block px-4 py-1.5 bg-gold-400/20 text-gold-400 text-sm font-semibold rounded-full mb-6">
-                  {c('hero', 'badge')}
-                </span>
-                <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                  {c('hero', 'title')}
-                </h1>
-                <p className="text-xl text-slate-300 mb-6">{c('hero', 'subtitle')}</p>
-                <ul className="space-y-3 mb-8">
-                  {(c('hero', 'highlights') || []).map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-300">
-                      <span className="text-gold-400">&#10003;</span> {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-4">
-                  <Button to="/contact">{c('hero', 'ctaPrimary')}</Button>
-                  <Button href="#structure" variant="secondary">{c('hero', 'ctaSecondary')}</Button>
-                </div>
-              </ScrollReveal>
-            </div>
-
-            <ScrollReveal delay={0.2}>
-              <div className="bg-navy-800 rounded-2xl p-8 border-2 border-gold-400/30">
-                <div className="text-3xl font-bold text-gold-400 font-display mb-1">{c('priceBox', 'price')}</div>
-                <p className="text-slate-300 mb-4">{c('priceBox', 'schedule')}</p>
-                <p className="text-slate-300 text-sm mb-6">{c('priceBox', 'nextCohort')}</p>
-                <Button to="/contact" className="w-full">{c('priceBox', 'ctaText')}</Button>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Ideal For / Not For */}
-      <section className="py-24 bg-navy-900">
-        <div className="max-w-5xl mx-auto px-6">
-          <SectionHeading title={c('idealFor', 'title')} subtitle={c('idealFor', 'subtitle')} light />
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <ScrollReveal>
-              <div className="bg-navy-800 rounded-2xl p-8 border border-green-500/20 h-full">
-                <h3 className="font-display text-xl font-bold text-white mb-4">Ideal For</h3>
-                <ul className="space-y-3">
-                  {(c('idealFor', 'items') || []).map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
-                      <span className="text-green-400 mt-0.5 shrink-0">&#10003;</span> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <div className="bg-navy-800 rounded-2xl p-8 border border-red-500/20 h-full">
-                <h3 className="font-display text-xl font-bold text-white mb-4">Not For</h3>
-                <ul className="space-y-3">
-                  {(c('notFor', 'items') || []).map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
-                      <span className="text-red-400/70 mt-0.5 shrink-0">&#10007;</span> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 1-8-1 Structure */}
-      <section id="structure" className="py-24 bg-navy-950">
-        <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading title={c('timeline', 'title')} subtitle={c('timeline', 'subtitle')} light />
-
-          <div className="space-y-6">
-            {timelineItems.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="grid md:grid-cols-4 gap-6 bg-navy-900 rounded-2xl p-8 border border-navy-800">
-                  <div className="md:col-span-1">
-                    <div className="bg-navy-800 rounded-xl p-4 text-center border border-gold-400/20">
-                      <p className="text-gold-400 font-bold text-sm">{item.week}</p>
-                      <p className="text-slate-300 text-xs mt-1">{item.label}</p>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <h4 className="font-display text-lg font-bold text-white mb-2">{item.title}</h4>
-                    <p className="text-slate-300 text-sm leading-relaxed">{item.description}</p>
-                    {item.layers && (
-                      <ul className="mt-4 space-y-1">
-                        {item.layers.map((l, j) => (
-                          <li key={j} className="text-slate-300/80 text-sm flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-gold-400/60" /> {l}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes FIT Different */}
-      <section className="py-24 bg-warm-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title={c('features', 'title')} subtitle={c('features', 'subtitle')} />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featureItems.map(({ icon: Icon, title, text }, i) => (
-              <ScrollReveal key={i} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl p-8 border border-warm-200 hover:border-gold-400/30 transition-colors h-full">
-                  <Icon className="w-8 h-8 text-gold-400 mb-4" />
-                  <h3 className="font-display text-lg font-bold text-navy-950 mb-3">{title}</h3>
-                  <p className="text-slate-700 text-sm leading-relaxed">{text}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included + Investment */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading title={c('inclusions', 'title')} />
-
+      {/* 1. Hero — Navy gradient */}
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-navy-950 via-[#0d0240] to-[#203460] text-warm-50 overflow-hidden"
+        style={{ padding: '10rem 0 7rem' }}
+      >
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 25% 55%, rgba(240,222,160,0.04) 0%, transparent 55%)' }}
+        />
+        <div className="relative z-10 max-w-[750px] mx-auto px-6 text-center">
           <ScrollReveal>
-            <div className="bg-warm-50 rounded-2xl p-8 md:p-10 border border-warm-200 mb-8">
-              <ul className="space-y-4">
-                {inclusionItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm">
-                    <span className="text-gold-400 mt-0.5 shrink-0">&#10003;</span>
-                    <p className="text-slate-700"><strong className="text-navy-950">{item.label}</strong> {item.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <div className="bg-warm-50 rounded-2xl p-8 border-2 border-gold-400/30">
-              <h3 className="font-display text-xl font-bold text-navy-950 mb-3">{c('investment', 'title')}</h3>
-              <p className="text-slate-700 leading-relaxed mb-2">
-                <strong className="text-gold-400 text-2xl">{c('investment', 'price')}</strong> (pricing varies based on cohort composition and retreat location)
-              </p>
-              <p className="text-slate-700 text-sm">{c('investment', 'includes')}</p>
-              <p className="text-slate-700 text-sm mt-2">{c('investment', 'excludes')}</p>
-            </div>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+              {c('hero', 'label')}
+            </p>
+            <h1 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-normal text-warm-50 leading-tight mb-6">
+              {c('hero', 'title')}
+            </h1>
+            <p className="text-[1.05rem] text-warm-50/70 leading-[1.85] max-w-[620px] mx-auto mb-10">
+              {c('hero', 'subtitle')}
+            </p>
+            <Link to="/contact" className="inline-block font-display text-[0.72rem] tracking-[0.14em] uppercase px-10 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
+              {c('hero', 'ctaText')}
+            </Link>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-navy-900">
-        <div className="max-w-5xl mx-auto px-6">
-          <SectionHeading title="What Past Participants Say" light />
-          <div className="grid md:grid-cols-2 gap-8">
-            {cohortTestimonials.map((t, i) => (
-              <ScrollReveal key={t.id} delay={i * 0.1}>
-                <TestimonialCard testimonial={t} />
+      {/* 2. Problem — White bg */}
+      <section className="bg-white py-28 px-6">
+        <div className="max-w-[700px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+              {c('problem', 'label')}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 leading-tight mb-8">
+              {c('problem', 'title')}
+            </h2>
+            <div className="w-[50px] h-0.5 bg-gold-400 mb-8" />
+          </ScrollReveal>
+          {(c('problem', 'paragraphs') || []).map((p, i) => (
+            <ScrollReveal key={i}>
+              <p
+                className="text-[0.95rem] leading-[1.95] text-navy-950/55 mb-5 [&>strong]:text-navy-950 [&>strong]:font-medium"
+                dangerouslySetInnerHTML={{ __html: p }}
+              />
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Outcomes — Beige bg */}
+      <section className="bg-warm-50 py-28 px-6">
+        <div className="max-w-[800px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+              {c('outcomes', 'label')}
+            </p>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 leading-tight text-center mb-4">
+              {c('outcomes', 'title')}
+            </h2>
+            <p className="text-[0.95rem] text-navy-950/55 text-center max-w-[550px] mx-auto mb-12">
+              {c('outcomes', 'subtitle')}
+            </p>
+          </ScrollReveal>
+
+          {outcomeGroups.map((group, gi) => (
+            <div key={gi} className="mb-12 last:mb-0">
+              <ScrollReveal>
+                <div className="font-display text-[0.6rem] tracking-[0.25em] uppercase text-gold-400 mb-3 pl-2">
+                  {group.label}
+                </div>
+              </ScrollReveal>
+              <ScrollReveal>
+                <div className="flex flex-col gap-4">
+                  {(group.items || []).map((item, ii) => (
+                    <AccordionItem
+                      key={ii}
+                      item={item}
+                      isOpen={openAccordions[gi] === ii}
+                      onToggle={() => toggleAccordion(gi, ii)}
+                    />
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Journey — Navy bg */}
+      <section className="bg-navy-950 text-warm-50 py-28 px-6">
+        <div className="max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+              {c('journey', 'label')}
+            </p>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-warm-50 leading-tight text-center mb-4">
+              {c('journey', 'title')}
+            </h2>
+            <p className="text-[0.95rem] text-warm-50/70 text-center max-w-[550px] mx-auto mb-16">
+              {c('journey', 'subtitle')}
+            </p>
+          </ScrollReveal>
+
+          <div className="relative pl-10">
+            {/* Vertical line */}
+            <div
+              className="absolute top-0 bottom-0 w-0.5 bg-gold-300/15"
+              style={{ left: '15px' }}
+            />
+
+            {journeyPhases.map((phase, i) => (
+              <ScrollReveal key={i}>
+                <div className="relative mb-10 last:mb-0 pl-8">
+                  {/* Dot */}
+                  <div
+                    className="absolute w-3 h-3 rounded-full bg-gold-400 border-2 border-navy-950 z-10"
+                    style={{ left: '-33px', top: '0.3rem' }}
+                  />
+                  <div className="font-display text-[0.58rem] tracking-[0.2em] uppercase text-gold-400 mb-1.5">
+                    {phase.phaseLabel}
+                  </div>
+                  <div className="font-display text-base font-medium text-gold-300 mb-2">
+                    {phase.title}
+                  </div>
+                  <p
+                    className="text-[0.88rem] leading-[1.8] text-warm-50/70 [&>strong]:text-warm-50 [&>strong]:font-medium"
+                    dangerouslySetInnerHTML={{ __html: phase.body }}
+                  />
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-24 bg-navy-950">
-        <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading title="Frequently Asked Questions" light />
-          <FAQAccordion items={faq} dark />
+      {/* 5. Numbers — White bg */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-[800px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+              {c('numbers', 'label')}
+            </p>
+            <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.8rem)] font-normal text-navy-950 leading-tight mb-12">
+              {c('numbers', 'title')}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {numberItems.map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="font-display text-[2.2rem] font-normal text-navy-950 leading-none mb-2">
+                    {item.value}
+                  </div>
+                  <div className="text-[0.72rem] tracking-wide text-navy-950/55 leading-snug">
+                    {item.label}<br />{item.sublabel}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <CTASection
-        heading={c('cta', 'heading')}
-        subtext={c('cta', 'subtext')}
-        buttonText={c('cta', 'buttonText')}
-        buttonTo="/contact"
-      />
+      {/* 6. Who — Beige bg */}
+      <section className="bg-warm-50 py-28 px-6">
+        <div className="max-w-[700px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+              {c('who', 'label')}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.4rem,2.8vw,2rem)] font-normal text-navy-950 leading-tight mb-8">
+              {c('who', 'title')}
+            </h2>
+            <div className="w-[50px] h-0.5 bg-gold-400 mb-8" />
+          </ScrollReveal>
+          <ScrollReveal>
+            <p className="text-[0.95rem] leading-[1.9] text-navy-950/55 mb-6">
+              {c('who', 'intro')}
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              {whoItems.map((item, i) => (
+                <li key={i} className="text-[0.9rem] leading-[1.75] text-navy-950/55 pl-5 relative">
+                  <span className="absolute left-0 top-[0.55rem] w-1.5 h-1.5 rounded-full bg-gold-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 7. Testimonials — Navy bg */}
+      <section className="bg-navy-950 text-warm-50 py-28 px-6 relative overflow-hidden">
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: '-40%', right: '-15%', width: '500px', height: '500px',
+            background: 'radial-gradient(circle, rgba(240,222,160,0.03) 0%, transparent 60%)',
+          }}
+        />
+        <div className="relative z-10 max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+              {c('testimonials', 'label')}
+            </p>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-warm-50 leading-tight text-center mb-12">
+              {c('testimonials', 'title')}
+            </h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonialItems.map((t, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="bg-[rgba(32,52,96,0.4)] border border-gold-300/8 py-[2.2rem] px-[1.8rem] transition-all duration-400 hover:-translate-y-[5px] hover:border-gold-400/20 hover:shadow-xl hover:shadow-black/18">
+                  <div className="font-display text-[2.5rem] text-gold-300/15 leading-none mb-1 select-none">"</div>
+                  <p className="text-[0.85rem] leading-[1.85] text-warm-50/80 italic mb-5">{t.text}</p>
+                  <div className="w-[25px] h-px bg-gold-400 mb-3" />
+                  <div className="font-display text-[0.75rem] font-medium text-gold-300 mb-0.5">{t.role}</div>
+                  <div className="text-[0.72rem] text-warm-50/70">{t.company}</div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Investment — Beige bg */}
+      <section className="bg-warm-50 py-20 px-6">
+        <div className="max-w-[600px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+              {c('investment', 'label')}
+            </p>
+            <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.8rem)] font-normal text-navy-950 leading-tight mb-6">
+              {c('investment', 'title')}
+            </h2>
+            <div className="font-display text-3xl text-navy-950 font-normal mb-4">
+              {c('investment', 'price')}
+            </div>
+            <p className="text-[0.9rem] text-navy-950/55 leading-[1.85]">
+              {c('investment', 'note')}
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 9. CTA — Navy gradient */}
+      <section className="bg-gradient-to-br from-navy-950 to-[#203460] text-warm-50 text-center py-28 px-6 relative overflow-hidden">
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            bottom: '-20%', left: '50%', transform: 'translateX(-50%)',
+            width: '400px', height: '400px',
+            background: 'radial-gradient(circle, rgba(250,110,35,0.05) 0%, transparent 60%)',
+          }}
+        />
+        <div className="relative z-10 max-w-[600px] mx-auto">
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] font-normal text-warm-50 leading-tight mb-4">
+              {c('cta', 'heading')}
+            </h2>
+            <p className="text-[0.95rem] text-warm-50/70 leading-[1.85] mb-10">
+              {c('cta', 'body')}
+            </p>
+            <Link to="/contact" className="inline-block font-display text-[0.72rem] tracking-[0.14em] uppercase px-12 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
+              {c('cta', 'buttonText')}
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   )
 }

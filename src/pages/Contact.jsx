@@ -54,6 +54,7 @@ export default function Contact() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 bg-navy-950 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-gold-400/20 blur-3xl" />
         </div>
