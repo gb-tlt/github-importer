@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Clock, Linkedin, Instagram, Shield } from 'lucide-react'
+import { Mail, Clock, Linkedin, Instagram, Youtube, Shield } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import FAQAccordion from '../components/ui/FAQAccordion'
 import ScrollReveal from '../components/ui/ScrollReveal'
@@ -22,8 +22,9 @@ const defaults = {
   sidebar: {
     email: 'gowtham@theleadershiptattva.com',
     responseTime: 'Within 24-48 hours',
-    linkedinUrl: 'https://www.linkedin.com/in/gowthambalaji/',
-    instagramUrl: 'https://www.instagram.com/theleadershiptattva/',
+    linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',
+    instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/',
+    youtubeUrl: 'https://www.youtube.com/@gbcoach',
   },
   confidentiality: {
     title: 'Confidentiality',
@@ -198,6 +199,9 @@ export default function Contact() {
                     </a>
                     <a href={c('sidebar', 'instagramUrl')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
                       <Instagram className="w-5 h-5" /> Instagram
+                    </a>
+                    <a href={c('sidebar', 'youtubeUrl')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
+                      <Youtube className="w-5 h-5" /> YouTube
                     </a>
                   </div>
                 </div>

@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
-import { Linkedin, Mail, Instagram } from 'lucide-react'
+import { Linkedin, Mail, Instagram, Youtube } from 'lucide-react'
 import { useContent } from '../../hooks/useContent'
 
 const footerDefaults = {
   tagline: 'Deep work for leaders who want to integrate, not just perform.',
   email: 'gowtham@theleadershiptattva.com',
   responseTime: 'Response within 24-48 hours',
-  linkedinUrl: 'https://www.linkedin.com/in/gowthambalaji/',
-  instagramUrl: 'https://www.instagram.com/theleadershiptattva/',
+  linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',
+  instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/',
+  youtubeUrl: 'https://www.youtube.com/@gbcoach',
   copyright: '\u00A9 2026 The Leadership Tattva. All rights reserved.',
 }
 
@@ -35,6 +36,9 @@ export default function Footer() {
               </a>
               <a href={f('instagramUrl')} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href={f('youtubeUrl')} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="YouTube">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
