@@ -182,67 +182,54 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: 'linear-gradient(155deg, #090134 0%, #0d0240 55%, #203460 100%)' }}>
+      <section className="relative min-h-[66vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(155deg, #090134 0%, #0d0240 55%, #203460 100%)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(240,222,160,0.05) 0%, transparent 55%)' }} />
-        <div className="relative z-[2] max-w-[1100px] mx-auto w-full px-6 lg:px-12 py-32">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="max-w-[520px]">
-              <ScrollReveal>
-                <p className="font-display text-[0.58rem] tracking-[0.35em] uppercase text-gold-400 mb-8">
-                  {c('hero', 'badge')}
-                </p>
-                <h1 className="font-display font-normal leading-[1.15] mb-6 text-warm-50" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
-                  {c('hero', 'headline')}
-                  <span className="text-gold-400">{c('hero', 'headlineGold')}</span>
-                </h1>
-                <p className="text-[1.05rem] leading-[1.85] text-warm-50/80 mb-10">
-                  {c('hero', 'subtext')}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/contact" className="inline-block font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] bg-gold-400 text-white transition-all duration-400 hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)]">
-                    {c('hero', 'ctaPrimary')}
-                  </Link>
-                  <Link to="/services" className="inline-block font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] border border-warm-50/40 text-warm-50 transition-all duration-400 hover:border-gold-300 hover:text-gold-300">
-                    {c('hero', 'ctaSecondary')}
-                  </Link>
-                </div>
-              </ScrollReveal>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(240,222,160,0.05) 0%, transparent 55%)' }} />
+        <div className="relative z-[2] max-w-[800px] mx-auto w-full px-6 lg:px-12 py-32 text-center">
+          <ScrollReveal>
+            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-16 md:h-20 w-auto mx-auto mb-8 opacity-90" />
+            <p className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-8">
+              {c('hero', 'badge')}
+            </p>
+            <h1 className="font-display font-normal leading-[1.15] mb-6 text-warm-50" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+              {c('hero', 'headline')}
+              <span className="text-gold-400">{c('hero', 'headlineGold')}</span>
+            </h1>
+            <p className="text-[1.05rem] leading-[1.85] text-warm-50/80 mb-10 max-w-[600px] mx-auto">
+              {c('hero', 'subtext')}
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/contact" className="inline-block font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] bg-gold-400 text-white transition-all duration-400 hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)]">
+                {c('hero', 'ctaPrimary')}
+              </Link>
+              <Link to="/services" className="inline-block font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] border border-warm-50/40 text-warm-50 transition-all duration-400 hover:border-gold-300 hover:text-gold-300">
+                {c('hero', 'ctaSecondary')}
+              </Link>
             </div>
-
-            <div className="hidden lg:flex justify-center items-center">
-              <ScrollReveal>
-                <div className="w-[380px] h-[420px] rounded-lg overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(252,243,231,0.08), rgba(240,222,160,0.1))', border: '1px solid rgba(240,222,160,0.15)' }}>
-                  <img
-                    src={c('hero', 'heroImage') || '/gowtham.jpg'}
-                    alt="Gowtham Balaji - Leadership Integration Coach"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 2. Logos */}
       <div className="bg-warm-50 border-b border-navy-950/10 py-12 px-6">
-        <div className="max-w-[1100px] mx-auto text-center">
-          <ScrollReveal>
-            <p className="font-body text-[0.7rem] tracking-[0.18em] uppercase text-navy-950/55 mb-5">
-              {c('logos', 'label')}
-            </p>
-            <div className="flex justify-center items-center gap-8 md:gap-10 flex-wrap">
-              {(c('logos', 'logos') || []).map((logo) => (
+        <div className="text-center">
+          <p className="font-body text-[0.7rem] tracking-[0.18em] uppercase text-navy-950/55 mb-5">
+            {c('logos', 'label')}
+          </p>
+          <div className="overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-warm-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-warm-50 to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-10 items-center animate-marquee hover:[animation-play-state:paused]">
+              {[...(c('logos', 'logos') || []), ...(c('logos', 'logos') || [])].map((logo, i) => (
                 <img
-                  key={logo.name}
+                  key={`${logo.name}-${i}`}
                   src={logo.src}
                   alt={logo.name}
-                  className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-60 hover:opacity-90 grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain shrink-0 opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 />
               ))}
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </div>
 
@@ -250,7 +237,7 @@ export default function Home() {
       <section ref={philosophySectionRef} className="bg-navy-950 text-warm-50 py-28 px-6 lg:px-12">
         <div className="max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('philosophy', 'label')}
             </p>
             <h2 className="font-display font-normal leading-[1.3] text-warm-50 mb-10" style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2rem)' }}>
@@ -260,7 +247,7 @@ export default function Home() {
             <div className="flex flex-col gap-7">
               {(c('philosophy', 'pillars') || []).map((pillar, i) => (
                 <div key={i} className="border-l-2 border-gold-400/25 pl-5 transition-all duration-400 hover:border-gold-400 hover:translate-x-1.5 cursor-default">
-                  <h3 className="font-display text-[0.82rem] font-medium text-gold-300 tracking-[0.04em] mb-1">
+                  <h3 className="font-display text-[0.92rem] font-medium text-gold-300 tracking-[0.04em] mb-1">
                     {pillar.title}
                   </h3>
                   <p className="text-[0.88rem] leading-[1.75] text-warm-50/70">{pillar.text}</p>
@@ -324,7 +311,7 @@ export default function Home() {
       <section className="bg-navy-950 text-warm-50 py-28 pb-40 px-6 relative">
         <div className="max-w-[900px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
               {c('fiveLayers', 'title')}
             </p>
             <h2 className="font-display font-normal text-center text-warm-50 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
@@ -351,14 +338,14 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-display text-[1rem] font-medium text-gold-300 mb-0.5">{layer.name}</div>
-                    <div className="text-[0.78rem] text-gold-400 italic mb-3">{layer.sanskrit}</div>
+                    <div className="text-[0.88rem] text-gold-400 italic mb-3">{layer.sanskrit}</div>
                     <div className="text-[0.88rem] leading-[1.75] text-warm-50/70 mb-3">{layer.description}</div>
                     <div className="flex flex-wrap gap-8">
-                      <div className="text-[0.78rem] leading-[1.6]">
+                      <div className="text-[0.88rem] leading-[1.6]">
                         <span className="font-medium block mb-0.5 text-[#e87461]">Fragmented:</span>
                         <span className="text-warm-50/70">{layer.fragmented}</span>
                       </div>
-                      <div className="text-[0.78rem] leading-[1.6]">
+                      <div className="text-[0.88rem] leading-[1.6]">
                         <span className="font-medium block mb-0.5 text-[#7ec49d]">Integrated:</span>
                         <span className="text-warm-50/70">{layer.integrated}</span>
                       </div>
@@ -375,7 +362,7 @@ export default function Home() {
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[1000px] mx-auto text-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('services', 'label')}
             </p>
             <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
@@ -391,12 +378,12 @@ export default function Home() {
                   {programIconMap[service.id] && (
                     <img src={programIconMap[service.id]} alt="" className="w-14 h-14 object-contain mb-4" />
                   )}
-                  <div className="font-display text-[0.55rem] tracking-[0.2em] uppercase text-gold-400 font-medium mb-5">
+                  <div className="font-display text-[0.75rem] tracking-[0.2em] uppercase text-gold-400 font-medium mb-5">
                     {service.badge}
                   </div>
                   <h3 className="font-display text-[1rem] font-medium text-navy-950 leading-[1.3] mb-3">{service.title}</h3>
                   <p className="text-[0.85rem] leading-[1.75] text-navy-950/55 mb-5">{service.description}</p>
-                  <Link to={service.link} className="font-display text-[0.65rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
+                  <Link to={service.link} className="font-display text-[0.75rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
                     Learn More →
                   </Link>
                 </div>
@@ -417,7 +404,7 @@ export default function Home() {
         <div className="absolute -top-1/2 -right-[20%] w-[600px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.04) 0%, transparent 70%)' }} />
         <div className="max-w-[1100px] mx-auto relative z-[2]">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
               {c('testimonials', 'title')}
             </p>
             <h2 className="font-display font-normal text-center text-warm-50 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
@@ -433,7 +420,7 @@ export default function Home() {
                   <div className="font-display text-[3.5rem] text-gold-300/15 leading-none mb-2 select-none">&ldquo;</div>
                   <p className="text-[0.88rem] leading-[1.85] text-warm-50/80 italic mb-6">{t.quote}</p>
                   <div className="w-[30px] h-px bg-gold-400 mb-4" />
-                  <div className="font-display text-[0.78rem] font-medium text-gold-300 mb-0.5">{t.author}</div>
+                  <div className="font-display text-[0.88rem] font-medium text-gold-300 mb-0.5">{t.author}</div>
                   <div className="text-[0.75rem] text-warm-50/70">{t.company}</div>
                 </div>
               </ScrollReveal>
@@ -446,7 +433,7 @@ export default function Home() {
       <section className="bg-white py-28 px-6">
         <div className="max-w-[750px] mx-auto text-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('aboutTlt', 'label')}
             </p>
             <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-2" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
@@ -462,7 +449,14 @@ export default function Home() {
               {c('aboutTlt', 'quote')}
             </div>
 
-            <Link to="/about" className="font-display text-[0.68rem] tracking-[0.1em] uppercase text-gold-400 hover:tracking-[0.16em] transition-all duration-300">
+            <p className="text-[0.88rem] leading-[1.7] text-navy-950/60 mt-2 mb-8">
+              <span className="font-display font-medium text-navy-950">Gowtham Balaji</span>
+              <span className="text-gold-400">, Leadership Coach</span>
+              <span className="text-navy-950/40"> — </span>
+              120+ Senior Leaders Coached 1-to-1 &middot; 10,000+ Leaders Trained &middot; 7+ Years of Practice &middot; 6 Years Off-Grid Ongoing Study
+            </p>
+
+            <Link to="/about" className="font-display text-[0.78rem] tracking-[0.1em] uppercase text-gold-400 hover:tracking-[0.16em] transition-all duration-300">
               {c('aboutTlt', 'linkText')} →
             </Link>
           </ScrollReveal>
@@ -473,7 +467,7 @@ export default function Home() {
       <section className="bg-warm-50 py-20 px-6">
         <ScrollReveal>
           <div className="max-w-[700px] mx-auto text-center bg-white border border-navy-950/10 p-14 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(9,1,52,0.08)] hover:border-transparent">
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('assessment', 'badge')}
             </p>
             <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-4" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)' }}>

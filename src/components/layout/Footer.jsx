@@ -6,8 +6,8 @@ const footerDefaults = {
   tagline: 'Deep work for leaders who want to integrate, not just perform.',
   email: 'gowtham@theleadershiptattva.com',
   responseTime: 'Response within 24-48 hours',
-  linkedinUrl: '#',
-  instagramUrl: '#',
+  linkedinUrl: 'https://www.linkedin.com/in/gowthambalaji/',
+  instagramUrl: 'https://www.instagram.com/theleadershiptattva/',
   copyright: '\u00A9 2026 The Leadership Tattva. All rights reserved.',
 }
 
@@ -27,13 +27,13 @@ export default function Footer() {
               {f('tagline')}
             </p>
             <div className="flex gap-4 mt-6">
-              <a href={f('linkedinUrl')} className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="LinkedIn">
+              <a href={f('linkedinUrl')} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href={`mailto:${f('email')}`} className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="Email">
                 <Mail className="w-5 h-5" />
               </a>
-              <a href={f('instagramUrl')} className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="Instagram">
+              <a href={f('instagramUrl')} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-gold-400 transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>

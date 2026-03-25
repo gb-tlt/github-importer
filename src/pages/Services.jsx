@@ -93,7 +93,7 @@ export default function Services() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-24 bg-gradient-to-br from-navy-950 to-[#1a0a5c] overflow-hidden">
+      <section className="relative pt-28 pb-16 bg-gradient-to-br from-navy-950 to-[#1a0a5c] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }} />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full bg-gold-400/20 blur-3xl" />
@@ -111,7 +111,7 @@ export default function Services() {
       </section>
 
       {/* Program Cards */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             title={c('programs', 'title')}
@@ -134,7 +134,7 @@ export default function Services() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-24 bg-warm-50">
+      <section className="py-16 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading title={c('comparison', 'title')} subtitle={c('comparison', 'subtitle')} />
 
@@ -166,7 +166,7 @@ export default function Services() {
       </section>
 
       {/* Decision Framework */}
-      <section className="py-24 bg-warm-50">
+      <section className="py-16 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-[#fcf3e7] rounded-lg p-8 md:p-12">
             <SectionHeading

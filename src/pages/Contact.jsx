@@ -22,8 +22,8 @@ const defaults = {
   sidebar: {
     email: 'gowtham@theleadershiptattva.com',
     responseTime: 'Within 24-48 hours',
-    linkedinUrl: '#',
-    instagramUrl: '#',
+    linkedinUrl: 'https://www.linkedin.com/in/gowthambalaji/',
+    instagramUrl: 'https://www.instagram.com/theleadershiptattva/',
   },
   confidentiality: {
     title: 'Confidentiality',
@@ -193,10 +193,10 @@ export default function Contact() {
                 <div className="bg-white rounded-2xl p-8 border border-warm-200">
                   <h3 className="font-display text-xl font-bold text-navy-950 mb-6">Connect</h3>
                   <div className="space-y-4">
-                    <a href={c('sidebar', 'linkedinUrl')} className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'linkedinUrl')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
                       <Linkedin className="w-5 h-5" /> LinkedIn
                     </a>
-                    <a href={c('sidebar', 'instagramUrl')} className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
+                    <a href={c('sidebar', 'instagramUrl')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-gold-400 transition-colors">
                       <Instagram className="w-5 h-5" /> Instagram
                     </a>
                   </div>
@@ -218,6 +218,30 @@ export default function Contact() {
               </ScrollReveal>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Map / Location */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="text-center mb-8">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-navy-950 mb-2">Where the Work Happens</h3>
+              <p className="text-slate-600">From a farm in Tiruvannamalai, Tamil Nadu — far from the noise, close to the work.</p>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-warm-200 shadow-sm" style={{ height: '400px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62322.45!2d79.04!3d12.23!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babce4e19a867b7%3A0x51b13e26beabc36c!2sTiruvannamalai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1711000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Leadership Tattva Location - Tiruvannamalai"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

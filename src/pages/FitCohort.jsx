@@ -244,7 +244,7 @@ export default function FitCohort() {
         />
         <div className="relative z-10 max-w-[750px] mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
               {c('hero', 'label')}
             </p>
             <h1 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-normal text-warm-50 leading-tight mb-6">
@@ -264,7 +264,7 @@ export default function FitCohort() {
       <section className="bg-white py-28 px-6">
         <div className="max-w-[700px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
               {c('problem', 'label')}
             </p>
           </ScrollReveal>
@@ -289,7 +289,7 @@ export default function FitCohort() {
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[800px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
               {c('outcomes', 'label')}
             </p>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-navy-950 leading-tight text-center mb-4">
@@ -303,7 +303,7 @@ export default function FitCohort() {
           {outcomeGroups.map((group, gi) => (
             <div key={gi} className="mb-12 last:mb-0">
               <ScrollReveal>
-                <div className="font-display text-[0.6rem] tracking-[0.25em] uppercase text-gold-400 mb-3 pl-2">
+                <div className="font-display text-[0.7rem] tracking-[0.25em] uppercase text-gold-400 mb-3 pl-2">
                   {group.label}
                 </div>
               </ScrollReveal>
@@ -328,7 +328,7 @@ export default function FitCohort() {
       <section className="bg-navy-950 text-warm-50 py-28 px-6">
         <div className="max-w-[900px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
               {c('journey', 'label')}
             </p>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-warm-50 leading-tight text-center mb-4">
@@ -354,7 +354,7 @@ export default function FitCohort() {
                     className="absolute w-3 h-3 rounded-full bg-gold-400 border-2 border-navy-950 z-10"
                     style={{ left: '-33px', top: '0.3rem' }}
                   />
-                  <div className="font-display text-[0.58rem] tracking-[0.2em] uppercase text-gold-400 mb-1.5">
+                  <div className="font-display text-[0.68rem] tracking-[0.2em] uppercase text-gold-400 mb-1.5">
                     {phase.phaseLabel}
                   </div>
                   <div className="font-display text-base font-medium text-gold-300 mb-2">
@@ -375,7 +375,7 @@ export default function FitCohort() {
       <section className="bg-white py-20 px-6">
         <div className="max-w-[800px] mx-auto text-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
               {c('numbers', 'label')}
             </p>
             <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.8rem)] font-normal text-navy-950 leading-tight mb-12">
@@ -403,7 +403,7 @@ export default function FitCohort() {
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[700px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
               {c('who', 'label')}
             </p>
           </ScrollReveal>
@@ -440,7 +440,7 @@ export default function FitCohort() {
         />
         <div className="relative z-10 max-w-[900px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6 text-center">
               {c('testimonials', 'label')}
             </p>
             <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-normal text-warm-50 leading-tight text-center mb-12">
@@ -467,7 +467,7 @@ export default function FitCohort() {
       <section className="bg-warm-50 py-20 px-6">
         <div className="max-w-[600px] mx-auto text-center">
           <ScrollReveal>
-            <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase font-normal text-gold-400 mb-6">
               {c('investment', 'label')}
             </p>
             <h2 className="font-display text-[clamp(1.3rem,2.5vw,1.8rem)] font-normal text-navy-950 leading-tight mb-6">
