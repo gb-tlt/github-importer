@@ -39,7 +39,10 @@ export default function Contact() {
 
   const { content } = useContent('contact')
   const { data: faqData } = useCollection('faq')
-  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+  const c = (section, key) => {
+    const val = content?.[section]?.[key]
+    return (val && val !== '#') ? val : defaults[section]?.[key]
+  }
   const faq = faqData?.contact || defaultFAQ
 
   const handleChange = (e) => {

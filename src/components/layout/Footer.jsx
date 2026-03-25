@@ -14,7 +14,10 @@ const footerDefaults = {
 
 export default function Footer() {
   const { content } = useContent('global')
-  const f = (key) => content?.footer?.[key] || footerDefaults[key]
+  const f = (key) => {
+    const val = content?.footer?.[key]
+    return (val && val !== '#') ? val : footerDefaults[key]
+  }
   return (
     <footer className="bg-navy-950 border-t border-navy-800">
       <div className="max-w-7xl mx-auto px-6 py-16">

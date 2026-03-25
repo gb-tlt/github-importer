@@ -44,8 +44,9 @@ const content = {
       tagline: 'Deep work for leaders who want to integrate, not just perform.',
       email: 'gowtham@theleadershiptattva.com',
       responseTime: 'Response within 24-48 hours',
-      linkedinUrl: '#',
-      instagramUrl: '#',
+      linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',
+      instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/',
+      youtubeUrl: 'https://www.youtube.com/@gbcoach',
       copyright: '\u00A9 2026 The Leadership Tattva. All rights reserved.',
     },
   },
@@ -239,7 +240,7 @@ const content = {
   contact: {
     hero: { badge: 'Contact', title: "Let's Have a Conversation", subtitle: "Whether you're curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I'm here." },
     form: { title: 'Book a Clarity Call', subtitle: '45 minutes to understand your challenges, explore fit, and answer your questions. No obligation.', submitText: 'Request Clarity Call' },
-    sidebar: { email: 'gowtham@theleadershiptattva.com', responseTime: 'Within 24-48 hours', linkedinUrl: '#', instagramUrl: '#' },
+    sidebar: { email: 'gowtham@theleadershiptattva.com', responseTime: 'Within 24-48 hours', linkedinUrl: 'https://www.linkedin.com/in/gbcoach/', instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/', youtubeUrl: 'https://www.youtube.com/@gbcoach' },
     confidentiality: { title: 'Confidentiality', text: 'All conversations are strictly confidential. Your information is never shared.' },
   },
   fitCohort: {
