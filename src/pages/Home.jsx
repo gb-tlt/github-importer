@@ -187,7 +187,7 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(240,222,160,0.05) 0%, transparent 55%)' }} />
         <div className="relative z-[2] max-w-[800px] mx-auto w-full px-6 lg:px-12 py-32 text-center">
           <ScrollReveal>
-            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-16 md:h-20 w-auto mx-auto mb-8 opacity-90" />
+            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-24 md:h-28 w-auto mx-auto mb-8 opacity-90" />
             <p className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-8">
               {c('hero', 'badge')}
             </p>
