@@ -95,12 +95,19 @@ const defaults = {
     label: 'Gratitude',
     title: 'Grateful to Our Gurus, Teachers & Mentors',
     subtitle: 'This work stands on the shoulders of teachers and traditions.',
-    people: [
-      { name: 'Raghu Ananthanarayanan', desc: 'Yoga & Leadership' },
-      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
-      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
-      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
-      { name: 'Teacher Name', desc: 'Tradition / Discipline' },
+    inspirations: [
+      { name: 'Arunachala', desc: 'The Sacred Mountain', photo: '/images/gurus/arunachala.jpeg', type: 'landscape' },
+      { name: 'Ramana Maharishi', desc: 'Advaita Vedanta', photo: '/images/gurus/ramana-maharishi.jpeg' },
+      { name: 'Yogi Ramsuratkumar', desc: 'The Divine Beggar of Tiruvannamalai', photo: '/images/gurus/yogi-ramsuratkumar.jpeg' },
+    ],
+    teachers: [
+      { name: 'Shri. Raghu Anantanarayanan', desc: 'Yoga & Leadership, Ritambhara', photo: '/images/gurus/raghu-anantanarayanan.jpeg' },
+      { name: 'Shri Notchur Venkatraman', desc: 'Vedanta & Scriptures', photo: '/images/gurus/notchur-venkatraman.jpeg' },
+      { name: 'Smt. Sashikala Ananth', desc: 'Vaastu & Sacred Design, Ritambhara', photo: '/images/gurus/sashikala-ananth.jpeg' },
+      { name: 'Smt. Anuradha Ramesh', desc: 'Sacred Paths', photo: '/images/gurus/anuradha-ramesh.jpeg' },
+      { name: 'Smt. Saraswati Vasudevan', desc: 'Yoga Therapy, Yogavahini', photo: '/images/gurus/saraswati-vasudevan.jpeg' },
+      { name: 'Thaddeus Lawrence', desc: 'Somatic & Energy Work', photo: '/images/gurus/thaddeus-lawrence.jpeg' },
+      { name: 'Ritambhara Acharya Sangha', desc: 'Community of Practice', photo: '/images/gurus/ritambhara.jpeg', type: 'logo' },
     ],
   },
   cta: {
@@ -119,7 +126,8 @@ export default function About() {
   const works = c('observed', 'works') || defaults.observed.works
   const philosophyItems = c('philosophy', 'items') || defaults.philosophy.items
   const chapters = c('founder', 'chapters') || defaults.founder.chapters
-  const lineagePeople = c('lineage', 'people') || defaults.lineage.people
+  const lineageInspirations = c('lineage', 'inspirations') || defaults.lineage.inspirations
+  const lineageTeachers = c('lineage', 'teachers') || defaults.lineage.teachers
 
   return (
     <>
@@ -294,18 +302,42 @@ export default function About() {
             <p className="text-[0.95rem] text-navy-950/55 italic mb-12">{c('lineage', 'subtitle')}</p>
           </ScrollReveal>
 
+          {/* Tier 1: Spiritual Inspirations */}
           <ScrollReveal>
-            <div className="flex justify-center gap-12 flex-wrap">
-              {lineagePeople.map((person, i) => (
-                <div key={i} className="group text-center max-w-[140px] transition-all duration-400 hover:-translate-y-1 cursor-default">
-                  <div className="w-[100px] h-[100px] rounded-full mx-auto mb-4 bg-white border-2 border-gold-300/40 group-hover:border-gold-400 transition-colors duration-300 overflow-hidden">
-                    {person.photo ? (
-                      <img src={person.photo} alt={person.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-[0.75rem] text-navy-950/40 font-display tracking-wide">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                    )}
+            {/* Arunachala Mountain — landscape banner */}
+            {lineageInspirations.filter(g => g.type === 'landscape').map((guru, i) => (
+              <div key={i} className="relative w-full max-w-[700px] mx-auto h-[200px] rounded-2xl overflow-hidden mb-10 group cursor-default">
+                <img src={guru.photo} alt={guru.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-navy-950/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                  <p className="font-display text-[0.85rem] font-medium text-warm-50 tracking-wide">{guru.name}</p>
+                  <p className="text-[0.72rem] text-warm-50/70">{guru.desc}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* Spiritual Masters — larger portraits */}
+            <div className="flex justify-center gap-14 flex-wrap mb-14">
+              {lineageInspirations.filter(g => g.type !== 'landscape').map((guru, i) => (
+                <div key={i} className="group text-center max-w-[150px] transition-all duration-400 hover:-translate-y-1 cursor-default">
+                  <div className="w-[120px] h-[120px] rounded-full mx-auto mb-4 border-2 border-gold-300/40 group-hover:border-gold-400 transition-colors duration-300 overflow-hidden">
+                    <img src={guru.photo} alt={guru.name} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="font-display text-[0.8rem] font-medium text-navy-950 mb-0.5">{guru.name}</p>
+                  <p className="text-[0.72rem] text-navy-950/55 leading-[1.5]">{guru.desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* Tier 2: Teachers & Mentors */}
+          <ScrollReveal>
+            <p className="font-display text-[0.72rem] tracking-[0.2em] uppercase text-gold-400 mb-8">Teachers & Mentors</p>
+            <div className="flex justify-center gap-10 flex-wrap">
+              {lineageTeachers.map((person, i) => (
+                <div key={i} className="group text-center max-w-[130px] transition-all duration-400 hover:-translate-y-1 cursor-default">
+                  <div className={`w-[100px] h-[100px] mx-auto mb-4 border-2 border-gold-300/40 group-hover:border-gold-400 transition-colors duration-300 overflow-hidden ${person.type === 'logo' ? 'rounded-xl bg-white' : 'rounded-full'}`}>
+                    <img src={person.photo} alt={person.name} className={`w-full h-full ${person.type === 'logo' ? 'object-contain p-2' : 'object-cover'}`} />
                   </div>
                   <p className="font-display text-[0.75rem] font-medium text-navy-950 mb-0.5">{person.name}</p>
                   <p className="text-[0.72rem] text-navy-950/55 leading-[1.5]">{person.desc}</p>
