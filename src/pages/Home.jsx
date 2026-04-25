@@ -1,37 +1,24 @@
-import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
-import Button from '../components/ui/Button'
 import CTASection from '../components/ui/CTASection'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import TestimonialCarousel from '../components/ui/TestimonialCarousel'
 import { services as defaultServices } from '../data/services'
 import { testimonials as defaultTestimonials } from '../data/testimonials'
-import { layers as defaultLayers } from '../data/layers'
 import { useContent } from '../hooks/useContent'
 import { useCollection } from '../hooks/useCollection'
-
-const layerIconMap = {
-  body: '/images/icons/physical-vitality.png',
-  energy: '/images/icons/flow-state.png',
-  mind: '/images/icons/mental-peace.png',
-  judgment: '/images/icons/decision-making.png',
-  identity: '/images/icons/peace-alignment.png',
-}
 
 const programIconMap = {
   'fit-cohort': '/images/icons/group-session.png',
   'one-on-one': '/images/icons/1-1-session.png',
   'life-coaching': '/images/icons/family-harmony.png',
 }
-const stickyTops = [120, 140, 160, 180, 200]
-const stickyZ = [5, 4, 3, 2, 1]
 
 const defaults = {
   hero: {
     badge: 'Integration Coaching for Senior Leaders',
-    headline: 'What If Pressure Made You ',
-    headlineGold: 'Stronger?',
-    subtext: 'Most leaders fragment under pressure — their body betrays them, their mind goes blank, their presence collapses. It doesn\u2019t have to be this way. We help senior leaders rewire so pressure becomes power.',
+    headline: 'Executive Presence For Senior Leaders',
+    headlineGold: '',
+    subtext: "Most leaders fragment under pressure — their body betrays them, their mind goes blank, their presence collapses. It doesn’t have to be this way. We help senior leaders rewire their leadership operating system, so that when pressure strikes, what shows up is their presence, mastery and impact.",
     ctaPrimary: 'Book a Discovery Session',
     ctaSecondary: 'Explore Programs',
   },
@@ -55,52 +42,71 @@ const defaults = {
       { name: 'Eightfold AI', src: '/logos/eightfold-ai.png' },
     ],
   },
-  philosophy: {
-    label: 'What We Stand For',
-    heading: 'Skills and capacities are an outcome of an ',
-    headingEmphasis: 'integrated operating system.',
-    pillars: [
-      { title: 'Substance Over Fluff', text: 'We don\u2019t do motivational workshops. We rebuild the system underneath your skills — so what you already know stays accessible when it matters most.' },
-      { title: 'Ancient Wisdom + Modern Rigor', text: 'The Panchakosha framework. Neuroscience. Performance science from military, Olympic, and Formula One environments. Not borrowed from one tradition — integrated from many.' },
-      { title: 'Practice Over Theory', text: 'Understanding doesn\u2019t create change. Daily practice does. We are practitioners, not philosophers.' },
-    ],
-  },
-  problem: {
-    title: 'The Real Problem No One Talks About',
-    subtitle: "You're brilliant in calm. But when real pressure hits, something breaks.",
+  presence: {
+    label: 'A Moment of Truth',
+    heading: 'Presence is a result of an ',
+    headingEmphasis: 'integrated',
+    headingTail: ' leadership operating system.',
+    sub: "You know what you're capable of. You also know what happens when pressure hits.",
+    seoHeadline: 'CXO & Founder Leadership Coaching in Chennai',
     cards: [
-      { title: 'Your Body Betrays You', text: 'Tension floods in. Breathing gets shallow. Your posture collapses. The body remembers every past failure and re-enacts it under scrutiny.' },
-      { title: 'Your Mind Goes Blank', text: 'You had the perfect response prepared. But in the moment, words vanish. You over-explain, ramble, or freeze. The brilliant strategist disappears.' },
-      { title: 'Your Presence Collapses', text: "The room feels your fragmentation. Your team senses it. The board sees it. You look composed outside, but you're drowning inside." },
+      {
+        quote: "I had the answer. I just didn’t say it.",
+        body: "You knew exactly what should be said. You had the data. You had the conviction. But the moment you opened your mouth, something shrank. You softened the point. You hedged. Someone else said it three minutes later and got the credit. You walked out knowing — again — that <strong>the problem isn’t what you know.</strong>",
+      },
+      {
+        quote: "Why do I sound different when authority walks in?",
+        body: "Your voice in a 1:1 with your team is one voice. Your voice in front of the board is another. You can feel the shift happen — the pitch rises, sentences get longer, you start explaining when you should be stating. <strong>It’s not confidence you’re missing. It’s integration</strong> — the connection between what you know and how it comes out of your body.",
+      },
+      {
+        quote: "I know the leader I can be. I’ve met him once or twice.",
+        body: "You’ve had the moments. Rare ones — where you were fully there, spoke with unshakeable clarity, and the room moved. You know that leader exists inside you. The question isn’t whether you’re capable of it. <strong>The question is why you can’t access him consistently</strong> — especially when it matters most.",
+      },
     ],
-    closingText: 'This is fragmentation.',
-    closingBody: 'It\u2019s not a skills problem. It\u2019s not a confidence problem. It\u2019s an operating system problem. Your leadership OS was never designed for the pressure you face today. Most coaching works on the surface — techniques, frameworks, tips.',
-    closingHighlight: 'Integration works at the foundation.',
   },
-  fiveLayers: {
-    title: 'The Five Layers of Integration',
-    subtitle: 'Based on the Panchakosha framework, adapted for modern leadership. We work at every layer, not just the surface.',
+  leadershipMatters: {
+    label: 'A Way Forward',
+    heading: 'Your Leadership Matters',
+    quote: "There is nothing more dangerous than a loud voice with no real substance; and nothing more tragic than a good leader who has something to say, but can’t bring themselves to say it.",
+    bridge: [
+      "There’s a different way to show up. It awaits you.",
+      "And when you choose that, results, rewards, recognition follow you.",
+    ],
+    cards: [
+      { title: 'Come back to yourself.', text: 'The version of you that knew, before you somehow learnt to shrink.' },
+      { title: 'Let your depth and spontaneity take up space.', text: 'Not by being louder. By being fully present, integrating from inside.' },
+      { title: "Step in and co-create the kind of world you’d want to work in.", text: 'One where the thoughtful ones are heard, not hijacked.' },
+      { title: 'Do the real inner work. Not the performance of it.', text: 'The inner rewiring. The daily practice. The uncomfortable honesty.' },
+      { title: 'Walk with us, for a while.', text: "Not because you’re broken. Because you’re ready." },
+    ],
+    closingLead: 'For a real leader,',
+    closingLines: [
+      'This path is the way out of mediocrity and silent suffering.',
+      "This practice ensures you don’t slide back into invisibility, self-doubts and fears.",
+      'This work brings your presence and mastery to impact; rewards follow.',
+    ],
   },
   services: {
     label: 'How We Serve Leaders',
-    title: 'Three Pathways to Integration',
-    subtitle: 'Same methodology. Different formats. Which is the right fit for your situation?',
+    title: 'Develop Leadership Presence, Clarity & Impact Without Losing Yourself',
+    subtitle: 'Same methodology. Different pathways to integration.',
     linkText: 'Compare All Programs',
+    clarityPrompt: "Not sure where to start? A clarity call will help us figure out the right path together.",
   },
   testimonials: {
+    statStrip: '10,000+ Leaders Trained · 120+ Senior Leaders Coached 1-to-1 · Results Where It Counts: Profession, Relationships, Well-being',
     title: 'What Leaders Say',
-    subtitle: 'Real transformations from real leaders. Names anonymised for confidentiality.',
+    subtitle: "Don’t take our word for it. Hear from leaders who did the work.",
   },
   aboutTlt: {
     label: 'About',
     title: 'Why The Leadership Tattva Exists',
-    subtitle: 'Deep work for leaders who want to integrate, not just perform.',
     paragraphs: [
-      'The Leadership Tattva was founded on a simple observation: the most capable leaders fragment under pressure. Not because they lack skill, but because their operating system — body, breath, mind, discernment, purpose — disconnects when stakes are high.',
-      'We built a methodology that combines ancient Indic wisdom with modern neuroscience to create lasting integration. Not performance. Not facade. Real, embodied presence that doesn\u2019t collapse under pressure.',
-      'Founded by Gowtham Balaji — a leadership coach with a bent on Indic wisdom and authenticity — The Leadership Tattva serves senior leaders who are tired of fragmentation and ready to build integration that lasts. The work happens from a farm in Tiruvannamalai. Substance over fluff. Directness over polish. Integration over performance.',
+      'There is a voice inside every capable leader that knows they can do more, be more, impact more. But somewhere between the pressure and the performance, that voice learned to stay quiet.',
+      "We built The Leadership Tattva because we believe this: when that voice finds its ground, when the leader behind the title shows up fully, something shifts. Not just in their career. In every situation they walk into. In every team they lead. In every decision they make. The best ideas surface. The right work gets done. People stop performing and start contributing. That’s the world we want to help build. One integrated leader at a time.",
     ],
-    quote: '\u201CYou did not earn the right yesterday. You have been earning it your entire life. Now own it.\u201D',
+    credentials: 'Gowtham Balaji, Leadership Coach for CXOs, Founders And Senior Leaders — 150+ Leaders Coached In Private Exclusive 1-to-1 · 10,000+ Leaders Trained · 7+ Years of Practice',
+    hook: "What we’ve observed across hundreds of leaders, what we’ve found actually works, and the philosophy that drives everything we do.",
     linkText: 'Learn more about Gowtham',
   },
   assessment: {
@@ -112,8 +118,8 @@ const defaults = {
   },
   cta: {
     heading: 'Ready to Stop Fragmenting?',
-    subtext: "Book a 45-minute clarity call. We'll map your fragmentation pattern and I'll tell you honestly whether this is the right path for you.",
-    buttonText: 'Book a Discovery Session',
+    subtext: "Book a 45-minute clarity call. You’ll walk away knowing exactly where you fragment, why, and whether this is the right path forward.",
+    buttonText: 'Book a Clarity Call',
   },
 }
 
@@ -121,81 +127,36 @@ export default function Home() {
   const { content } = useContent('home')
   const { data: servicesData } = useCollection('services')
   const { data: testimonialsData } = useCollection('testimonials')
-  const { data: layersData } = useCollection('layers')
 
-  const c = (section, key) => content?.[section]?.[key] || defaults[section]?.[key]
+  const c = (section, key) => content?.[section]?.[key] ?? defaults[section]?.[key]
   const services = servicesData?.items || defaultServices
-  const testimonials = (testimonialsData?.items || defaultTestimonials).slice(0, 3)
-  const layers = layersData?.items || defaultLayers
+  const testimonials = testimonialsData?.items || defaultTestimonials
 
-  // 3D float effect refs
-  const philosophySectionRef = useRef(null)
-  const floatRef = useRef(null)
-
-  useEffect(() => {
-    const floatEl = floatRef.current
-    const section = philosophySectionRef.current
-    if (!floatEl || !section) return
-
-    // Skip on touch devices — use CSS animation instead
-    if ('ontouchstart' in window) {
-      floatEl.style.animation = 'floatAnim 6s ease-in-out infinite'
-      return
-    }
-
-    const maxTilt = 8
-    const smoothing = 0.08
-    let cx = 0, cy = 0, tx = 0, ty = 0, phase = 0
-    let animId
-
-    const onMouseMove = (e) => {
-      const rect = floatEl.getBoundingClientRect()
-      const centerX = rect.left + rect.width / 2
-      const centerY = rect.top + rect.height / 2
-      tx = Math.max(-1, Math.min(1, (e.clientX - centerX) / (window.innerWidth / 2)))
-      ty = Math.max(-1, Math.min(1, (e.clientY - centerY) / (window.innerHeight / 2)))
-    }
-
-    const onMouseLeave = () => { tx = 0; ty = 0 }
-
-    function animate() {
-      cx += (tx - cx) * smoothing
-      cy += (ty - cy) * smoothing
-      phase += 0.015
-      const fy = Math.sin(phase) * 14
-      floatEl.style.transform = `translateY(${fy}px) rotateX(${-cy * maxTilt}deg) rotateY(${cx * maxTilt}deg)`
-      floatEl.style.animation = 'none'
-      animId = requestAnimationFrame(animate)
-    }
-
-    section.addEventListener('mousemove', onMouseMove)
-    section.addEventListener('mouseleave', onMouseLeave)
-    animate()
-
-    return () => {
-      section.removeEventListener('mousemove', onMouseMove)
-      section.removeEventListener('mouseleave', onMouseLeave)
-      cancelAnimationFrame(animId)
-    }
-  }, [])
+  const presenceCards = c('presence', 'cards') || []
+  const leadershipCards = c('leadershipMatters', 'cards') || []
+  const leadershipBridge = c('leadershipMatters', 'bridge') || []
+  const leadershipClosing = c('leadershipMatters', 'closingLines') || []
+  const aboutParagraphs = c('aboutTlt', 'paragraphs') || []
+  const logos = c('logos', 'logos') || []
 
   return (
     <>
       {/* 1. Hero */}
-      <section className="relative min-h-[66vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(155deg, #090134 0%, #0d0240 55%, #203460 100%)' }}>
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(155deg, #090134 0%, #0d0240 55%, #203460 100%)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(240,222,160,0.05) 0%, transparent 55%)' }} />
-        <div className="relative z-[2] max-w-[800px] mx-auto w-full px-6 lg:px-12 py-32 text-center">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(240,222,160,0.06) 0%, transparent 55%)' }} />
+
+        <div className="relative z-[2] max-w-[820px] mx-auto w-full px-6 lg:px-12 py-24 md:py-28 text-center">
           <ScrollReveal>
-            <img src="/images/logo-horizontal.png" alt="The Leadership Tattva" className="h-24 md:h-28 w-auto mx-auto mb-8 opacity-90" />
-            <p className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-8">
+            <img src="/images/logo-square.png" alt="The Leadership Tattva" className="h-28 md:h-32 w-auto mx-auto mb-6 opacity-95 drop-shadow-[0_0_40px_rgba(240,222,160,0.15)]" />
+            <p className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-6">
               {c('hero', 'badge')}
             </p>
-            <h1 className="font-display font-normal leading-[1.15] mb-6 text-warm-50" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)' }}>
+            <h1 className="font-display font-normal leading-[1.15] mb-5 text-warm-50" style={{ fontSize: 'clamp(2rem, 4.2vw, 3.2rem)' }}>
               {c('hero', 'headline')}
-              <span className="text-gold-400">{c('hero', 'headlineGold')}</span>
+              {c('hero', 'headlineGold') && <span className="text-gold-400">{c('hero', 'headlineGold')}</span>}
             </h1>
-            <p className="text-[1.05rem] leading-[1.85] text-warm-50/80 mb-10 max-w-[600px] mx-auto">
+            <p className="text-[1.02rem] leading-[1.8] text-warm-50/80 mb-8 max-w-[680px] mx-auto">
               {c('hero', 'subtext')}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -210,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Logos */}
+      {/* 2. Logos — separate cream strip below hero */}
       <div className="bg-warm-50 border-b border-navy-950/10 py-12 px-6">
         <div className="text-center">
           <p className="font-body text-[0.7rem] tracking-[0.18em] uppercase text-navy-950/55 mb-5">
@@ -220,7 +181,7 @@ export default function Home() {
             <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-warm-50 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-warm-50 to-transparent z-10 pointer-events-none" />
             <div className="flex gap-10 items-center animate-marquee hover:[animation-play-state:paused]">
-              {[...(c('logos', 'logos') || []), ...(c('logos', 'logos') || [])].map((logo, i) => (
+              {[...logos, ...logos].map((logo, i) => (
                 <img
                   key={`${logo.name}-${i}`}
                   src={logo.src}
@@ -233,128 +194,159 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. Philosophy — What We Stand For */}
-      <section ref={philosophySectionRef} className="bg-navy-950 text-warm-50 py-28 px-6 lg:px-12">
-        <div className="max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
-              {c('philosophy', 'label')}
-            </p>
-            <h2 className="font-display font-normal leading-[1.3] text-warm-50 mb-10" style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2rem)' }}>
-              {c('philosophy', 'heading')}
-              <em className="text-gold-300 italic">{c('philosophy', 'headingEmphasis')}</em>
-            </h2>
-            <div className="flex flex-col gap-7">
-              {(c('philosophy', 'pillars') || []).map((pillar, i) => (
-                <div key={i} className="border-l-2 border-gold-400/25 pl-5 transition-all duration-400 hover:border-gold-400 hover:translate-x-1.5 cursor-default">
-                  <h3 className="font-display text-[0.92rem] font-medium text-gold-300 tracking-[0.04em] mb-1">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-[0.88rem] leading-[1.75] text-warm-50/70">{pillar.text}</p>
+      {/* 2. Presence Section */}
+      <section className="bg-warm-50 py-28 px-6 lg:px-12 relative overflow-hidden">
+        <div className="absolute top-[10%] -left-[5%] w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(250,110,35,0.04) 0%, transparent 60%)' }} />
+        <div className="absolute bottom-[15%] -right-[5%] w-[450px] h-[450px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.08) 0%, transparent 60%)' }} />
+
+        <div className="max-w-[1000px] mx-auto relative z-[2]">
+          <div className="text-center max-w-[720px] mx-auto mb-20">
+            <ScrollReveal>
+              <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-7">
+                {c('presence', 'label')}
+              </p>
+              <h3 className="sr-only">{c('presence', 'seoHeadline')}</h3>
+              <h2 className="font-display font-normal leading-[1.35] text-navy-950 mb-6" style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)' }}>
+                {c('presence', 'heading')}
+                <em className="text-gold-400 italic">{c('presence', 'headingEmphasis')}</em>
+                {c('presence', 'headingTail')}
+              </h2>
+              <p className="text-[1.02rem] text-navy-950/55 italic leading-[1.7] max-w-[580px] mx-auto">
+                {c('presence', 'sub')}
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="flex flex-col gap-12 lg:gap-10">
+            {presenceCards.map((card, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div
+                  className={`group relative bg-white border border-navy-950/10 p-8 md:p-12 max-w-full lg:max-w-[620px] transition-all duration-500 [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(9,1,52,0.08),0_8px_20px_rgba(250,110,35,0.06)] hover:border-transparent ${
+                    i === 0 ? 'lg:self-start lg:ml-[2%]' : i === 1 ? 'lg:self-end lg:mr-[2%]' : 'lg:self-start lg:ml-[8%]'
+                  }`}
+                >
+                  <span className="absolute top-0 left-0 w-[3px] h-full bg-gold-400 origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)]" />
+                  <div className="absolute top-8 right-10 font-display text-[0.7rem] tracking-[0.2em] text-gold-300 font-medium">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <p className="font-display italic leading-[1.35] text-navy-950 mb-7 pr-12" style={{ fontSize: 'clamp(1.2rem, 2.4vw, 1.6rem)' }}>
+                    <span className="font-display text-[2.8rem] leading-[0] align-[-0.35rem] text-gold-400 mr-1 not-italic opacity-80">&ldquo;</span>
+                    {card.quote}
+                  </p>
+                  <div className="w-[40px] h-px bg-gold-400/40 mb-6" />
+                  <p className="text-[0.92rem] leading-[1.9] text-navy-950/55" dangerouslySetInnerHTML={{ __html: card.body }} />
                 </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Your Leadership Matters */}
+      <section className="bg-white py-28 px-6 lg:px-12">
+        <div className="max-w-[1100px] mx-auto">
+          <ScrollReveal>
+            <div className="text-center max-w-[780px] mx-auto mb-14">
+              <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+                {c('leadershipMatters', 'label')}
+              </p>
+              <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-10" style={{ fontSize: 'clamp(1.8rem, 3.4vw, 2.6rem)' }}>
+                {c('leadershipMatters', 'heading')}
+              </h2>
+              <blockquote className="font-display italic text-navy-950 leading-[1.5] border-t border-b border-navy-950/10 py-8 mb-10" style={{ fontSize: 'clamp(1.05rem, 2vw, 1.3rem)' }}>
+                <span className="font-display text-[2.8rem] leading-[0] align-[-0.35rem] text-gold-400 mr-1 not-italic opacity-80">&ldquo;</span>
+                {c('leadershipMatters', 'quote')}
+              </blockquote>
+              {leadershipBridge.map((p, i) => (
+                <p key={i} className="text-[1.02rem] leading-[1.8] text-navy-950/70 mb-3">{p}</p>
               ))}
             </div>
           </ScrollReveal>
 
-          <ScrollReveal className="flex justify-center items-center" style={{ perspective: '1000px' }}>
-            <div
-              ref={floatRef}
-              className="relative w-full max-w-[480px]"
-              style={{ transformStyle: 'preserve3d', willChange: 'transform', animation: 'floatAnim 6s ease-in-out infinite' }}
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] rounded-full pointer-events-none -z-[1]" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.06) 0%, transparent 70%)', animation: 'glowPulse 4s ease-in-out infinite' }} />
-              <img
-                src={c('philosophy', 'image') || '/images/operating-system.png'}
-                alt="The Leadership Operating System"
-                className="w-full h-auto block transition-[filter] duration-400"
-                style={{ filter: 'drop-shadow(0 20px 50px rgba(240,222,160,0.12))' }}
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* 4. Problem */}
-      <section className="bg-white py-28 px-6">
-        <div className="max-w-[1000px] mx-auto text-center">
-          <ScrollReveal>
-            <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-              {c('problem', 'title')}
-            </h2>
-            <p className="text-[1.08rem] text-navy-950/55 mb-16">{c('problem', 'subtitle')}</p>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-7 mb-14">
-            {(c('problem', 'cards') || []).map((card, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group relative bg-warm-50 p-10 text-left border border-navy-950/10 overflow-hidden transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(9,1,52,0.1),0_4px_12px_rgba(250,110,35,0.08)] hover:border-transparent before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-gold-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-400 group-hover:before:scale-x-100">
-                  <h3 className="font-display text-[0.95rem] font-medium text-navy-950 mb-4">{card.title}</h3>
-                  <p className="text-[0.88rem] leading-[1.75] text-navy-950/55">{card.text}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {leadershipCards.map((card, i) => (
+              <ScrollReveal key={i} delay={i * 0.08}>
+                <div className="group relative bg-warm-50 p-8 md:p-9 h-full border border-navy-950/10 transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(9,1,52,0.1),0_4px_12px_rgba(250,110,35,0.08)] hover:border-transparent">
+                  <span className="absolute top-0 left-0 w-full h-[3px] bg-gold-400 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[400ms]" />
+                  <div className="absolute top-6 right-7 font-display text-[0.7rem] tracking-[0.2em] text-gold-300 font-medium">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <h3 className="font-display text-[1rem] font-medium text-navy-950 leading-[1.35] mb-4 pr-10">
+                    {card.title}
+                  </h3>
+                  <div className="w-[30px] h-px bg-gold-400/40 mb-4" />
+                  <p className="text-[0.9rem] leading-[1.8] text-navy-950/55">{card.text}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
 
           <ScrollReveal>
-            <div className="max-w-[750px] mx-auto p-10 bg-warm-50 border-l-[3px] border-gold-400 text-left">
-              <p className="text-[1rem] leading-[1.85] text-navy-950">
-                <span className="text-gold-400 font-medium">{c('problem', 'closingText') || 'This is fragmentation.'}</span>{' '}
-                {c('problem', 'closingBody') || 'It\u2019s not a skills problem. It\u2019s not a confidence problem. It\u2019s an operating system problem. Your leadership OS was never designed for the pressure you face today. Most coaching works on the surface — techniques, frameworks, tips.'}{' '}
-                <span className="text-gold-400 font-medium">{c('problem', 'closingHighlight') || 'Integration works at the foundation.'}</span>
+            <div className="text-center max-w-[720px] mx-auto">
+              <p className="font-display text-[0.72rem] tracking-[0.25em] uppercase text-gold-400 mb-6">
+                {c('leadershipMatters', 'closingLead')}
               </p>
+              <div className="space-y-4">
+                {leadershipClosing.map((line, i) => (
+                  <p key={i} className="font-display italic text-navy-950 leading-[1.55]" style={{ fontSize: 'clamp(0.98rem, 1.8vw, 1.15rem)' }}>
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 5. Five Layers — Sticky Stacking Cards */}
-      <section className="bg-navy-950 text-warm-50 py-28 pb-40 px-6 relative">
-        <div className="max-w-[900px] mx-auto">
+      {/* 4. What Leaders Say — Carousel */}
+      <section className="bg-navy-950 text-warm-50 py-28 px-6 relative overflow-hidden">
+        <div className="absolute -top-1/2 -right-[20%] w-[600px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.04) 0%, transparent 70%)' }} />
+        <div className="max-w-[1200px] mx-auto relative z-[2]">
           <ScrollReveal>
-            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
-              {c('fiveLayers', 'title')}
+            <p className="font-display text-[0.68rem] tracking-[0.28em] uppercase text-gold-300 text-center mb-4 leading-[1.7]">
+              {c('testimonials', 'statStrip')}
             </p>
             <h2 className="font-display font-normal text-center text-warm-50 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-              {c('fiveLayers', 'title')}
+              {c('testimonials', 'title')}
             </h2>
-            <p className="text-[0.95rem] text-center text-warm-50/70 max-w-[600px] mx-auto mb-16">
-              {c('fiveLayers', 'subtitle')}
+            <p className="text-[0.95rem] text-center text-warm-50/70 mb-16 max-w-[600px] mx-auto">
+              {c('testimonials', 'subtitle')}
             </p>
           </ScrollReveal>
 
-          <div className="relative">
-            {layers.map((layer, i) => (
-              <ScrollReveal key={layer.id} delay={i * 0.05}>
-                <div
-                  className="lg:sticky relative bg-[#203460] border border-gold-300/10 p-8 lg:p-10 mb-6 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-8 items-start transition-all duration-400 hover:border-gold-400/30 hover:shadow-[0_8px_30px_rgba(240,222,160,0.06)]"
-                  style={{ top: `${stickyTops[i]}px`, zIndex: stickyZ[i] }}
-                >
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-navy-950/40">
-                    {layerIconMap[layer.icon] ? (
-                      <img src={layerIconMap[layer.icon]} alt={layer.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <span className="text-xl">✦</span>
-                    )}
-                  </div>
-                  <div>
-                    <div className="font-display text-[1rem] font-medium text-gold-300 mb-0.5">{layer.name}</div>
-                    <div className="text-[0.88rem] text-gold-400 italic mb-3">{layer.sanskrit}</div>
-                    <div className="text-[0.88rem] leading-[1.75] text-warm-50/70 mb-3">{layer.description}</div>
-                    <div className="flex flex-wrap gap-8">
-                      <div className="text-[0.88rem] leading-[1.6]">
-                        <span className="font-medium block mb-0.5 text-[#e87461]">Fragmented:</span>
-                        <span className="text-warm-50/70">{layer.fragmented}</span>
-                      </div>
-                      <div className="text-[0.88rem] leading-[1.6]">
-                        <span className="font-medium block mb-0.5 text-[#7ec49d]">Integrated:</span>
-                        <span className="text-warm-50/70">{layer.integrated}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
+          <ScrollReveal>
+            <TestimonialCarousel items={testimonials} />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 5. About TLT */}
+      <section className="bg-white py-28 px-6">
+        <div className="max-w-[780px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
+              {c('aboutTlt', 'label')}
+            </p>
+            <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-10" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
+              {c('aboutTlt', 'title')}
+            </h2>
+
+            {aboutParagraphs.map((p, i) => (
+              <p key={i} className="text-[0.98rem] leading-[1.9] text-navy-950/70 mb-6 text-left">{p}</p>
             ))}
-          </div>
+
+            <div className="font-display text-gold-400 my-10 leading-[1.7] py-8 border-t border-b border-navy-950/10" style={{ fontSize: 'clamp(0.88rem, 1.5vw, 1rem)' }}>
+              {c('aboutTlt', 'credentials')}
+            </div>
+
+            <p className="text-[0.95rem] leading-[1.8] text-navy-950/65 mb-8 italic">
+              {c('aboutTlt', 'hook')}
+            </p>
+
+            <Link to="/about" className="font-display text-[0.78rem] tracking-[0.1em] uppercase text-gold-400 hover:tracking-[0.16em] transition-all duration-300">
+              {c('aboutTlt', 'linkText')} →
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -365,7 +357,7 @@ export default function Home() {
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('services', 'label')}
             </p>
-            <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
+            <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-4" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}>
               {c('services', 'title')}
             </h2>
             <p className="text-[1rem] text-navy-950/55 mb-16">{c('services', 'subtitle')}</p>
@@ -374,7 +366,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {services.map((service, i) => (
               <ScrollReveal key={service.id} delay={i * 0.1}>
-                <div className="group relative bg-white p-10 text-left border border-navy-950/10 overflow-hidden transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_15px_45px_rgba(9,1,52,0.1),0_5px_15px_rgba(250,110,35,0.08)] hover:border-transparent before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[3px] before:bg-gold-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-400 group-hover:before:scale-x-100">
+                <div className="group relative bg-white p-10 text-left border border-navy-950/10 overflow-hidden h-full transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-2 hover:shadow-[0_15px_45px_rgba(9,1,52,0.1),0_5px_15px_rgba(250,110,35,0.08)] hover:border-transparent before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[3px] before:bg-gold-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-400 group-hover:before:scale-x-100">
                   {programIconMap[service.id] && (
                     <img src={programIconMap[service.id]} alt="" className="w-14 h-14 object-contain mb-4" />
                   )}
@@ -392,81 +384,23 @@ export default function Home() {
           </div>
 
           <ScrollReveal>
-            <Link to="/services" className="font-display text-[0.7rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300">
+            <Link to="/services" className="font-display text-[0.7rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 block mb-6">
               {c('services', 'linkText')} →
             </Link>
+            <p className="text-[0.92rem] text-navy-950/60 italic max-w-[520px] mx-auto">
+              {c('services', 'clarityPrompt')}{' '}
+              <a href="#final-cta" className="text-gold-400 not-italic font-medium hover:text-[#e05e15] transition-colors duration-300 underline-offset-4 hover:underline">
+                Book a clarity call →
+              </a>
+            </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 7. Testimonials */}
-      <section className="bg-navy-950 text-warm-50 py-28 px-6 relative overflow-hidden">
-        <div className="absolute -top-1/2 -right-[20%] w-[600px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.04) 0%, transparent 70%)' }} />
-        <div className="max-w-[1100px] mx-auto relative z-[2]">
-          <ScrollReveal>
-            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 text-center mb-6">
-              {c('testimonials', 'title')}
-            </p>
-            <h2 className="font-display font-normal text-center text-warm-50 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-              {c('testimonials', 'title')}
-            </h2>
-            <p className="text-[0.92rem] text-center text-warm-50/70 mb-16">{c('testimonials', 'subtitle')}</p>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-7">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.id || i} delay={i * 0.1}>
-                <div className="bg-[rgba(32,52,96,0.5)] border border-gold-300/[0.08] p-10 relative transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-1.5 hover:border-gold-400/25 hover:shadow-[0_15px_40px_rgba(0,0,0,0.2),0_0_30px_rgba(240,222,160,0.04)]">
-                  <div className="font-display text-[3.5rem] text-gold-300/15 leading-none mb-2 select-none">&ldquo;</div>
-                  <p className="text-[0.88rem] leading-[1.85] text-warm-50/80 italic mb-6">{t.quote}</p>
-                  <div className="w-[30px] h-px bg-gold-400 mb-4" />
-                  <div className="font-display text-[0.88rem] font-medium text-gold-300 mb-0.5">{t.author}</div>
-                  <div className="text-[0.75rem] text-warm-50/70">{t.company}</div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. About TLT */}
-      <section className="bg-white py-28 px-6">
-        <div className="max-w-[750px] mx-auto text-center">
-          <ScrollReveal>
-            <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
-              {c('aboutTlt', 'label')}
-            </p>
-            <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-2" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
-              {c('aboutTlt', 'title')}
-            </h2>
-            <p className="text-[0.95rem] text-navy-950/55 italic mb-10">{c('aboutTlt', 'subtitle')}</p>
-
-            {(c('aboutTlt', 'paragraphs') || []).map((p, i) => (
-              <p key={i} className="text-[0.95rem] leading-[1.9] text-navy-950/55 mb-5 text-left">{p}</p>
-            ))}
-
-            <div className="font-display italic text-gold-400 my-10 leading-[1.55] font-normal text-center py-8 border-t border-b border-navy-950/10" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
-              {c('aboutTlt', 'quote')}
-            </div>
-
-            <p className="text-[0.88rem] leading-[1.7] text-navy-950/60 mt-2 mb-8">
-              <span className="font-display font-medium text-navy-950">Gowtham Balaji</span>
-              <span className="text-gold-400">, Leadership Coach</span>
-              <span className="text-navy-950/40"> — </span>
-              120+ Senior Leaders Coached 1-to-1 &middot; 10,000+ Leaders Trained &middot; 7+ Years of Practice &middot; 6 Years Off-Grid Ongoing Study
-            </p>
-
-            <Link to="/about" className="font-display text-[0.78rem] tracking-[0.1em] uppercase text-gold-400 hover:tracking-[0.16em] transition-all duration-300">
-              {c('aboutTlt', 'linkText')} →
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* 9. Assessment */}
-      <section className="bg-warm-50 py-20 px-6">
+      {/* 7. Assessment */}
+      <section className="bg-white py-20 px-6">
         <ScrollReveal>
-          <div className="max-w-[700px] mx-auto text-center bg-white border border-navy-950/10 p-14 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(9,1,52,0.08)] hover:border-transparent">
+          <div className="max-w-[700px] mx-auto text-center bg-warm-50 border border-navy-950/10 p-14 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(9,1,52,0.08)] hover:border-transparent">
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('assessment', 'badge')}
             </p>
@@ -485,14 +419,16 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* 10. Final CTA */}
-      <CTASection
-        heading={c('cta', 'heading')}
-        subtext={c('cta', 'subtext')}
-        buttonText={c('cta', 'buttonText')}
-        buttonTo="/contact"
-        dark
-      />
+      {/* 8. Final CTA */}
+      <div id="final-cta" className="scroll-mt-24">
+        <CTASection
+          heading={c('cta', 'heading')}
+          subtext={c('cta', 'subtext')}
+          buttonText={c('cta', 'buttonText')}
+          buttonTo="/contact"
+          dark
+        />
+      </div>
     </>
   )
 }

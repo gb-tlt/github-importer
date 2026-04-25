@@ -5,6 +5,7 @@ export const testimonials = [
     author: 'CEO',
     company: 'SaaS Company (Series B)',
     program: 'one-on-one',
+    type: 'quote',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const testimonials = [
     author: 'Founder',
     company: 'HealthTech Startup',
     program: 'one-on-one',
+    type: 'quote',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const testimonials = [
     author: 'VP Engineering',
     company: 'Global Tech Company',
     program: 'fit-cohort',
+    type: 'quote',
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const testimonials = [
     author: 'Director of Strategy',
     company: 'Healthcare Startup',
     program: 'fit-cohort',
+    type: 'quote',
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const testimonials = [
     author: 'VP Product',
     company: 'B2B SaaS',
     program: 'life-coaching',
+    type: 'quote',
   },
   {
     id: 6,
@@ -40,5 +45,6 @@ export const testimonials = [
     author: 'VP Operations',
     company: 'Global Consulting Firm',
     program: 'one-on-one',
+    type: 'quote',
   },
 ]

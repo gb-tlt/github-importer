@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Home, User, Briefcase, Users, Crown, Heart, BookOpen, Phone, Globe, Database } from 'lucide-react'
+import { Home, User, Briefcase, Users, Crown, Heart, BookOpen, Phone, Globe, Database, Compass } from 'lucide-react'
 
 const pages = [
-  { to: '/admin/home', icon: Home, label: 'Home Page', desc: 'Hero, problem statement, five layers, programs, testimonials, lead magnet, CTA' },
-  { to: '/admin/about', icon: User, label: 'About Page', desc: 'Story, credentials, philosophy, differentiation, personal touch' },
+  { to: '/admin/home', icon: Home, label: 'Home Page', desc: 'Hero, presence section, leadership matters, programs, testimonials, lead magnet, CTA' },
+  { to: '/admin/about', icon: User, label: 'About Page', desc: 'Hero, founder story, three depths of work, credentials, lineage' },
+  { to: '/admin/the-work', icon: Compass, label: 'The Work Page', desc: '6-arc explanation: challenge, root cause, reframe, solution, promise, principles, audit CTA' },
   { to: '/admin/services', icon: Briefcase, label: 'Services Page', desc: 'Program cards, comparison table, decision framework' },
   { to: '/admin/fit-cohort', icon: Users, label: 'FIT Cohort', desc: 'Hero, pricing, timeline, features, inclusions, investment' },
   { to: '/admin/one-on-one', icon: Crown, label: 'One-on-One', desc: 'Hero, pricing, session phases, modalities, inclusions' },

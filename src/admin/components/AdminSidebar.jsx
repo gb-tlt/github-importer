@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { Home, User, Briefcase, Users, Crown, Heart, BookOpen, Phone, Globe, Database, LogOut } from 'lucide-react'
+import { Home, User, Briefcase, Users, Crown, Heart, BookOpen, Phone, Globe, Database, LogOut, Compass } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
 const navItems = [
   { to: '/admin', icon: Home, label: 'Dashboard', end: true },
   { to: '/admin/home', icon: Home, label: 'Home Page' },
   { to: '/admin/about', icon: User, label: 'About Page' },
+  { to: '/admin/the-work', icon: Compass, label: 'The Work Page' },
   { to: '/admin/services', icon: Briefcase, label: 'Services Page' },
   { to: '/admin/fit-cohort', icon: Users, label: 'FIT Cohort' },
   { to: '/admin/one-on-one', icon: Crown, label: 'One-on-One' },

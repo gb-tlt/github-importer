@@ -1,5 +1,6 @@
 export { homeSchema } from './home'
 export { aboutSchema } from './about'
+export { theWorkSchema } from './theWork'
 export { servicesSchema } from './services'
 export { fitCohortSchema } from './fitCohort'
 export { oneOnOneSchema } from './oneOnOne'
@@ -12,6 +13,7 @@ export { collectionsSchema } from './collections'
 export const pageSchemas = {
   home: () => import('./home').then((m) => m.homeSchema),
   about: () => import('./about').then((m) => m.aboutSchema),
+  theWork: () => import('./theWork').then((m) => m.theWorkSchema),
   services: () => import('./services').then((m) => m.servicesSchema),
   fitCohort: () => import('./fitCohort').then((m) => m.fitCohortSchema),
   oneOnOne: () => import('./oneOnOne').then((m) => m.oneOnOneSchema),

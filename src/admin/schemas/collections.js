@@ -21,10 +21,13 @@ export const collectionsSchema = {
     label: 'Testimonials',
     fields: [
       { key: 'id', label: 'ID', type: 'text' },
+      { key: 'type', label: 'Type (quote | video)', type: 'text', placeholder: 'quote' },
       { key: 'quote', label: 'Quote', type: 'textarea' },
       { key: 'author', label: 'Author / Title', type: 'text' },
       { key: 'company', label: 'Company', type: 'text' },
       { key: 'program', label: 'Program (fit-cohort, one-on-one, life-coaching)', type: 'text' },
+      { key: 'videoUrl', label: 'Video URL (only if type = video)', type: 'text' },
+      { key: 'poster', label: 'Video Poster Image (only if type = video)', type: 'image', path: 'images/testimonials' },
     ],
   },
   faq: {

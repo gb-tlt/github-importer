@@ -3,16 +3,15 @@ export const homeSchema = {
     label: 'Hero Section',
     fields: [
       { key: 'badge', label: 'Badge Text', type: 'text' },
-      { key: 'headline', label: 'Headline (before gold text)', type: 'text' },
-      { key: 'headlineGold', label: 'Headline Gold Text', type: 'text' },
+      { key: 'headline', label: 'Headline', type: 'text' },
+      { key: 'headlineGold', label: 'Headline Gold Text (optional)', type: 'text' },
       { key: 'subtext', label: 'Subtext', type: 'textarea' },
       { key: 'ctaPrimary', label: 'Primary CTA Text', type: 'text' },
       { key: 'ctaSecondary', label: 'Secondary CTA Text', type: 'text' },
-      { key: 'heroImage', label: 'Hero Image', type: 'image', path: 'images/hero' },
     ],
   },
   logos: {
-    label: 'Logos Strip',
+    label: 'Logos Strip (inside Hero)',
     fields: [
       { key: 'label', label: 'Label Text', type: 'text' },
       { key: 'logos', label: 'Company Logos', type: 'objectArray', fields: [
@@ -21,64 +20,62 @@ export const homeSchema = {
       ]},
     ],
   },
-  philosophy: {
-    label: 'Philosophy Section',
+  presence: {
+    label: 'Presence Section',
     fields: [
-      { key: 'label', label: 'Section Label', type: 'text' },
+      { key: 'label', label: 'Eyebrow Label', type: 'text' },
       { key: 'heading', label: 'Heading (before emphasis)', type: 'text' },
-      { key: 'headingEmphasis', label: 'Heading Emphasis (italic gold)', type: 'text' },
-      { key: 'pillars', label: 'Pillars', type: 'objectArray', fields: [
-        { key: 'title', label: 'Pillar Title', type: 'text' },
-        { key: 'text', label: 'Pillar Text', type: 'textarea' },
+      { key: 'headingEmphasis', label: 'Heading Emphasis (italic orange)', type: 'text' },
+      { key: 'headingTail', label: 'Heading Tail (after emphasis)', type: 'text' },
+      { key: 'sub', label: 'Sub-headline', type: 'textarea' },
+      { key: 'seoHeadline', label: 'SEO Headline (hidden h3)', type: 'text' },
+      { key: 'cards', label: 'Presence Cards', type: 'objectArray', fields: [
+        { key: 'quote', label: 'Quote', type: 'text' },
+        { key: 'body', label: 'Body (HTML allowed for <strong>)', type: 'textarea' },
       ]},
-      { key: 'image', label: 'Philosophy Image', type: 'image', path: 'images/philosophy' },
     ],
   },
-  problem: {
-    label: 'Problem Statement',
+  leadershipMatters: {
+    label: 'Your Leadership Matters Section',
     fields: [
-      { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'subtitle', label: 'Section Subtitle', type: 'text' },
-      { key: 'cards', label: 'Problem Cards', type: 'objectArray', fields: [
+      { key: 'label', label: 'Eyebrow Label', type: 'text' },
+      { key: 'heading', label: 'Section Heading', type: 'text' },
+      { key: 'quote', label: 'Quote', type: 'textarea' },
+      { key: 'bridge', label: 'Bridge Paragraphs', type: 'array' },
+      { key: 'cards', label: 'Path Cards (01-05)', type: 'objectArray', fields: [
         { key: 'title', label: 'Card Title', type: 'text' },
         { key: 'text', label: 'Card Text', type: 'textarea' },
       ]},
-      { key: 'closingText', label: 'Closing Highlight (start)', type: 'text' },
-      { key: 'closingBody', label: 'Closing Body Text', type: 'textarea' },
-      { key: 'closingHighlight', label: 'Closing Highlight (end)', type: 'text' },
-    ],
-  },
-  fiveLayers: {
-    label: 'Five Layers Section',
-    fields: [
-      { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'subtitle', label: 'Section Subtitle', type: 'textarea' },
+      { key: 'closingLead', label: 'Closing Lead-in', type: 'text' },
+      { key: 'closingLines', label: 'Closing Lines', type: 'array' },
     ],
   },
   services: {
     label: 'Services Section',
     fields: [
-      { key: 'label', label: 'Section Label', type: 'text' },
-      { key: 'title', label: 'Section Title', type: 'text' },
+      { key: 'label', label: 'Eyebrow Label', type: 'text' },
+      { key: 'title', label: 'Section Title (SEO headline)', type: 'text' },
       { key: 'subtitle', label: 'Section Subtitle', type: 'text' },
       { key: 'linkText', label: 'Compare Link Text', type: 'text' },
+      { key: 'clarityPrompt', label: 'Clarity-call Helper Line', type: 'textarea' },
     ],
   },
   testimonials: {
     label: 'Testimonials Section',
     fields: [
+      { key: 'statStrip', label: 'Stat Strip (above heading)', type: 'textarea' },
       { key: 'title', label: 'Section Title', type: 'text' },
-      { key: 'subtitle', label: 'Section Subtitle', type: 'text' },
+      { key: 'subtitle', label: 'Section Subtitle', type: 'textarea' },
     ],
   },
   aboutTlt: {
     label: 'About TLT Section',
     fields: [
-      { key: 'label', label: 'Section Label', type: 'text' },
+      { key: 'label', label: 'Eyebrow Label', type: 'text' },
       { key: 'title', label: 'Title', type: 'text' },
-      { key: 'subtitle', label: 'Subtitle (italic)', type: 'text' },
       { key: 'paragraphs', label: 'Body Paragraphs', type: 'array' },
-      { key: 'quote', label: 'Quote', type: 'textarea' },
+      { key: 'credentials', label: 'Credentials Line', type: 'textarea' },
+      { key: 'hook', label: 'Hook Line (italic)', type: 'textarea' },
       { key: 'linkText', label: 'Link Text', type: 'text' },
     ],
   },

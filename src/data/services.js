@@ -10,7 +10,7 @@ export const services = [
     format: 'Group (5-8 leaders)',
     bestFor: 'Directors, VPs, Senior Managers',
     keyBenefit: 'Peer learning + community',
-    description: 'Group-based transformation with 5-8 senior leaders. 1-8-1 structure: Opening retreat, 8 intensive training weeks, Closing integration retreat. Peer learning, accountability, and community support.',
+    description: 'Group-based transformation with 5-8 senior leaders. 1-8-1 structure: opening intensive, 8 deep-end training weeks, closing intensive. Peer learning, accountability, and community support. For VPs, Directors, senior leaders and entrepreneurs.',
     features: [
       '10-week intensive program (1-8-1 structure)',
       'Opening retreat (Week 1) + Closing retreat (Week 10)',
@@ -33,7 +33,7 @@ export const services = [
     format: 'Premium 1-to-1',
     bestFor: 'CXOs, Founders (30L+)',
     keyBenefit: 'Maximum depth, holistic transformation',
-    description: 'Deep, bespoke transformation work. For CXOs, Founders, VPs with complex challenges. 16 personalized sessions covering physiology, emotional healing, purpose discovery, and spiritual alignment.',
+    description: 'Deep, bespoke transformation work. For CXOs, founders, and senior leaders with complex challenges. 16 personalised sessions covering physiology, emotional healing, purpose discovery, spiritual alignment and authentic leadership.',
     features: [
       '16 personalized sessions (60-120 min each)',
       'Physiology assessment & blood work (if needed)',
@@ -57,7 +57,7 @@ export const services = [
     format: 'Custom 1-to-1',
     bestFor: 'Leaders seeking life alignment',
     keyBenefit: 'Life realignment + meaning',
-    description: 'Whole-life alignment for leaders at inflection points. When leadership feels hollow and you need to realign work with values and meaning. Custom duration and format.',
+    description: 'Whole-life alignment for leaders at inflection points. When leadership feels hollow and you need to realign work with authenticity, values and meaning. Custom duration and format.',
     features: [
       'Custom duration (typically 4 months)',
       'Values clarification & purpose discovery',

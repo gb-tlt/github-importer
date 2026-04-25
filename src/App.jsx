@@ -5,6 +5,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
+import TheWork from './pages/TheWork'
 import Services from './pages/Services'
 import FitCohort from './pages/FitCohort'
 import OneOnOne from './pages/OneOnOne'
@@ -22,6 +23,7 @@ const CollectionEditor = lazy(() => import('./admin/editors/CollectionEditor'))
 const adminPages = [
   { path: 'home', title: 'Home Page', schemaImport: () => import('./admin/schemas/home').then(m => m.homeSchema) },
   { path: 'about', title: 'About Page', schemaImport: () => import('./admin/schemas/about').then(m => m.aboutSchema) },
+  { path: 'the-work', title: 'The Work Page', schemaImport: () => import('./admin/schemas/theWork').then(m => m.theWorkSchema) },
   { path: 'services', title: 'Services Page', schemaImport: () => import('./admin/schemas/services').then(m => m.servicesSchema) },
   { path: 'fit-cohort', title: 'FIT Cohort', schemaImport: () => import('./admin/schemas/fitCohort').then(m => m.fitCohortSchema) },
   { path: 'one-on-one', title: 'One-on-One', schemaImport: () => import('./admin/schemas/oneOnOne').then(m => m.oneOnOneSchema) },
@@ -49,6 +51,7 @@ function App() {
               <Route element={<Layout />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/the-work" element={<TheWork />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/services/fit-cohort" element={<FitCohort />} />
                 <Route path="/services/one-on-one" element={<OneOnOne />} />
@@ -63,7 +66,7 @@ function App() {
                   <Route
                     key={path}
                     path={path}
-                    element={<LazyPageEditor pageName={path === 'fit-cohort' ? 'fitCohort' : path === 'one-on-one' ? 'oneOnOne' : path === 'life-coaching' ? 'lifeCoaching' : path} title={title} schemaImport={schemaImport} />}
+                    element={<LazyPageEditor pageName={path === 'fit-cohort' ? 'fitCohort' : path === 'one-on-one' ? 'oneOnOne' : path === 'life-coaching' ? 'lifeCoaching' : path === 'the-work' ? 'theWork' : path} title={title} schemaImport={schemaImport} />}
                   />
                 ))}
                 <Route path="collections" element={<CollectionEditor />} />
