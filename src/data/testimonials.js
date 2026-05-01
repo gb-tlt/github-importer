@@ -17,7 +17,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    quote: "I had tried individual coaching before but it didn't stick. FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
+    quote: "I had tried individual coaching before but it didn't stick. F.I.T. was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
     author: 'VP Engineering',
     company: 'Global Tech Company',
     program: 'fit-cohort',
@@ -25,7 +25,7 @@ export const testimonials = [
   },
   {
     id: 4,
-    quote: "The opening retreat was where everything clicked. Gowtham mapped my exact fragmentation pattern\u2014I freeze under scrutiny and over-explain later. We practiced this in simulations throughout the cohort. By Week 10, pressure no longer made me freeze. It made me sharper.",
+    quote: "The opening intensive was where everything clicked. Gowtham mapped my exact fragmentation pattern\u2014I freeze under scrutiny and over-explain later. We practiced this in simulations throughout the cohort. By Week 10, pressure no longer made me freeze. It made me sharper.",
     author: 'Director of Strategy',
     company: 'Healthcare Startup',
     program: 'fit-cohort',

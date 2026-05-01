@@ -238,7 +238,7 @@ const content = {
     },
   },
   contact: {
-    hero: { badge: 'Contact', title: "Let's Have a Conversation", subtitle: "Whether you're curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I'm here." },
+    hero: { badge: 'Contact', title: "Let's Have a Conversation", subtitle: "Whether you're curious about F.I.T. Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I'm here." },
     form: { title: 'Book a Clarity Call', subtitle: '45 minutes to understand your challenges, explore fit, and answer your questions. No obligation.', submitText: 'Request Clarity Call' },
     sidebar: { email: 'connect@theleadershiptattva.com', responseTime: 'Within 24-48 hours', linkedinUrl: 'https://www.linkedin.com/in/gbcoach/', instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/', youtubeUrl: 'https://www.youtube.com/@gbcoach' },
     confidentiality: { title: 'Confidentiality', text: 'All conversations are strictly confidential. Your information is never shared.' },
@@ -255,12 +255,12 @@ const content = {
       title: "You've Tried Leadership Development. It Didn't Stick.",
       paragraphs: [
         "You've done the workshops. Read the books. Hired the coaches. And in calm moments, it all made sense. <strong>But under real pressure — the board room, the crisis call, the high-stakes conversation — everything reverted.</strong>",
-        "The problem was never the training. The problem was the layer it was working on. Skills installed on a fragmented operating system crash the moment pressure hits. FIT works at the operating system level.",
+        "The problem was never the training. The problem was the layer it was working on. Skills installed on a fragmented operating system crash the moment pressure hits. F.I.T. works at the operating system level.",
       ],
     },
     outcomes: {
       label: 'What You Walk Away With',
-      title: 'What FIT Produces in You',
+      title: 'What F.I.T. Produces in You',
       subtitle: 'Three structural shifts and the daily foundation that sustains them.',
       groups: [
         {
@@ -270,13 +270,13 @@ const content = {
               number: '01',
               title: 'Earn the Right — From Within',
               subtitle: 'Stop questioning whether you belong in the room.',
-              content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. FIT closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours — not because someone gave it to you, but because you claimed it from the inside out.</p>",
+              content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. F.I.T. closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours — not because someone gave it to you, but because you claimed it from the inside out.</p>",
             },
             {
               number: '02',
               title: 'Know Your Leadership Location',
               subtitle: 'See the full map of who you serve, what they need, and what you need.',
-              content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong> — the full ecosystem of demands, relationships, and stakes around them.</p><p>After FIT, you'll know:</p><ul><li>Who you're truly serving — and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake — and how to address it directly</li><li>What you need from your team — and how to ask for it clearly</li><li>Where your real role lies — beyond the job description</li></ul>",
+              content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong> — the full ecosystem of demands, relationships, and stakes around them.</p><p>After F.I.T., you'll know:</p><ul><li>Who you're truly serving — and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake — and how to address it directly</li><li>What you need from your team — and how to ask for it clearly</li><li>Where your real role lies — beyond the job description</li></ul>",
             },
             {
               number: '03',
@@ -293,19 +293,19 @@ const content = {
               number: '—',
               title: 'Your Inner Voices — Recognised and Redirected',
               subtitle: 'The internal narratives that run your decisions, made visible.',
-              content: "<p>Every leader has inner voices — the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In FIT, you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
+              content: "<p>Every leader has inner voices — the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In F.I.T., you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
             },
             {
               number: '—',
               title: "Your Body — What Works for It, What Doesn't",
               subtitle: 'Somatic intelligence that keeps you grounded under pressure.',
-              content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>FIT teaches you to read your body's signals and regulate in real-time — in 10 to 30 seconds, invisible to the room.</strong></p>",
+              content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>F.I.T. teaches you to read your body's signals and regulate in real-time — in 10 to 30 seconds, invisible to the room.</strong></p>",
             },
             {
               number: '—',
               title: 'Your Day — Designed, Not Improvised',
               subtitle: 'Energy cycles, office demands, and home needs — aligned into one rhythm.',
-              content: "<p>Most leaders let their calendar design their day. FIT flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong> — so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
+              content: "<p>Most leaders let their calendar design their day. F.I.T. flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong> — so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
             },
           ],
         },
@@ -313,7 +313,7 @@ const content = {
     },
     journey: {
       label: 'The Full Arc',
-      title: 'Your Journey Through FIT',
+      title: 'Your Journey Through F.I.T.',
       subtitle: 'From first conversation to confirmed transformation.',
       phases: [
         {
@@ -355,8 +355,8 @@ const content = {
     },
     who: {
       label: 'Is This For You?',
-      title: 'Is FIT Right for You?',
-      intro: 'FIT is for CXOs, founders, VPs, and directors earning ₹30L+ who:',
+      title: 'Is F.I.T. Right for You?',
+      intro: 'F.I.T. is for CXOs, founders, VPs, and directors earning ₹30L+ who:',
       items: [
         'Have succeeded through talent but recognise their inconsistency under pressure',
         'Have tried leadership development before and found it didn\'t stick when stakes rose',
@@ -366,11 +366,11 @@ const content = {
       ],
     },
     testimonials: {
-      label: 'From FIT Graduates',
-      title: 'What FIT Graduates Say',
+      label: 'From F.I.T. Graduates',
+      title: 'What F.I.T. Graduates Say',
       items: [
         {
-          text: "I had tried individual coaching before but it didn't stick. FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
+          text: "I had tried individual coaching before but it didn't stick. F.I.T. was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.",
           role: 'VP Engineering',
           company: 'Global Tech Company',
         },
@@ -389,7 +389,7 @@ const content = {
     },
     cta: {
       heading: 'Applications for the Next Cohort Are Open',
-      body: "It starts with a clarity call — a 30-minute conversation to understand your pattern and see if FIT is the right path.",
+      body: "It starts with a clarity call — a 30-minute conversation to understand your pattern and see if F.I.T. is the right path.",
       buttonText: 'Apply Now',
     },
   },
@@ -400,7 +400,7 @@ const content = {
 const collections = {
   services: {
     items: [
-      { id: 'fit-cohort', title: 'FIT Leadership Cohort', tagline: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure', badge: 'START HERE', badgeColor: 'primary', price: '1-1.5L + GST', duration: '10 weeks (1-8-1 structure)', format: 'Group (5-8 leaders)', bestFor: 'Directors, VPs, Senior Managers', keyBenefit: 'Peer learning + community', description: 'Group-based transformation with 5-8 senior leaders. 1-8-1 structure: Opening retreat, 8 intensive training weeks, Closing integration retreat. Peer learning, accountability, and community support.', features: ['10-week intensive program (1-8-1 structure)', 'Opening retreat (Week 1) + Closing retreat (Week 10)', '8 weekly group sessions (75-90 min each)', 'Triad accountability (groups of 3)', '1 personal session with Gowtham', 'Peer learning and mirrors', 'Lifetime community access'], link: '/services/fit-cohort' },
+      { id: 'fit-cohort', title: 'F.I.T. Leadership Cohort', tagline: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure', badge: 'START HERE', badgeColor: 'primary', price: '1-1.5L + GST', duration: '10 weeks (1-8-1 structure)', format: 'Group (5-8 leaders)', bestFor: 'Directors, VPs, Senior Managers', keyBenefit: 'Peer learning + community', description: 'Group-based transformation with 5-8 senior leaders. 1-8-1 structure: Opening intensive, 8 deep-end training weeks, Closing integration intensive. Peer learning, accountability, and community support.', features: ['10-week intensive program (1-8-1 structure)', 'Opening intensive (Week 1) + Closing intensive (Week 10)', '8 weekly group sessions (75-90 min each)', 'Triad accountability (groups of 3)', '1 personal session with Gowtham', 'Peer learning and mirrors', 'Lifetime community access'], link: '/services/fit-cohort' },
       { id: 'one-on-one', title: 'One-on-One Leadership Coaching', tagline: 'Deep, Bespoke Transformation for CXOs & Senior Leaders with Complex Challenges', badge: 'PREMIUM', badgeColor: 'gold', price: '8L + GST', duration: '4 months | 16 sessions', format: 'Premium 1-to-1', bestFor: 'CXOs, Founders (30L+)', keyBenefit: 'Maximum depth, holistic transformation', description: 'Deep, bespoke transformation work. For CXOs, Founders, VPs with complex challenges. 16 personalized sessions covering physiology, emotional healing, purpose discovery, and spiritual alignment.', features: ['16 personalized sessions (60-120 min each)', 'Physiology assessment & blood work (if needed)', 'Emotional healing & trauma work', 'Purpose discovery & alignment', 'WhatsApp access between sessions', 'Optional Tiruvannamalai retreat', 'Post-program 3-month check-in', 'Alumni community access'], link: '/services/one-on-one' },
       { id: 'life-coaching', title: 'Life Coaching', tagline: 'When Leadership Feels Hollow and You Need to Realign Work with Life, Values, and Meaning', badge: 'HOLISTIC', badgeColor: 'primary', price: '4-8L + GST', duration: 'Custom (typically 4 months)', format: 'Custom 1-to-1', bestFor: 'Leaders seeking life alignment', keyBenefit: 'Life realignment + meaning', description: 'Whole-life alignment for leaders at inflection points. When leadership feels hollow and you need to realign work with values and meaning. Custom duration and format.', features: ['Custom duration (typically 4 months)', 'Values clarification & purpose discovery', 'Relationship and life rhythm design', 'Existential exploration & meaning-making', 'Life-leadership integration', 'Flexible scheduling'], link: '/services/life-coaching' },
     ],
@@ -409,8 +409,8 @@ const collections = {
     items: [
       { id: 1, quote: "I had all the answers but kept getting triggered in high-stakes conversations. Gowtham didn\u2019t just coach me on communication\u2014he addressed the underlying fragmentation at the body, emotional, and spiritual levels. Now I handle board challenges without collapsing internally. This changed how I show up as a CEO.", author: 'CEO', company: 'SaaS Company (Series B)', program: 'one-on-one' },
       { id: 2, quote: "Worth every rupee. The physiology work alone was game-changing\u2014turns out my fragmentation was connected to sleep deprivation and hormone imbalance. We addressed it holistically: body, energy, purpose, values. The WhatsApp access was invaluable during a board crisis. I've had 5 executive coaches before. This was different.", author: 'Founder', company: 'HealthTech Startup', program: 'one-on-one' },
-      { id: 3, quote: "I had tried individual coaching before but it didn't stick. FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.", author: 'VP Engineering', company: 'Global Tech Company', program: 'fit-cohort' },
-      { id: 4, quote: "The opening retreat was where everything clicked. Gowtham mapped my exact fragmentation pattern\u2014I freeze under scrutiny and over-explain later. We practiced this in simulations throughout the cohort. By Week 10, pressure no longer made me freeze. It made me sharper.", author: 'Director of Strategy', company: 'Healthcare Startup', program: 'fit-cohort' },
+      { id: 3, quote: "I had tried individual coaching before but it didn't stick. F.I.T. was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. The triad accountability kept me practicing between sessions. 10 weeks later, I handle board pressure completely differently.", author: 'VP Engineering', company: 'Global Tech Company', program: 'fit-cohort' },
+      { id: 4, quote: "The opening intensive was where everything clicked. Gowtham mapped my exact fragmentation pattern\u2014I freeze under scrutiny and over-explain later. We practiced this in simulations throughout the cohort. By Week 10, pressure no longer made me freeze. It made me sharper.", author: 'Director of Strategy', company: 'Healthcare Startup', program: 'fit-cohort' },
       { id: 5, quote: "I was a 'successful' VP but my marriage was falling apart and I felt dead inside. Life coaching helped me see I had optimized for the wrong things. We redesigned everything: my role, my schedule, my relationship with my wife, my values. 6 months later, I'm alive again.", author: 'VP Product', company: 'B2B SaaS', program: 'life-coaching' },
       { id: 6, quote: "I was skeptical about energy work and spiritual practices. But Gowtham customized everything to what I needed\u2014no woo-woo, just practical tools that worked. The Tiruvannamalai retreat was the most profound 3 days of my career. My leadership fundamentally shifted.", author: 'VP Operations', company: 'Global Consulting Firm', program: 'one-on-one' },
     ],
@@ -421,10 +421,10 @@ const collections = {
       { q: 'What if I miss a session?', a: "All sessions are recorded, but live attendance is strongly encouraged." },
       { q: 'How big is each cohort?', a: '5-8 leaders maximum.' },
       { q: 'Can my company sponsor my participation?', a: 'Absolutely. We provide invoices and can speak to HR/L&D teams.' },
-      { q: 'What happens after the 10 weeks?', a: 'You join the FIT Alumni Community with lifetime access.' },
+      { q: 'What happens after the 10 weeks?', a: 'You join the F.I.T. Alumni Community with lifetime access.' },
     ],
     oneOnOne: [
-      { q: 'How is this different from FIT Cohort?', a: 'FIT is group-based. One-on-One is private, intensive, and fully customized.' },
+      { q: 'How is this different from F.I.T. Cohort?', a: 'F.I.T. is group-based. One-on-One is private, intensive, and fully customized.' },
       { q: 'Do I need to do all 16 sessions?', a: 'The 16-session arc is designed for lasting change.' },
       { q: 'Why only 6 clients at a time?', a: 'Quality over quantity. Deep presence and availability.' },
     ],

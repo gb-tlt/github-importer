@@ -25,7 +25,7 @@ const adminPages = [
   { path: 'about', title: 'About Page', schemaImport: () => import('./admin/schemas/about').then(m => m.aboutSchema) },
   { path: 'the-work', title: 'The Work Page', schemaImport: () => import('./admin/schemas/theWork').then(m => m.theWorkSchema) },
   { path: 'services', title: 'Services Page', schemaImport: () => import('./admin/schemas/services').then(m => m.servicesSchema) },
-  { path: 'fit-cohort', title: 'FIT Cohort', schemaImport: () => import('./admin/schemas/fitCohort').then(m => m.fitCohortSchema) },
+  { path: 'fit-cohort', title: 'F.I.T. Cohort', schemaImport: () => import('./admin/schemas/fitCohort').then(m => m.fitCohortSchema) },
   { path: 'one-on-one', title: 'One-on-One', schemaImport: () => import('./admin/schemas/oneOnOne').then(m => m.oneOnOneSchema) },
   { path: 'life-coaching', title: 'Life Coaching', schemaImport: () => import('./admin/schemas/lifeCoaching').then(m => m.lifeCoachingSchema) },
   { path: 'resources', title: 'Resources', schemaImport: () => import('./admin/schemas/resources').then(m => m.resourcesSchema) },

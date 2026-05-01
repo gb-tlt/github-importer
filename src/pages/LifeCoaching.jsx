@@ -71,7 +71,7 @@ const defaults = {
   },
   notFor: {
     items: [
-      'Leaders seeking leadership skills only (see FIT or One-on-One)',
+      'Leaders seeking leadership skills only (see F.I.T. or One-on-One)',
       'Those wanting quick answers or action plans',
       'Leaders uncomfortable with deep questioning',
       'Those seeking business strategy',

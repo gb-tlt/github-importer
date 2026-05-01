@@ -8,7 +8,7 @@ const navItems = [
   { to: '/admin/about', icon: User, label: 'About Page' },
   { to: '/admin/the-work', icon: Compass, label: 'The Work Page' },
   { to: '/admin/services', icon: Briefcase, label: 'Services Page' },
-  { to: '/admin/fit-cohort', icon: Users, label: 'FIT Cohort' },
+  { to: '/admin/fit-cohort', icon: Users, label: 'F.I.T. Cohort' },
   { to: '/admin/one-on-one', icon: Crown, label: 'One-on-One' },
   { to: '/admin/life-coaching', icon: Heart, label: 'Life Coaching' },
   { to: '/admin/resources', icon: BookOpen, label: 'Resources' },

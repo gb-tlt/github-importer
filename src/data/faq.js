@@ -12,8 +12,8 @@ export const fitCohortFAQ = [
     a: '5-8 leaders maximum. Small enough for deep work and personal attention. Large enough for diverse peer perspectives and rich group dynamics.',
   },
   {
-    q: 'Where are retreats held?',
-    a: 'Typically near Bangalore or in quiet retreat centers conducive to deep work. Exact location announced 4 weeks before cohort start. Accommodation and meals included in program fee.',
+    q: 'Where are intensives held?',
+    a: 'Typically near Bangalore or in quiet venues conducive to deep work. Exact location announced 4 weeks before cohort start. Accommodation and meals included in program fee.',
   },
   {
     q: 'Can my company sponsor my participation?',
@@ -21,7 +21,7 @@ export const fitCohortFAQ = [
   },
   {
     q: 'What happens after the 10 weeks end?',
-    a: "You transition into the FIT Alumni Community with lifetime access. Monthly alumni meetups, ongoing resources, and a private community platform. Integration doesn't end at Week 10\u2014it's a lifelong practice.",
+    a: "You transition into the F.I.T. Alumni Community with lifetime access. Monthly alumni meetups, ongoing resources, and a private community platform. Integration doesn't end at Week 10\u2014it's a lifelong practice.",
   },
   {
     q: 'Is this program confidential?',
@@ -29,14 +29,14 @@ export const fitCohortFAQ = [
   },
   {
     q: 'How is this different from One-on-One Coaching?',
-    a: "FIT is group-based with peer learning (more affordable, powerful community). One-on-One is bespoke, intensive, and private (deeper, more expensive). If your challenges are highly complex or you prefer private work, choose One-on-One. If you'd benefit from peer mirrors and community, start with FIT.",
+    a: "F.I.T. is group-based with peer learning (more affordable, powerful community). One-on-One is bespoke, intensive, and private (deeper, more expensive). If your challenges are highly complex or you prefer private work, choose One-on-One. If you'd benefit from peer mirrors and community, start with F.I.T..",
   },
 ]
 
 export const oneOnOneFAQ = [
   {
-    q: 'How is this different from FIT Cohort?',
-    a: 'FIT is group-based with peer learning (more affordable, community-powered). One-on-One is private, intensive, and fully customized to your complex challenges. If you need maximum depth, privacy, and customization, choose this. If peer learning appeals, start with FIT.',
+    q: 'How is this different from F.I.T. Cohort?',
+    a: 'F.I.T. is group-based with peer learning (more affordable, community-powered). One-on-One is private, intensive, and fully customized to your complex challenges. If you need maximum depth, privacy, and customization, choose this. If peer learning appeals, start with F.I.T..',
   },
   {
     q: 'Do I need to do all 16 sessions, or can I stop early?',

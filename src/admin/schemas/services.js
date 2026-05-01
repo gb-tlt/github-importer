@@ -26,7 +26,7 @@ export const servicesSchema = {
     fields: [
       { key: 'title', label: 'Section Title', type: 'text' },
       { key: 'subtitle', label: 'Subtitle', type: 'text' },
-      { key: 'rows', label: 'Comparison Rows', type: 'table', columns: ['Dimension', 'FIT Cohort', 'One-on-One', 'Life Coaching'] },
+      { key: 'rows', label: 'Comparison Rows', type: 'table', columns: ['Dimension', 'F.I.T. Cohort', 'One-on-One', 'Life Coaching'] },
     ],
   },
   decisionFramework: {
@@ -36,7 +36,7 @@ export const servicesSchema = {
       { key: 'subtitle', label: 'Subtitle', type: 'text' },
       { key: 'items', label: 'Decision Items', type: 'objectArray', fields: [
         { key: 'title', label: 'Dimension', type: 'text' },
-        { key: 'fit', label: 'FIT Cohort', type: 'text' },
+        { key: 'fit', label: 'F.I.T. Cohort', type: 'text' },
         { key: 'one', label: 'One-on-One', type: 'text' },
         { key: 'life', label: 'Life Coaching', type: 'text' },
       ]},

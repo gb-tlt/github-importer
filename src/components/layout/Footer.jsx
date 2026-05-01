@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm tracking-wide uppercase">Services</h4>
             <ul className="space-y-3">
-              <li><Link to="/services/fit-cohort" className="text-slate-300 hover:text-gold-400 text-sm transition-colors">FIT Leadership Cohort</Link></li>
+              <li><Link to="/services/fit-cohort" className="text-slate-300 hover:text-gold-400 text-sm transition-colors">F.I.T. Leadership Cohort</Link></li>
               <li><Link to="/services/one-on-one" className="text-slate-300 hover:text-gold-400 text-sm transition-colors">One-on-One Coaching</Link></li>
               <li><Link to="/services/life-coaching" className="text-slate-300 hover:text-gold-400 text-sm transition-colors">Life Coaching</Link></li>
             </ul>

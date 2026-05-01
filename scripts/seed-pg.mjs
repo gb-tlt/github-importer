@@ -121,7 +121,7 @@ const content = {
     cta: { heading: 'Ready to Explore If This Work Fits You?', subtext: "Book a 45-minute clarity call.", buttonText: 'Book Your Clarity Call' },
   },
   contact: {
-    hero: { badge: 'Contact', title: "Let's Have a Conversation", subtitle: "Whether you're curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I'm here." },
+    hero: { badge: 'Contact', title: "Let's Have a Conversation", subtitle: "Whether you're curious about F.I.T. Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I'm here." },
     form: { title: 'Book a Clarity Call', subtitle: '45 minutes to understand your challenges, explore fit, and answer your questions. No obligation.', submitText: 'Request Clarity Call' },
     sidebar: { email: 'connect@theleadershiptattva.com', responseTime: 'Within 24-48 hours', linkedinUrl: '#', instagramUrl: '#' },
     confidentiality: { title: 'Confidentiality', text: 'All conversations are strictly confidential. Your information is never shared.' },
@@ -130,7 +130,7 @@ const content = {
     hero: {
       badge: 'Services',
       title: 'Three Pathways to Integration',
-      subtitle: 'All three use the same Five Layers methodology. Depth, format, and intensity differ. Start with FIT Cohort, then move deeper if needed.',
+      subtitle: 'All three use the same Five Layers methodology. Depth, format, and intensity differ. Start with F.I.T. Cohort, then move deeper if needed.',
     },
     programs: {
       title: 'Explore Your Options',
@@ -146,7 +146,7 @@ const content = {
       rows: [
         ['Investment', '\u20B91-1.5L + GST', '\u20B98L + GST', '\u20B94-8L + GST'],
         ['Duration', '10 weeks', '4 months', '4 months (custom)'],
-        ['Sessions', '8 group + 1 personal + 2 retreats', '16 personalized sessions', 'Custom (12-16)'],
+        ['Sessions', '8 group + 1 personal + 2 intensives', '16 personalized sessions', 'Custom (12-16)'],
         ['Format', 'Group (5-8 leaders)', 'Premium 1-to-1', 'Custom 1-to-1'],
         ['Best For', 'Directors, VPs, Senior Managers', 'CXOs, Founders (\u20B930L+)', 'Leaders seeking life alignment'],
         ['Key Benefit', 'Peer learning + community', 'Maximum depth + customization', 'Life realignment + meaning'],
@@ -184,19 +184,19 @@ const content = {
     },
     cta: {
       heading: 'All Three Pathways Are Powerful',
-      subtext: "The question isn't which is 'best'\u2014it's which is the right fit for your situation right now. Most leaders start with FIT Cohort.",
+      subtext: "The question isn't which is 'best'\u2014it's which is the right fit for your situation right now. Most leaders start with F.I.T. Cohort.",
       buttonText: 'Book a Clarity Call',
     },
   },
   fitCohort: {
     hero: {
       badge: 'START HERE \u2022 MOST ACCESSIBLE ENTRY POINT',
-      title: 'FIT Leadership Cohort',
+      title: 'F.I.T. Leadership Cohort',
       subtitle: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure',
       highlights: [
         '10-week intensive (1-8-1 structure)',
         '5-8 senior leaders per cohort',
-        'Opening & closing retreats',
+        'Opening & closing intensives',
         'Peer learning & accountability triads',
         'Lifetime community access',
       ],
@@ -211,7 +211,7 @@ const content = {
     },
     idealFor: {
       title: 'Who Is This For?',
-      subtitle: "FIT is designed for proven leaders who fragment under real pressure\u2014not because they lack capability, but because their operating system hasn't been integrated.",
+      subtitle: "F.I.T. is designed for proven leaders who fragment under real pressure\u2014not because they lack capability, but because their operating system hasn't been integrated.",
       items: [
         'Directors, VPs, Senior Managers with 8-15+ years experience',
         'Leaders who are capable in calm but collapse under scrutiny',
@@ -219,7 +219,7 @@ const content = {
         'Leaders ready to be vulnerable in a trusted group',
         'People who thrive with accountability and mirrors',
         'Those seeking sustainable transformation (not quick fixes)',
-        'Leaders willing to commit 10 weeks + 2 retreat weekends',
+        'Leaders willing to commit 10 weeks + 2 intensive weekends',
       ],
     },
     notFor: {
@@ -235,13 +235,13 @@ const content = {
     },
     timeline: {
       title: 'The 1-8-1 Structure',
-      subtitle: 'One opening retreat, eight intensive training weeks, one closing integration retreat.',
+      subtitle: 'One opening intensive, eight deep-end training weeks, one closing integration intensive.',
       items: [
         {
           week: 'WEEK 1',
-          label: 'Opening Retreat',
+          label: 'Opening Intensive',
           title: 'Foundation & Diagnosis',
-          description: '2-day immersive weekend retreat. Map your fragmentation pattern. Understand the Five Layers. Build trust with your cohort. Conduct pressure simulations. Create personalized integration plan.',
+          description: '2-day immersive weekend intensive. Map your fragmentation pattern. Understand the Five Layers. Build trust with your cohort. Conduct pressure simulations. Create personalized integration plan.',
         },
         {
           week: 'WEEKS 2-9',
@@ -261,30 +261,30 @@ const content = {
         },
         {
           week: 'WEEK 10',
-          label: 'Closing Retreat',
+          label: 'Closing Intensive',
           title: 'Integration & Sustainability',
-          description: '2-day integration weekend retreat. Synthesize all layers. Run final pressure simulations to test integration. Create post-cohort sustainability plan. Graduate ceremony. Transition into lifetime alumni community.',
+          description: '2-day integration weekend intensive. Synthesize all layers. Run final pressure simulations to test integration. Create post-cohort sustainability plan. Graduate ceremony. Transition into lifetime alumni community.',
         },
       ],
     },
     features: {
-      title: 'What Makes FIT Different',
+      title: 'What Makes F.I.T. Different',
       subtitle: "This isn't typical executive coaching or leadership training.",
       items: [
         { icon: 'Users', title: 'Peer Learning Power', text: 'Your fragmentation patterns are mirrored in your peers. Seeing your patterns in others creates profound "aha" moments that 1-to-1 coaching can\'t replicate.' },
         { icon: 'Flame', title: 'Pressure Simulations', text: 'We don\'t just talk about pressure\u2014we create it. Board challenges, crisis scenarios, high-stakes presentations. You practice integration under real conditions.' },
         { icon: 'Activity', title: 'Multi-Modal Approach', text: 'Somatic work, breathwork, energy practices, psychological processing, values alignment. Integration happens across all Five Layers, not just cognitive.' },
         { icon: 'Handshake', title: 'Triad Accountability', text: 'You\'re paired with 2 other leaders in a triad. Weekly check-ins between sessions. This peer accountability makes the work stick.' },
-        { icon: 'Mountain', title: 'Retreat Bookends', text: 'Opening retreat builds trust and diagnoses patterns. Closing retreat integrates learning and ensures sustainability. Deeper work happens in immersive settings.' },
-        { icon: 'Globe', title: 'Lifetime Community', text: 'FIT graduates join a lifetime alumni network. Monthly meetups, shared resources, ongoing support. Integration is a journey, not a 10-week event.' },
+        { icon: 'Mountain', title: 'Intensive Bookends', text: 'Opening intensive builds trust and diagnoses patterns. Closing intensive integrates learning and ensures sustainability. Deeper work happens in immersive settings.' },
+        { icon: 'Globe', title: 'Lifetime Community', text: 'F.I.T. graduates join a lifetime alumni network. Monthly meetups, shared resources, ongoing support. Integration is a journey, not a 10-week event.' },
       ],
     },
     inclusions: {
       title: "What's Included",
       items: [
-        { label: 'Opening Retreat (Week 1):', desc: '2-day immersive weekend \u2022 Fragmentation diagnosis \u2022 Five Layers introduction \u2022 Cohort bonding' },
+        { label: 'Opening Intensive (Week 1):', desc: '2-day immersive weekend \u2022 Fragmentation diagnosis \u2022 Five Layers introduction \u2022 Cohort bonding' },
         { label: '8 Weekly Group Sessions:', desc: '75-90 minutes each \u2022 Wednesday 5:30 AM IST \u2022 Layer-by-layer training \u2022 Pressure simulations' },
-        { label: 'Closing Retreat (Week 10):', desc: '2-day integration weekend \u2022 Final simulations \u2022 Sustainability planning \u2022 Graduation' },
+        { label: 'Closing Intensive (Week 10):', desc: '2-day integration weekend \u2022 Final simulations \u2022 Sustainability planning \u2022 Graduation' },
         { label: '1 Personal Session:', desc: '60 minutes 1-to-1 with Gowtham \u2022 Your specific pattern \u2022 Personalized guidance' },
         { label: 'Triad Accountability:', desc: 'Weekly check-ins with 2 peer leaders \u2022 Between-session support' },
         { label: 'Digital Resources:', desc: 'Guided practices \u2022 Frameworks \u2022 Reading materials \u2022 Session recordings' },
@@ -294,8 +294,8 @@ const content = {
     investment: {
       title: 'Investment',
       price: '\u20B91-1.5 Lakh + GST',
-      includes: 'Includes: All sessions, both retreats (accommodation + meals), digital resources, 1-to-1 session, lifetime community access.',
-      excludes: 'Not included: Travel to retreat locations.',
+      includes: 'Includes: All sessions, both intensives (accommodation + meals), digital resources, 1-to-1 session, lifetime community access.',
+      excludes: 'Not included: Travel to intensive locations.',
     },
     cta: {
       heading: 'Ready to Stop Fragmenting?',
@@ -342,7 +342,7 @@ const content = {
       items: [
         'Leaders wanting quick fixes or 3-session solutions',
         'Those seeking business strategy consulting',
-        'Leaders who prefer group learning (see FIT Cohort)',
+        'Leaders who prefer group learning (see F.I.T. Cohort)',
         'Those uncomfortable with deep vulnerability',
         'Leaders under deep psychiatric treatment',
         'People wanting only cognitive/talk-based coaching',
@@ -441,7 +441,7 @@ const content = {
     },
     notFor: {
       items: [
-        'Leaders seeking leadership skills only (see FIT or One-on-One)',
+        'Leaders seeking leadership skills only (see F.I.T. or One-on-One)',
         'Those wanting quick answers or action plans',
         'Leaders uncomfortable with deep questioning',
         'Those seeking business strategy',
@@ -547,7 +547,7 @@ const content = {
 const collections = {
   services: {
     items: [
-      { id: 'fit-cohort', title: 'FIT Leadership Cohort', tagline: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure', badge: 'START HERE', badgeColor: 'primary', price: '1-1.5L + GST', duration: '10 weeks (1-8-1 structure)', format: 'Group (5-8 leaders)', bestFor: 'Directors, VPs, Senior Managers', keyBenefit: 'Peer learning + community', description: 'Group-based transformation with 5-8 senior leaders.', features: ['10-week intensive program', 'Opening retreat + Closing retreat', '8 weekly group sessions', 'Triad accountability', '1 personal session with Gowtham', 'Peer learning and mirrors', 'Lifetime community access'], link: '/services/fit-cohort' },
+      { id: 'fit-cohort', title: 'F.I.T. Leadership Cohort', tagline: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure', badge: 'START HERE', badgeColor: 'primary', price: '1-1.5L + GST', duration: '10 weeks (1-8-1 structure)', format: 'Group (5-8 leaders)', bestFor: 'Directors, VPs, Senior Managers', keyBenefit: 'Peer learning + community', description: 'Group-based transformation with 5-8 senior leaders.', features: ['10-week intensive program', 'Opening intensive + Closing intensive', '8 weekly group sessions', 'Triad accountability', '1 personal session with Gowtham', 'Peer learning and mirrors', 'Lifetime community access'], link: '/services/fit-cohort' },
       { id: 'one-on-one', title: 'One-on-One Leadership Coaching', tagline: 'Deep, Bespoke Transformation for CXOs & Senior Leaders', badge: 'PREMIUM', badgeColor: 'gold', price: '8L + GST', duration: '4 months | 16 sessions', format: 'Premium 1-to-1', bestFor: 'CXOs, Founders (30L+)', keyBenefit: 'Maximum depth, holistic transformation', description: 'Deep, bespoke transformation work.', features: ['16 personalized sessions', 'Physiology assessment', 'Emotional healing & trauma work', 'Purpose discovery & alignment', 'WhatsApp access', 'Optional Tiruvannamalai retreat', 'Post-program 3-month check-in', 'Alumni community access'], link: '/services/one-on-one' },
       { id: 'life-coaching', title: 'Life Coaching', tagline: 'When Leadership Feels Hollow and You Need to Realign', badge: 'HOLISTIC', badgeColor: 'primary', price: '4-8L + GST', duration: 'Custom (typically 4 months)', format: 'Custom 1-to-1', bestFor: 'Leaders seeking life alignment', keyBenefit: 'Life realignment + meaning', description: 'Whole-life alignment for leaders at inflection points.', features: ['Custom duration', 'Values clarification & purpose discovery', 'Relationship and life rhythm design', 'Existential exploration', 'Life-leadership integration', 'Flexible scheduling'], link: '/services/life-coaching' },
     ],
@@ -556,8 +556,8 @@ const collections = {
     items: [
       { id: 1, quote: "I had all the answers but kept getting triggered in high-stakes conversations. Gowtham addressed the underlying fragmentation at the body, emotional, and spiritual levels.", author: 'CEO', company: 'SaaS Company (Series B)', program: 'one-on-one' },
       { id: 2, quote: "Worth every rupee. The physiology work alone was game-changing. I've had 5 executive coaches before. This was different.", author: 'Founder', company: 'HealthTech Startup', program: 'one-on-one' },
-      { id: 3, quote: "FIT was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. 10 weeks later, I handle board pressure completely differently.", author: 'VP Engineering', company: 'Global Tech Company', program: 'fit-cohort' },
-      { id: 4, quote: "The opening retreat was where everything clicked. By Week 10, pressure no longer made me freeze. It made me sharper.", author: 'Director of Strategy', company: 'Healthcare Startup', program: 'fit-cohort' },
+      { id: 3, quote: "F.I.T. was different. Seeing my fragmentation patterns mirrored in other VPs created instant recognition. 10 weeks later, I handle board pressure completely differently.", author: 'VP Engineering', company: 'Global Tech Company', program: 'fit-cohort' },
+      { id: 4, quote: "The opening intensive was where everything clicked. By Week 10, pressure no longer made me freeze. It made me sharper.", author: 'Director of Strategy', company: 'Healthcare Startup', program: 'fit-cohort' },
       { id: 5, quote: "I was a 'successful' VP but my marriage was falling apart. Life coaching helped me see I had optimized for the wrong things. 6 months later, I'm alive again.", author: 'VP Product', company: 'B2B SaaS', program: 'life-coaching' },
       { id: 6, quote: "I was skeptical about energy work. But Gowtham customized everything. The Tiruvannamalai retreat was the most profound 3 days of my career.", author: 'VP Operations', company: 'Global Consulting Firm', program: 'one-on-one' },
     ],
@@ -568,10 +568,10 @@ const collections = {
       { q: 'What if I miss a session?', a: "All sessions are recorded, but live attendance is strongly encouraged." },
       { q: 'How big is each cohort?', a: '5-8 leaders maximum.' },
       { q: 'Can my company sponsor my participation?', a: 'Absolutely. We provide invoices and can speak to HR/L&D teams.' },
-      { q: 'What happens after the 10 weeks?', a: 'You join the FIT Alumni Community with lifetime access.' },
+      { q: 'What happens after the 10 weeks?', a: 'You join the F.I.T. Alumni Community with lifetime access.' },
     ],
     oneOnOne: [
-      { q: 'How is this different from FIT Cohort?', a: 'FIT is group-based. One-on-One is private, intensive, and fully customized.' },
+      { q: 'How is this different from F.I.T. Cohort?', a: 'F.I.T. is group-based. One-on-One is private, intensive, and fully customized.' },
       { q: 'Do I need to do all 16 sessions?', a: 'The 16-session arc is designed for lasting change.' },
       { q: 'Why only 6 clients at a time?', a: 'Quality over quantity. Deep presence and availability.' },
     ],

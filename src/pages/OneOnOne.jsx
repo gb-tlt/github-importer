@@ -66,7 +66,7 @@ const defaults = {
     items: [
       'Leaders wanting quick fixes or 3-session solutions',
       'Those seeking business strategy consulting',
-      'Leaders who prefer group learning (see FIT Cohort)',
+      'Leaders who prefer group learning (see F.I.T. Cohort)',
       'Those uncomfortable with deep vulnerability',
       'Leaders under deep psychiatric treatment',
       'People wanting only cognitive/talk-based coaching',

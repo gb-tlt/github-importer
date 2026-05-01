@@ -33,7 +33,7 @@ export const collectionsSchema = {
   faq: {
     label: 'FAQs',
     sections: {
-      fitCohort: 'FIT Cohort FAQs',
+      fitCohort: 'F.I.T. Cohort FAQs',
       oneOnOne: 'One-on-One FAQs',
       lifeCoaching: 'Life Coaching FAQs',
       contact: 'Contact FAQs',

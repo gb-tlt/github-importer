@@ -6,7 +6,7 @@ const pages = [
   { to: '/admin/about', icon: User, label: 'About Page', desc: 'Hero, founder story, three depths of work, credentials, lineage' },
   { to: '/admin/the-work', icon: Compass, label: 'The Work Page', desc: '6-arc explanation: challenge, root cause, reframe, solution, promise, principles, audit CTA' },
   { to: '/admin/services', icon: Briefcase, label: 'Services Page', desc: 'Program cards, comparison table, decision framework' },
-  { to: '/admin/fit-cohort', icon: Users, label: 'FIT Cohort', desc: 'Hero, pricing, timeline, features, inclusions, investment' },
+  { to: '/admin/fit-cohort', icon: Users, label: 'F.I.T. Cohort', desc: 'Hero, pricing, timeline, features, inclusions, investment' },
   { to: '/admin/one-on-one', icon: Crown, label: 'One-on-One', desc: 'Hero, pricing, session phases, modalities, inclusions' },
   { to: '/admin/life-coaching', icon: Heart, label: 'Life Coaching', desc: 'Hero, pricing, inflection points, dimensions, inclusions' },
   { to: '/admin/resources', icon: BookOpen, label: 'Resources', desc: 'Assessments, categories, articles, newsletter' },

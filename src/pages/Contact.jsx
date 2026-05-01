@@ -12,7 +12,7 @@ const defaults = {
   hero: {
     badge: 'Contact',
     title: "Let\u2019s Have a Conversation",
-    subtitle: "Whether you\u2019re curious about FIT Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I\u2019m here.",
+    subtitle: "Whether you\u2019re curious about F.I.T. Cohort, one-on-one coaching, life coaching, or just want to explore what integration means for your leadership, I\u2019m here.",
   },
   form: {
     title: 'Book a Clarity Call',
@@ -146,7 +146,7 @@ export default function Contact() {
                         className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 focus:outline-none focus:border-gold-400 transition-colors"
                       >
                         <option value="">Not sure yet</option>
-                        <option value="fit-cohort">FIT Leadership Cohort</option>
+                        <option value="fit-cohort">F.I.T. Leadership Cohort</option>
                         <option value="one-on-one">One-on-One Leadership Coaching</option>
                         <option value="life-coaching">Life Coaching</option>
                       </select>

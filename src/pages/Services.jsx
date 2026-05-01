@@ -12,7 +12,7 @@ import { useCollection } from '../hooks/useCollection'
 const defaults = {
   hero: {
     title: 'Three Pathways to Integration',
-    subtitle: 'All three use the same Five Layers methodology. Depth, format, and intensity differ. Start with FIT Cohort, then move deeper if needed.',
+    subtitle: 'All three use the same Five Layers methodology. Depth, format, and intensity differ. Start with F.I.T. Cohort, then move deeper if needed.',
   },
   programs: {
     title: 'Explore Your Options',
@@ -28,7 +28,7 @@ const defaults = {
     rows: [
       ['Investment', '\u20B91-1.5L + GST', '\u20B98L + GST', '\u20B94-8L + GST'],
       ['Duration', '10 weeks (1-8-1 structure)', '4 months', '4 months (custom)'],
-      ['Sessions', '8 group + 1 personal + 2 retreats', '16 personalized sessions', 'Custom (typically 12-16)'],
+      ['Sessions', '8 group + 1 personal + 2 intensives', '16 personalized sessions', 'Custom (typically 12-16)'],
       ['Format', 'Group (5-8 leaders)', 'Premium 1-to-1', 'Custom 1-to-1'],
       ['Best For', 'Directors, VPs, Senior Managers', 'CXOs, Founders (\u20B930L+)', 'Leaders seeking life alignment'],
       ['Key Benefit', 'Peer learning + community', 'Maximum depth, holistic transformation', 'Life realignment + meaning'],
@@ -59,7 +59,7 @@ const defaults = {
       },
       {
         title: 'Time Commitment',
-        fit: '10 weeks, weekly sessions + 2 retreat weekends',
+        fit: '10 weeks, weekly sessions + 2 intensive weekends',
         one: '4 months, flexible scheduling (16 sessions)',
         life: '4 months, custom schedule',
       },
@@ -74,7 +74,7 @@ const defaults = {
   },
   cta: {
     heading: 'All Three Pathways Are Powerful',
-    subtext: "The question isn't which is \"best\"\u2014it's which is the right FIT for your situation right now. Most leaders start with FIT Cohort.",
+    subtext: "The question isn't which is \"best\"\u2014it's which is the right F.I.T. for your situation right now. Most leaders start with F.I.T. Cohort.",
     buttonText: 'Book a Clarity Call',
   },
 }
@@ -144,7 +144,7 @@ export default function Services() {
                 <thead>
                   <tr className="bg-navy-950">
                     <th className="py-4 px-4 text-white font-semibold">Dimension</th>
-                    <th className="py-4 px-4 text-white font-semibold">FIT Cohort (START HERE)</th>
+                    <th className="py-4 px-4 text-white font-semibold">F.I.T. Cohort (START HERE)</th>
                     <th className="py-4 px-4 text-white font-semibold">One-on-One Leadership <span className="text-[#D4AF37]">★</span></th>
                     <th className="py-4 px-4 text-white font-semibold">Life Coaching</th>
                   </tr>
@@ -180,7 +180,7 @@ export default function Services() {
                   <div className="bg-white rounded-2xl p-6 border-l-4 border-gold-400 h-full">
                     <h4 className="text-navy-950 font-semibold mb-3">Q{i + 1}: {item.title}</h4>
                     <div className="space-y-3 text-sm">
-                      <p className="text-slate-600"><span className="text-navy-950 font-semibold">FIT Cohort:</span> {item.fit}</p>
+                      <p className="text-slate-600"><span className="text-navy-950 font-semibold">F.I.T. Cohort:</span> {item.fit}</p>
                       <p className="text-slate-600"><span className="text-navy-950 font-semibold">One-on-One:</span> {item.one}</p>
                       <p className="text-slate-600"><span className="text-navy-950 font-semibold">Life Coaching:</span> {item.life}</p>
                     </div>

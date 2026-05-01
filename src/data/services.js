@@ -1,7 +1,7 @@
 export const services = [
   {
     id: 'fit-cohort',
-    title: 'FIT Leadership Cohort',
+    title: 'F.I.T. Leadership Cohort',
     tagline: 'Group-Based Integration for Senior Leaders Who Fragment Under Pressure',
     badge: 'START HERE',
     badgeColor: 'primary',
@@ -13,7 +13,7 @@ export const services = [
     description: 'Group-based transformation with 5-8 senior leaders. 1-8-1 structure: opening intensive, 8 deep-end training weeks, closing intensive. Peer learning, accountability, and community support. For VPs, Directors, senior leaders and entrepreneurs.',
     features: [
       '10-week intensive program (1-8-1 structure)',
-      'Opening retreat (Week 1) + Closing retreat (Week 10)',
+      'Opening intensive (Week 1) + Closing intensive (Week 10)',
       '8 weekly group sessions (75-90 min each)',
       'Triad accountability (groups of 3)',
       '1 personal session with Gowtham',
