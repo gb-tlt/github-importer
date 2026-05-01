@@ -185,7 +185,7 @@ export default function LifeCoaching() {
           <div className="space-y-4">
             {inflectionItems.map((point, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-navy-800 rounded-xl p-6 border border-navy-800 hover:border-gold-400/20 transition-colors">
+                <div className="bg-navy-800 rounded-2xl p-6 border border-navy-800 hover:border-gold-400/20 transition-colors">
                   <p className="font-display text-lg text-white italic mb-2">&ldquo;{point.quote}&rdquo;</p>
                   <p className="text-slate-300 text-sm">{point.desc}</p>
                 </div>

@@ -2,14 +2,14 @@ export const theWorkSchema = {
   hero: {
     label: 'Hero',
     fields: [
-      { key: 'badge', label: 'Eyebrow Label', type: 'text' },
+      { key: 'badge', label: 'Persona Sub-headline', type: 'text' },
       { key: 'lines', label: 'Opening Lines', type: 'array' },
       { key: 'pivot', label: 'Pivot Line (italic gold)', type: 'text' },
       { key: 'closing', label: 'Closing Paragraph', type: 'textarea' },
     ],
   },
   arc1: {
-    label: 'Arc 1 — The Challenge',
+    label: 'Arc 1:The Challenge',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
@@ -40,7 +40,7 @@ export const theWorkSchema = {
     ],
   },
   arc2: {
-    label: 'Arc 2 — The Root Cause',
+    label: 'Arc 2:The Root Cause',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
@@ -53,7 +53,7 @@ export const theWorkSchema = {
     ],
   },
   arc3: {
-    label: 'Arc 3 — The Reframe',
+    label: 'Arc 3:The Reframe',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
@@ -64,13 +64,14 @@ export const theWorkSchema = {
     ],
   },
   arc4: {
-    label: 'Arc 4 — The Solution',
+    label: 'Arc 4:The Solution',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
       { key: 'intro', label: 'Intro Paragraph', type: 'textarea' },
       { key: 'intro2', label: 'Second Intro Paragraph', type: 'textarea' },
       { key: 'pillars', label: '5 Pillars', type: 'objectArray', fields: [
+        { key: 'tab', label: 'Tab Label (short, for pill nav)', type: 'text' },
         { key: 'title', label: 'Title', type: 'text' },
         { key: 'text', label: 'Text', type: 'textarea' },
       ]},
@@ -80,7 +81,7 @@ export const theWorkSchema = {
     ],
   },
   arc5: {
-    label: 'Arc 5 — The Promise (Testimonial)',
+    label: 'Arc 5:The Promise (Testimonial)',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
@@ -90,7 +91,7 @@ export const theWorkSchema = {
     ],
   },
   arc6: {
-    label: 'Arc 6 — What We Stand For',
+    label: 'Arc 6:What We Stand For',
     fields: [
       { key: 'eyebrow', label: 'Section Eyebrow', type: 'text' },
       { key: 'title', label: 'Section Title', type: 'text' },
@@ -102,7 +103,7 @@ export const theWorkSchema = {
     ],
   },
   cta: {
-    label: 'CTA — Audit + Clarity Call',
+    label: 'CTA:Audit + Clarity Call',
     fields: [
       { key: 'title', label: 'Section Title', type: 'text' },
       { key: 'intro', label: 'Intro Paragraph', type: 'textarea' },

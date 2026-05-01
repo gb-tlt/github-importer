@@ -35,7 +35,7 @@ export default function FiveLayersStacked({ label, title, subtitle, layers = [] 
           {layers.map((layer, i) => (
             <ScrollReveal key={layer.id} delay={i * 0.05}>
               <div
-                className="lg:sticky relative bg-[#203460] border border-gold-300/10 p-8 lg:p-10 mb-6 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-8 items-start transition-all duration-400 hover:border-gold-400/30 hover:shadow-[0_8px_30px_rgba(240,222,160,0.06)]"
+                className="lg:sticky relative bg-[#203460] rounded-2xl border border-gold-300/10 p-8 lg:p-10 mb-6 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-8 items-start transition-all duration-400 hover:border-gold-400/30 hover:shadow-[0_8px_30px_rgba(240,222,160,0.06)]"
                 style={{ top: `${stickyTops[i]}px`, zIndex: stickyZ[i] }}
               >
                 <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-navy-950/40">

@@ -31,7 +31,7 @@ const content = {
   },
   home: {
     hero: {
-      badge: 'Integration Coaching for Senior Leaders',
+      badge: 'Executive Presence For Senior Leaders',
       headline: 'What If Pressure Made You ',
       headlineGold: 'Stronger?',
       subtext: 'Most leaders fragment under pressure\u2014their body betrays them, their mind goes blank, their presence collapses. It doesn\u2019t have to be this way. I help senior leaders rewire so pressure becomes power.',

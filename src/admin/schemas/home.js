@@ -41,13 +41,10 @@ export const homeSchema = {
       { key: 'label', label: 'Eyebrow Label', type: 'text' },
       { key: 'heading', label: 'Section Heading', type: 'text' },
       { key: 'quote', label: 'Quote', type: 'textarea' },
-      { key: 'bridge', label: 'Bridge Paragraphs', type: 'array' },
-      { key: 'cards', label: 'Path Cards (01-05)', type: 'objectArray', fields: [
+      { key: 'cards', label: 'Path Cards (01-06)', type: 'objectArray', fields: [
         { key: 'title', label: 'Card Title', type: 'text' },
         { key: 'text', label: 'Card Text', type: 'textarea' },
       ]},
-      { key: 'closingLead', label: 'Closing Lead-in', type: 'text' },
-      { key: 'closingLines', label: 'Closing Lines', type: 'array' },
     ],
   },
   services: {
@@ -63,9 +60,18 @@ export const homeSchema = {
   testimonials: {
     label: 'Testimonials Section',
     fields: [
-      { key: 'statStrip', label: 'Stat Strip (above heading)', type: 'textarea' },
       { key: 'title', label: 'Section Title', type: 'text' },
       { key: 'subtitle', label: 'Section Subtitle', type: 'textarea' },
+    ],
+  },
+  stats: {
+    label: 'Animated Stats Section',
+    fields: [
+      { key: 'items', label: 'Stats', type: 'objectArray', fields: [
+        { key: 'value', label: 'Number (integer, e.g. 10000)', type: 'text' },
+        { key: 'suffix', label: 'Suffix (e.g. + or %)', type: 'text' },
+        { key: 'label', label: 'Label', type: 'text' },
+      ]},
     ],
   },
   aboutTlt: {
@@ -74,7 +80,6 @@ export const homeSchema = {
       { key: 'label', label: 'Eyebrow Label', type: 'text' },
       { key: 'title', label: 'Title', type: 'text' },
       { key: 'paragraphs', label: 'Body Paragraphs', type: 'array' },
-      { key: 'credentials', label: 'Credentials Line', type: 'textarea' },
       { key: 'hook', label: 'Hook Line (italic)', type: 'textarea' },
       { key: 'linkText', label: 'Link Text', type: 'text' },
     ],

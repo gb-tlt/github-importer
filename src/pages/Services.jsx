@@ -125,7 +125,7 @@ export default function Services() {
           </div>
 
           <ScrollReveal className="mt-12">
-            <div className="bg-[#fff9e6] border-l-4 border-[#D4AF37] rounded-r-lg p-6 max-w-4xl mx-auto">
+            <div className="bg-[#fff9e6] border-l-4 border-[#D4AF37] rounded-r-2xl p-6 max-w-4xl mx-auto">
               <h4 className="text-navy-950 font-semibold mb-2 text-lg">{c('disclaimer', 'title')}</h4>
               <p className="text-slate-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: c('disclaimer', 'text') }} />
             </div>
@@ -140,7 +140,7 @@ export default function Services() {
 
           <ScrollReveal>
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm bg-white rounded-lg overflow-hidden shadow-md">
+              <table className="w-full text-left text-sm bg-white rounded-2xl overflow-hidden shadow-md">
                 <thead>
                   <tr className="bg-navy-950">
                     <th className="py-4 px-4 text-white font-semibold">Dimension</th>
@@ -168,7 +168,7 @@ export default function Services() {
       {/* Decision Framework */}
       <section className="py-16 bg-warm-50">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-[#fcf3e7] rounded-lg p-8 md:p-12">
+          <div className="bg-[#fcf3e7] rounded-2xl p-8 md:p-12">
             <SectionHeading
               title={c('decisionFramework', 'title')}
               subtitle={c('decisionFramework', 'subtitle')}
@@ -177,7 +177,7 @@ export default function Services() {
             <div className="grid md:grid-cols-2 gap-6">
               {frameworkItems.map((item, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="bg-white rounded-lg p-6 border-l-4 border-gold-400 h-full">
+                  <div className="bg-white rounded-2xl p-6 border-l-4 border-gold-400 h-full">
                     <h4 className="text-navy-950 font-semibold mb-3">Q{i + 1}: {item.title}</h4>
                     <div className="space-y-3 text-sm">
                       <p className="text-slate-600"><span className="text-navy-950 font-semibold">FIT Cohort:</span> {item.fit}</p>

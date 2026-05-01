@@ -3,7 +3,7 @@ import { Linkedin, Mail, Instagram, Youtube } from 'lucide-react'
 import { useContent } from '../../hooks/useContent'
 
 const footerDefaults = {
-  tagline: 'Leadership Coaching for CXOs, Founders & Senior Leaders — Chennai, India',
+  tagline: 'Leadership Coaching for CXOs, Founders & Senior Leaders, Chennai, India',
   email: 'gowtham@theleadershiptattva.com',
   responseTime: 'Response within 24-48 hours',
   linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',

@@ -14,7 +14,7 @@ export default function ProgramCard({ service, index = 0, dark = false, icon }) 
 
   return (
     <ScrollReveal delay={index * 0.1}>
-      <div className={`relative rounded-lg p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+      <div className={`relative rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 ${
         dark
           ? isGold
             ? 'bg-navy-800 border-2 border-gold-400 shadow-lg shadow-gold-400/10'

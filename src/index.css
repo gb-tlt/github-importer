@@ -94,6 +94,10 @@ body {
   animation: marquee 30s linear infinite;
   width: max-content;
 }
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+  width: max-content;
+}
 
 /* Hide scrollbar on scroll-snap carousels */
 .no-scrollbar {

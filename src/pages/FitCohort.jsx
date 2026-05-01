@@ -15,7 +15,7 @@ const defaults = {
     label: 'The Reality',
     title: "You've Tried Leadership Development. It Didn't Stick.",
     paragraphs: [
-      "You've done the workshops. Read the books. Hired the coaches. And in calm moments, it all made sense. <strong>But under real pressure — the board room, the crisis call, the high-stakes conversation — everything reverted.</strong>",
+      "You've done the workshops. Read the books. Hired the coaches. And in calm moments, it all made sense. <strong>But under real pressure, the board room, the crisis call, the high-stakes conversation, everything reverted.</strong>",
       "The problem was never the training. The problem was the layer it was working on. Skills installed on a fragmented operating system crash the moment pressure hits. FIT works at the operating system level.",
     ],
   },
@@ -29,21 +29,21 @@ const defaults = {
         items: [
           {
             number: '01',
-            title: 'Earn the Right — From Within',
+            title: 'Earn the Right, From Within',
             subtitle: 'Stop questioning whether you belong in the room.',
-            content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. FIT closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours — not because someone gave it to you, but because you claimed it from the inside out.</p>",
+            content: "<p>Most leaders occupy their position but haven't fully <strong>earned the right within themselves</strong> to be there. There's a gap between the title and the internal conviction. FIT closes that gap.</p><p>You stop seeking permission from your achievements, your title, or other people's approval. The space you occupy becomes fully yours, not because someone gave it to you, but because you claimed it from the inside out.</p>",
           },
           {
             number: '02',
             title: 'Know Your Leadership Location',
             subtitle: 'See the full map of who you serve, what they need, and what you need.',
-            content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong> — the full ecosystem of demands, relationships, and stakes around them.</p><p>After FIT, you'll know:</p><ul><li>Who you're truly serving — and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake — and how to address it directly</li><li>What you need from your team — and how to ask for it clearly</li><li>Where your real role lies — beyond the job description</li></ul>",
+            content: "<p>Most leaders operate without a clear map. They know their role but not their <strong>leadership location</strong>, the full ecosystem of demands, relationships, and stakes around them.</p><p>After FIT, you'll know:</p><ul><li>Who you're truly serving, and what keeps them awake at night</li><li>What keeps <strong>you</strong> awake, and how to address it directly</li><li>What you need from your team, and how to ask for it clearly</li><li>Where your real role lies, beyond the job description</li></ul>",
           },
           {
             number: '03',
-            title: 'Set Yourself Up for Success — Every Day',
+            title: 'Set Yourself Up for Success, Every Day',
             subtitle: 'No more trial and error. No more seeking external validation.',
-            content: "<p>You stop relying on trial and error to figure out what works. You stop waiting for your boss, your board, or your team to tell you you're doing a good job.</p><p><strong>You design your day so you show up ready, not reactive.</strong> Your morning preparation, your energy management, your pre-meeting ritual — all become intentional systems, not hopeful improvisation. You know you're doing a good job because your internal compass is calibrated, not because someone validated you externally.</p>",
+            content: "<p>You stop relying on trial and error to figure out what works. You stop waiting for your boss, your board, or your team to tell you you're doing a good job.</p><p><strong>You design your day so you show up ready, not reactive.</strong> Your morning preparation, your energy management, your pre-meeting ritual, all become intentional systems, not hopeful improvisation. You know you're doing a good job because your internal compass is calibrated, not because someone validated you externally.</p>",
           },
         ],
       },
@@ -51,22 +51,22 @@ const defaults = {
         label: 'The Foundation Underneath',
         items: [
           {
-            number: '—',
-            title: 'Your Inner Voices — Recognised and Redirected',
+            number: '•',
+            title: 'Your Inner Voices, Recognised and Redirected',
             subtitle: 'The internal narratives that run your decisions, made visible.',
-            content: "<p>Every leader has inner voices — the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In FIT, you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
+            content: "<p>Every leader has inner voices, the critic, the perfectionist, the people-pleaser, the achiever. Most leaders don't know these voices are running the show. <strong>In FIT, you identify them, understand their origin, and learn to work with them instead of being hijacked by them.</strong></p>",
           },
           {
-            number: '—',
-            title: "Your Body — What Works for It, What Doesn't",
+            number: '•',
+            title: "Your Body, What Works for It, What Doesn't",
             subtitle: 'Somatic intelligence that keeps you grounded under pressure.',
-            content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>FIT teaches you to read your body's signals and regulate in real-time — in 10 to 30 seconds, invisible to the room.</strong></p>",
+            content: "<p>Your body has been signalling fragmentation long before your mind catches up. Tight shoulders before a presentation. Shallow breathing in a difficult conversation. <strong>FIT teaches you to read your body's signals and regulate in real-time, in 10 to 30 seconds, invisible to the room.</strong></p>",
           },
           {
-            number: '—',
-            title: 'Your Day — Designed, Not Improvised',
-            subtitle: 'Energy cycles, office demands, and home needs — aligned into one rhythm.',
-            content: "<p>Most leaders let their calendar design their day. FIT flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong> — so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
+            number: '•',
+            title: 'Your Day, Designed, Not Improvised',
+            subtitle: 'Energy cycles, office demands, and home needs, aligned into one rhythm.',
+            content: "<p>Most leaders let their calendar design their day. FIT flips this. <strong>You design your day around your energy cycles, your office demands, and your home needs</strong>, so you're not borrowing from one to pay the other. A morning protocol, a regulation practice, and a daily intention become your operating system's startup sequence.</p>",
           },
         ],
       },
@@ -78,29 +78,29 @@ const defaults = {
     subtitle: 'From first conversation to confirmed transformation.',
     phases: [
       {
-        phaseLabel: 'Phase 1 — Discovery',
+        phaseLabel: 'Phase 1, Discovery',
         title: 'Clarity Call',
-        body: 'A 30-minute conversation where <strong>we qualify each other</strong>. We map your fragmentation pattern. You assess whether this approach resonates. Not a sales pitch — a mutual diagnostic.',
+        body: 'A 30-minute conversation where <strong>we qualify each other</strong>. We map your fragmentation pattern. You assess whether this approach resonates. Not a sales pitch, a mutual diagnostic.',
       },
       {
-        phaseLabel: 'Phase 2 — Preparation',
+        phaseLabel: 'Phase 2, Preparation',
         title: 'Orientation & Preparatory Work',
         body: 'Once enrolled, you go through an orientation process and complete preparatory work before the program begins. <strong>You arrive on day one already engaged, not cold.</strong>',
       },
       {
-        phaseLabel: 'Phase 3 — The Intensive',
+        phaseLabel: 'Phase 3, The Intensive',
         title: 'Weekend Intensive + 8 Weeks of Wednesday Sessions',
         body: 'A full-day weekend intensive launches the cohort. Then <strong>8 weeks of Wednesday sessions, 5:30 AM – 8:00 AM</strong>, with a small group of 5–8 leaders seeking similar transformation. Parallel 1-on-1 attention from Gowtham throughout. Triad accountability groups keep you practising between sessions.',
       },
       {
-        phaseLabel: 'Phase 4 — Integration',
+        phaseLabel: 'Phase 4, Integration',
         title: '100-Day Plan',
-        body: 'At the end of 8 weeks, we meet to build your <strong>100-day integration plan</strong> — a structured roadmap for applying what you\'ve rewired into your real-world leadership context.',
+        body: 'At the end of 8 weeks, we meet to build your <strong>100-day integration plan</strong>, a structured roadmap for applying what you\'ve rewired into your real-world leadership context.',
       },
       {
-        phaseLabel: 'Phase 5 — Real-World Testing',
+        phaseLabel: 'Phase 5, Real-World Testing',
         title: '100 Days of Supported Practice',
-        body: 'For 100 days after the program, you can <strong>check back in with Gowtham for 1-on-1 attention</strong>. This ensures the operating system rewiring holds under real pressure. The shift is confirmed not in a practice environment — but in your actual leadership.',
+        body: 'For 100 days after the program, you can <strong>check back in with Gowtham for 1-on-1 attention</strong>. This ensures the operating system rewiring holds under real pressure. The shift is confirmed not in a practice environment, but in your actual leadership.',
       },
     ],
   },
@@ -122,7 +122,7 @@ const defaults = {
       'Have succeeded through talent but recognise their inconsistency under pressure',
       'Have tried leadership development before and found it didn\'t stick when stakes rose',
       'Are willing to start at 5:30 AM and commit to daily practice',
-      'Want depth, not breadth — a small group of peers, not a lecture hall',
+      'Want depth, not breadth, a small group of peers, not a lecture hall',
       'Are ready to be seen, challenged, and held to a standard',
     ],
   },
@@ -150,7 +150,7 @@ const defaults = {
   },
   cta: {
     heading: 'Applications for the Next Cohort Are Open',
-    body: "It starts with a clarity call — a 30-minute conversation to understand your pattern and see if FIT is the right path.",
+    body: "It starts with a clarity call, a 30-minute conversation to understand your pattern and see if FIT is the right path.",
     buttonText: 'Apply Now',
   },
 }
@@ -234,7 +234,7 @@ export default function FitCohort() {
 
   return (
     <>
-      {/* 1. Hero — Navy gradient */}
+      {/* 1. Hero, Navy gradient */}
       <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-navy-950 via-[#0d0240] to-[#203460] text-warm-50 overflow-hidden"
         style={{ padding: '10rem 0 7rem' }}
       >
@@ -253,14 +253,14 @@ export default function FitCohort() {
             <p className="text-[1.05rem] text-warm-50/70 leading-[1.85] max-w-[620px] mx-auto mb-10">
               {c('hero', 'subtitle')}
             </p>
-            <Link to="/contact" className="inline-block font-display text-[0.72rem] tracking-[0.14em] uppercase px-10 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
+            <Link to="/contact" className="inline-block rounded-xl font-display text-[0.72rem] tracking-[0.14em] uppercase px-10 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
               {c('hero', 'ctaText')}
             </Link>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 2. Problem — White bg */}
+      {/* 2. Problem, White bg */}
       <section className="bg-white py-28 px-6">
         <div className="max-w-[700px] mx-auto">
           <ScrollReveal>
@@ -285,7 +285,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 3. Outcomes — Beige bg */}
+      {/* 3. Outcomes, Beige bg */}
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[800px] mx-auto">
           <ScrollReveal>
@@ -324,7 +324,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 4. Journey — Navy bg */}
+      {/* 4. Journey, Navy bg */}
       <section className="bg-navy-950 text-warm-50 py-28 px-6">
         <div className="max-w-[900px] mx-auto">
           <ScrollReveal>
@@ -371,7 +371,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 5. Numbers — White bg */}
+      {/* 5. Numbers, White bg */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-[800px] mx-auto text-center">
           <ScrollReveal>
@@ -399,7 +399,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 6. Who — Beige bg */}
+      {/* 6. Who, Beige bg */}
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[700px] mx-auto">
           <ScrollReveal>
@@ -429,7 +429,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 7. Testimonials — Navy bg */}
+      {/* 7. Testimonials, Navy bg */}
       <section className="bg-navy-950 text-warm-50 py-28 px-6 relative overflow-hidden">
         <div
           className="absolute pointer-events-none"
@@ -463,7 +463,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 8. Investment — Beige bg */}
+      {/* 8. Investment, Beige bg */}
       <section className="bg-warm-50 py-20 px-6">
         <div className="max-w-[600px] mx-auto text-center">
           <ScrollReveal>
@@ -483,7 +483,7 @@ export default function FitCohort() {
         </div>
       </section>
 
-      {/* 9. CTA — Navy gradient */}
+      {/* 9. CTA, Navy gradient */}
       <section className="bg-gradient-to-br from-navy-950 to-[#203460] text-warm-50 text-center py-28 px-6 relative overflow-hidden">
         <div
           className="absolute pointer-events-none"
@@ -501,7 +501,7 @@ export default function FitCohort() {
             <p className="text-[0.95rem] text-warm-50/70 leading-[1.85] mb-10">
               {c('cta', 'body')}
             </p>
-            <Link to="/contact" className="inline-block font-display text-[0.72rem] tracking-[0.14em] uppercase px-12 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
+            <Link to="/contact" className="inline-block rounded-xl font-display text-[0.72rem] tracking-[0.14em] uppercase px-12 py-4 bg-gold-400 text-white hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)] transition-all duration-400">
               {c('cta', 'buttonText')}
             </Link>
           </ScrollReveal>

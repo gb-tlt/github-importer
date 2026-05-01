@@ -234,7 +234,7 @@ export default function Contact() {
           <ScrollReveal>
             <div className="text-center mb-8">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-navy-950 mb-2">Where the Work Happens</h3>
-              <p className="text-slate-600">From a farm in Tiruvannamalai, Tamil Nadu — far from the noise, close to the work.</p>
+              <p className="text-slate-600">From a farm in Tiruvannamalai, Tamil Nadu, far from the noise, close to the work.</p>
             </div>
             <div className="rounded-2xl overflow-hidden border border-warm-200 shadow-sm" style={{ height: '400px' }}>
               <iframe
