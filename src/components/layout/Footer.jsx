@@ -4,7 +4,7 @@ import { useContent } from '../../hooks/useContent'
 
 const footerDefaults = {
   tagline: 'Leadership Coaching for CXOs, Founders & Senior Leaders, Chennai, India',
-  email: 'gowtham@theleadershiptattva.com',
+  email: 'connect@theleadershiptattva.com',
   responseTime: 'Response within 24-48 hours',
   linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',
   instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/',

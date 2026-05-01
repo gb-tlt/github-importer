@@ -20,7 +20,7 @@ const defaults = {
     submitText: 'Request Clarity Call',
   },
   sidebar: {
-    email: 'gowtham@theleadershiptattva.com',
+    email: 'connect@theleadershiptattva.com',
     responseTime: 'Within 24-48 hours',
     linkedinUrl: 'https://www.linkedin.com/in/gbcoach/',
     instagramUrl: 'https://www.instagram.com/gowtham.balaji.coach/',
