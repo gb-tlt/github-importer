@@ -7,6 +7,7 @@ import { services as defaultServices } from '../data/services'
 import { testimonials as defaultTestimonials } from '../data/testimonials'
 import { useContent } from '../hooks/useContent'
 import { useCollection } from '../hooks/useCollection'
+import { trackCtaClick } from '../lib/trackClick'
 
 const programIconMap = {
   'fit-cohort': '/images/icons/group-session.png',
