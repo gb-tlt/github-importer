@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
+import { trackCtaClick } from '../../lib/trackClick'
 
-export default function Button({ children, to, href, variant = 'primary', size = 'md', className = '', ...props }) {
+export default function Button({ children, to, href, variant = 'primary', size = 'md', className = '', trackId, onClick, ...props }) {
+  const handleClick = (e) => {
+    if (trackId) trackCtaClick(trackId)
+    if (onClick) onClick(e)
+  }
   const base = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 cursor-pointer'
 
   const variants = {
@@ -19,10 +24,10 @@ export default function Button({ children, to, href, variant = 'primary', size =
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`
 
   if (to) {
-    return <Link to={to} className={classes} {...props}>{children}</Link>
+    return <Link to={to} className={classes} onClick={handleClick} {...props}>{children}</Link>
   }
   if (href) {
-    return <a href={href} className={classes} {...props}>{children}</a>
+    return <a href={href} className={classes} onClick={handleClick} {...props}>{children}</a>
   }
-  return <button className={classes} {...props}>{children}</button>
+  return <button className={classes} onClick={handleClick} {...props}>{children}</button>
 }

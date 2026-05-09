@@ -7,6 +7,7 @@ import { services as defaultServices } from '../data/services'
 import { testimonials as defaultTestimonials } from '../data/testimonials'
 import { useContent } from '../hooks/useContent'
 import { useCollection } from '../hooks/useCollection'
+import { trackCtaClick } from '../lib/trackClick'
 
 const programIconMap = {
   'fit-cohort': '/images/icons/group-session.png',
@@ -155,7 +156,7 @@ export default function Home() {
               {c('hero', 'subtext')}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="https://form.typeform.com/to/geD9nbKV?utm_source=hmpghero" className="inline-block rounded-xl font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] bg-gold-400 text-white transition-all duration-400 hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)]">
+              <a href="https://form.typeform.com/to/geD9nbKV?utm_source=hmpghero" onClick={() => trackCtaClick('leadership_assessment')} className="inline-block rounded-xl font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] bg-gold-400 text-white transition-all duration-400 hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)]">
                 {c('hero', 'ctaPrimary')}
               </a>
               <Link to="/services" className="inline-block rounded-xl font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] border border-warm-50/40 text-warm-50 transition-all duration-400 hover:border-gold-300 hover:text-gold-300">
