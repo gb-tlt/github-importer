@@ -429,6 +429,33 @@ export default function Home() {
           dark
         />
       </div>
+
+      {assessmentOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4 md:p-8"
+          onClick={() => setAssessmentOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-[900px] h-[85vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close assessment"
+              onClick={() => setAssessmentOpen(false)}
+              className="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-navy-950 text-white hover:bg-gold-400 transition-colors text-lg leading-none"
+            >
+              ×
+            </button>
+            <iframe
+              title="Leadership Presence Assessment"
+              src="https://form.typeform.com/to/geD9nbKV?utm_source=hmpghero"
+              className="w-full h-full border-0"
+              allow="camera; microphone; autoplay; encrypted-media;"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }
