@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CTASection from '../components/ui/CTASection'
 import CountUp from '../components/ui/CountUp'
@@ -122,6 +123,7 @@ const defaults = {
 }
 
 export default function Home() {
+  const [assessmentOpen, setAssessmentOpen] = useState(false)
   const { content } = useContent('home')
   const { data: servicesData } = useCollection('services')
   const { data: testimonialsData } = useCollection('testimonials')
@@ -161,14 +163,7 @@ export default function Home() {
                 onClick={(e) => {
                   e.preventDefault()
                   trackCtaClick('leadership_assessment')
-                  const w = 900, h = 700
-                  const left = window.screenX + (window.outerWidth - w) / 2
-                  const top = window.screenY + (window.outerHeight - h) / 2
-                  window.open(
-                    'https://form.typeform.com/to/geD9nbKV?utm_source=hmpghero',
-                    'leadership_assessment',
-                    `popup=yes,width=${w},height=${h},left=${left},top=${top}`
-                  )
+                  setAssessmentOpen(true)
                 }}
                 className="inline-block rounded-xl font-display text-[0.7rem] tracking-[0.12em] uppercase px-[2.2rem] py-[0.95rem] bg-gold-400 text-white transition-all duration-400 hover:bg-[#e05e15] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(250,110,35,0.3)]"
               >
@@ -434,6 +429,33 @@ export default function Home() {
           dark
         />
       </div>
+
+      {assessmentOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4 md:p-8"
+          onClick={() => setAssessmentOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-[900px] h-[85vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close assessment"
+              onClick={() => setAssessmentOpen(false)}
+              className="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-navy-950 text-white hover:bg-gold-400 transition-colors text-lg leading-none"
+            >
+              ×
+            </button>
+            <iframe
+              title="Leadership Presence Assessment"
+              src="https://form.typeform.com/to/geD9nbKV?utm_source=hmpghero"
+              className="w-full h-full border-0"
+              allow="camera; microphone; autoplay; encrypted-media;"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }
