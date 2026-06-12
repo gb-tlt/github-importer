@@ -19,8 +19,8 @@ const programIconMap = {
 const defaults = {
   hero: {
     badge: 'Leadership Coach in India for CXOs, Founders & Senior Leaders',
-    headline: 'What If Pressure Made You ',
-    headlineGold: 'Stronger?',
+    headline: "Your Leadership Matters. That's Why Leadership Coaching Matters",
+    headlineGold: '',
     subtext: "Most leaders fragment under pressure, their body betrays them, their mind goes blank, their presence collapses. It doesn’t have to be this way. As a Leadership Coach for CXOs and senior leaders, we help them to rewire their leadership operating system, so that when pressure strikes, what shows up is their presence, mastery and impact.",
     ctaPrimary: 'Take a 4-min Leadership Presence Assessment',
     ctaSecondary: 'Explore Programs',
