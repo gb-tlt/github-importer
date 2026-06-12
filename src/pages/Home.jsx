@@ -69,7 +69,7 @@ const defaults = {
   },
   leadershipMatters: {
     label: 'A Way Forward',
-    heading: 'Your Leadership Matters',
+    heading: "Your Leadership Matters.\nThat's Why Leadership Coaching Matters\n\n",
     quote: "There is nothing more dangerous than a loud voice with no real substance; and nothing more tragic than a good leader who has something to say, but can’t bring themselves to say it.",
     cards: [
       { title: 'Come back to yourself.', text: 'The version of you that knew, before you somehow learnt to shrink.' },
@@ -255,7 +255,11 @@ export default function Home() {
                 {c('leadershipMatters', 'label')}
               </p>
               <h2 className="font-display font-normal leading-[1.3] text-navy-950 mb-10" style={{ fontSize: 'clamp(1.8rem, 3.4vw, 2.6rem)' }}>
-                {c('leadershipMatters', 'heading')}
+                {c('leadershipMatters', 'heading').split('\n').map((line, i) => (
+                  <span key={i} className="block">
+                    {line}
+                  </span>
+                ))}
               </h2>
               <blockquote className="font-display italic text-navy-950 leading-[1.5] border-t border-b border-navy-950/10 py-8" style={{ fontSize: 'clamp(1.05rem, 2vw, 1.3rem)' }}>
                 <span className="font-display text-[2.8rem] leading-[0] align-[-0.35rem] text-gold-400 mr-1 not-italic opacity-80">&ldquo;</span>
