@@ -178,6 +178,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
+        <title>Leadership Coach in India | Gowtham Balaji | The Leadership Tattva</title>
+        <meta name="description" content="Looking for a trusted leadership coach in India? Gowtham Balaji offers integration coaching for senior leaders, CXOs & founders. Book your free discovery call today" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
