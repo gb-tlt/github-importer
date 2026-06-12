@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CTASection from '../components/ui/CTASection'
+import FAQAccordion from '../components/ui/FAQAccordion'
 import CountUp from '../components/ui/CountUp'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import TestimonialCarousel from '../components/ui/TestimonialCarousel'
@@ -426,6 +427,28 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      {/* 7b. FAQ Section */}
+      <section className="py-20 md:py-28 bg-warm-50">
+        <h2 className="sr-only">Frequently Asked Questions About Leadership Coaching</h2>
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="text-[0.7rem] tracking-[0.25em] uppercase text-gold-400 font-semibold mb-3">FAQs</div>
+              <h2 className="font-display text-navy-950" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}>
+                Frequently Asked Questions
+              </h2>
+              <p className="text-navy-950/70 mt-4 max-w-2xl mx-auto">
+                Answers to common questions senior leaders ask before beginning leadership coaching with us.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="max-w-3xl mx-auto">
+            <FAQAccordion items={homeFAQ} />
+          </div>
+        </div>
+      </section>
+
 
       {/* 8. Final CTA */}
       <div id="final-cta" className="scroll-mt-24">
