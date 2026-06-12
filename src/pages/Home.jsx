@@ -429,6 +429,7 @@ export default function Home() {
 
       {/* 8. Final CTA */}
       <div id="final-cta" className="scroll-mt-24">
+        <h2 className="sr-only">Ready to Work with a Leading Leadership Coach in India?</h2>
         <CTASection
           heading={c('cta', 'heading')}
           subtext={c('cta', 'subtext')}
