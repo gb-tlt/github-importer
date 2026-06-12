@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import CTASection from '../components/ui/CTASection'
 import FAQAccordion from '../components/ui/FAQAccordion'
 import CountUp from '../components/ui/CountUp'
