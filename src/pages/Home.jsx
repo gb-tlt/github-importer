@@ -293,6 +293,7 @@ export default function Home() {
         <div className="absolute -top-1/2 -right-[20%] w-[600px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(240,222,160,0.04) 0%, transparent 70%)' }} />
         <div className="max-w-[1200px] mx-auto relative z-[2]">
           <ScrollReveal>
+            <h2 className="sr-only">Results from Leadership Coaching Engagements</h2>
             <h2 className="font-display font-normal text-center text-warm-50 mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
               {c('testimonials', 'title')}
             </h2>
