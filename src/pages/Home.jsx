@@ -89,7 +89,7 @@ const defaults = {
   },
   testimonials: {
     title: 'Results From Leadership Coaching',
-    subtitle: "The Leadership Tattva provides leadership coaching for CXOs, founders, VPs, directors and senior executives across India. Our integration coaching methodology helps leaders develop executive presence, emotional resilience, clarity under pressure and authentic leadership that holds when the stakes are highest. Now, don't take our word for it. Hear from leaders who did the work.",
+    subtitle: "Hear from senior leaders, CXOs and founders who made shifts in their leadership through coaching with Gowtham Balaji.",
   },
   stats: {
     items: [
