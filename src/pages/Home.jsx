@@ -88,7 +88,7 @@ const defaults = {
     clarityPrompt: "Not sure where to start? A clarity call will help us figure out the right path together.",
   },
   testimonials: {
-    title: 'Results from Leadership Coaching Engagements',
+    title: 'What Leaders Say',
     subtitle: "The Leadership Tattva provides leadership coaching for CXOs, founders, VPs, directors and senior executives across India. Our integration coaching methodology helps leaders develop executive presence, emotional resilience, clarity under pressure and authentic leadership that holds when the stakes are highest. Now, don't take our word for it. Hear from leaders who did the work.",
   },
   stats: {
