@@ -18,7 +18,7 @@ const programIconMap = {
 
 const defaults = {
   hero: {
-    badge: 'Executive Presence For Senior Leaders',
+    badge: 'Leadership Coach in India for CXOs, Founders & Senior Leaders',
     headline: 'What If Pressure Made You ',
     headlineGold: 'Stronger?',
     subtext: "Most leaders fragment under pressure, their body betrays them, their mind goes blank, their presence collapses. It doesn’t have to be this way. We help senior leaders rewire their leadership operating system, so that when pressure strikes, what shows up is their presence, mastery and impact.",
@@ -147,13 +147,13 @@ export default function Home() {
         <div className="relative z-[2] max-w-[820px] mx-auto w-full px-6 lg:px-12 py-10 md:py-14 lg:py-16 text-center">
           <ScrollReveal>
             <img src="/images/logo-square.png" alt="The Leadership Tattva" className="h-16 md:h-20 lg:h-24 w-auto mx-auto mb-4 md:mb-5 opacity-95 drop-shadow-[0_0_40px_rgba(240,222,160,0.15)]" />
-            <p className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-6">
+            <h1 className="font-display text-[0.68rem] tracking-[0.35em] uppercase text-gold-400 mb-6">
               {c('hero', 'badge')}
-            </p>
-            <h1 className="font-display font-normal leading-[1.15] mb-5 text-warm-50" style={{ fontSize: 'clamp(2rem, 4.2vw, 3.2rem)' }}>
+            </h1>
+            <h2 className="font-display font-normal leading-[1.15] mb-5 text-warm-50" style={{ fontSize: 'clamp(2rem, 4.2vw, 3.2rem)' }}>
               {c('hero', 'headline')}
               {c('hero', 'headlineGold') && <span className="text-gold-400">{c('hero', 'headlineGold')}</span>}
-            </h1>
+            </h2>
             <p className="text-[1.02rem] leading-[1.8] text-warm-50/80 mb-8 max-w-[680px] mx-auto">
               {c('hero', 'subtext')}
             </p>
