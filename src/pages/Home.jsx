@@ -100,7 +100,7 @@ const defaults = {
   },
   aboutTlt: {
     label: 'About',
-    title: 'Why The Leadership Tattva Exists',
+    title: 'Our Leadership Coaching Philosophy',
     paragraphs: [
       'There is a voice inside every capable leader that knows they can do more, be more, impact more. But somewhere between the pressure and the performance, that voice learned to stay quiet.',
       "We built The Leadership Tattva because we believe this: when that voice finds its ground, when the leader behind the title shows up fully, something shifts. Not just in their career. In every situation they walk into. In every team they lead. In every decision they make. The best ideas surface. The right work gets done. People stop performing and start contributing. That’s the world we want to help build. One integrated leader at a time.",
