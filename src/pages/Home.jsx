@@ -81,7 +81,7 @@ const defaults = {
     ],
   },
   services: {
-    label: 'How We Serve Leaders',
+    label: 'LEADERSHIP COACHING FOR SENIOR LEADERS',
     title: 'Develop Leadership Presence, Clarity & Impact Without Losing Yourself',
     subtitle: 'Same methodology. Different pathways to integration.',
     linkText: 'Compare All Programs',
