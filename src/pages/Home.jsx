@@ -17,6 +17,29 @@ const programIconMap = {
   'life-coaching': '/images/icons/family-harmony.png',
 }
 
+const homeFAQ = [
+  {
+    q: 'What is leadership coaching for CXOs in The Leadership Tattva?',
+    a: 'Leadership coaching for CXOs enables the senior executives integrate within oneself so that, even when pressure hits, their strategic thinking, executive presence, decision-making, communication, and leadership are effective.',
+  },
+  {
+    q: 'Who is this Leadership coaching designed for?',
+    a: 'This Leadership coaching is designed for CXOs, Directors, VPs, AVPs, senior leaders, founders, entrepreneurs, business owners, and high-potential executives navigating complex leadership challenges. A minimum of 5 years leadership experience is required to apply to our programs.',
+  },
+  {
+    q: "How does Leadership Tattva's coaching approach differ?",
+    a: "The answer is simple. We do not add layers of learning and knowledge to you. We help you remove clutter from your system that accumulates due to years of being in systems, so that you can realign towards your natural leadership gifts and potentials. This way, you're not stacking certificates, not spending hours doing something new, to see it vanish under pressure. You're coming back to simple and effective leadership that works all the time. This process addresses leadership presence, emotional resilience, self-awareness, strategic clarity, and practical business leadership development.",
+  },
+  {
+    q: 'What outcomes can senior leaders expect from leadership coaching?',
+    a: "Firstly, senior leaders often experience more energy, more time availability, more connection with what's meaningful for them in their life. The basics are taken care. Then they experience spontaneous shifts in how they respond to investor questions, board pressure and manager's pushbacks. This drives improved executive presence, better decision-making, stronger team influence, clearer communication, higher confidence, and sustainable leadership performance.",
+  },
+  {
+    q: 'Do you offer leadership coaching for organizations and leadership teams?',
+    a: 'Yes. Leadership Tattva provides coaching and leadership development programs for organizations, leadership teams, and senior management groups across industries.',
+  },
+]
+
 const defaults = {
   hero: {
     badge: 'Leadership Coach in India for CXOs, Founders & Senior Leaders',
