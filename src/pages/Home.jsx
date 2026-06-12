@@ -18,7 +18,7 @@ const programIconMap = {
 
 const defaults = {
   hero: {
-    badge: 'Executive Presence For Senior Leaders',
+    badge: 'Leadership Coach in India for CXOs, Founders & Senior Leaders',
     headline: 'What If Pressure Made You ',
     headlineGold: 'Stronger?',
     subtext: "Most leaders fragment under pressure, their body betrays them, their mind goes blank, their presence collapses. It doesn’t have to be this way. We help senior leaders rewire their leadership operating system, so that when pressure strikes, what shows up is their presence, mastery and impact.",
