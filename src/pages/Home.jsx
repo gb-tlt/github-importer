@@ -69,7 +69,7 @@ const defaults = {
   },
   leadershipMatters: {
     label: 'A Way Forward',
-    heading: 'Your Leadership Matters',
+    heading: "Your Leadership Matters.\nThat's Why Leadership Coaching Matters\n\n",
     quote: "There is nothing more dangerous than a loud voice with no real substance; and nothing more tragic than a good leader who has something to say, but can’t bring themselves to say it.",
     cards: [
       { title: 'Come back to yourself.', text: 'The version of you that knew, before you somehow learnt to shrink.' },
