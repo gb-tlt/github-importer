@@ -110,8 +110,8 @@ const defaults = {
   },
   assessment: {
     badge: 'Free Assessment',
-    title: 'Take the Leadership Integration Audit',
-    subtitle: '20 questions. 5 minutes. Discover where you fragment across the Five Layers and receive personalised integration practices.',
+    title: 'Take Your Leadership Presence Scoreard',
+    subtitle: '10 questions. 5 minutes. Discover where you fragment across the Five Layers and receive personalised integration practices.',
     ctaText: 'Start the Free Audit',
     note: 'No spam. Just clarity on your leadership pattern.',
   },
