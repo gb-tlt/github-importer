@@ -333,6 +333,7 @@ export default function Home() {
       <section className="bg-white py-28 px-6">
         <div className="max-w-[780px] mx-auto text-center">
           <ScrollReveal>
+            <h2 className="sr-only">Our Leadership Coaching Philosophy</h2>
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('aboutTlt', 'label')}
             </p>
@@ -359,6 +360,7 @@ export default function Home() {
       <section className="bg-warm-50 py-28 px-6">
         <div className="max-w-[1000px] mx-auto text-center">
           <ScrollReveal>
+            <h2 className="sr-only">LEADERSHIP COACHING FOR SENIOR LEADERS</h2>
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('services', 'label')}
             </p>
@@ -406,6 +408,7 @@ export default function Home() {
       <section className="bg-white py-20 px-6">
         <ScrollReveal>
           <div className="max-w-[700px] mx-auto text-center bg-warm-50 rounded-2xl border border-navy-950/10 p-14 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(9,1,52,0.08)] hover:border-transparent">
+            <h2 className="sr-only">Take Your Leadership Presence Scorecard</h2>
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-6">
               {c('assessment', 'badge')}
             </p>
