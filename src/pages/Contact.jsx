@@ -126,8 +126,9 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-navy-950 mb-2">Years of Leadership Experience</label>
+                      <label htmlFor="contact-experience" className="block text-sm font-medium text-navy-950 mb-2">Years of Leadership Experience</label>
                       <select
+                        id="contact-experience"
                         name="experience" value={formData.experience} onChange={handleChange}
                         className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 focus:outline-none focus:border-gold-400 transition-colors"
                       >
@@ -140,8 +141,9 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-navy-950 mb-2">Program Interest</label>
+                      <label htmlFor="contact-interest" className="block text-sm font-medium text-navy-950 mb-2">Program Interest</label>
                       <select
+                        id="contact-interest"
                         name="interest" value={formData.interest} onChange={handleChange}
                         className="w-full px-4 py-3 bg-warm-50 border border-warm-200 rounded-lg text-navy-950 focus:outline-none focus:border-gold-400 transition-colors"
                       >
