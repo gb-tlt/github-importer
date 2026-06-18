@@ -100,7 +100,7 @@ const defaults = {
     ],
   },
   arc4: {
-    eyebrow: 'Arc 4 of 6: The Solution',
+    eyebrow: 'ARC 4 OF 6: THE SOLUTION',
     title: 'How Integration Coaching Works',
     intro: 'This is not mindfulness repackaged for boardrooms. It is not motivation. It is a rigorous, evidence-grounded methodology that works at the layer where fragmentation actually lives, and where every other approach stops short.',
     intro2: "A leader is not a professional unit with a leadership gap. A leader is a human being, with a nervous system already running on chronic activation, a full life outside the office that doesn’t stay outside the office, an emotional history that shows up in every high-stakes room, and an identity shaped by years of performing what the corporate environment rewarded. Whole-person integration starts from this reality. Not from a competency framework. Not from a job description. From the actual human being in front of us.",
@@ -177,9 +177,12 @@ export default function TheWork() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(240,222,160,0.06) 0%, transparent 60%)' }} />
         <div className="relative z-[2] max-w-[900px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-warm-50/80 leading-[1.5] mb-8" style={{ fontSize: 'clamp(1rem, 1.7vw, 1.2rem)' }}>
+            <p className="font-display text-warm-50/80 leading-[1.5] mb-6" style={{ fontSize: 'clamp(1rem, 1.7vw, 1.2rem)' }}>
               {c('hero', 'badge')}
             </p>
+            <h1 className="font-display text-warm-50 leading-[1.3] mb-8" style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.2rem)' }}>
+              Integration Coaching for CXOs, Founders and Senior Leaders
+            </h1>
             {(c('hero', 'lines') || []).map((line, i) => (
               <p key={i} className="font-display font-normal text-warm-50 leading-[1.3] mb-3" style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)' }}>
                 {line}
