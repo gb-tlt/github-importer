@@ -255,7 +255,7 @@ export default function Home() {
               <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-7">
                 {c('presence', 'label')}
               </p>
-              <h3 className="sr-only">{c('presence', 'seoHeadline')}</h3>
+              <div className="sr-only">{c('presence', 'seoHeadline')}</div>
               <h2 className="font-display font-normal leading-[1.35] text-navy-950 mb-6" style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)' }}>
                 {c('presence', 'heading')}
                 <em className="text-gold-400 italic">{c('presence', 'headingEmphasis')}</em>
@@ -426,8 +426,8 @@ export default function Home() {
                   </div>
                   <h3 className="font-display text-[1rem] font-medium text-navy-950 leading-[1.3] mb-3">{service.title}</h3>
                   <p className="text-[0.85rem] leading-[1.75] text-navy-950/55 mb-5">{service.description}</p>
-                  <Link to={service.link} className="font-display text-[0.75rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
-                    Learn More →
+                  <Link to={service.link} aria-label={`Explore our ${service.title} program`} className="font-display text-[0.75rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
+                    Explore {service.title} <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </ScrollReveal>
