@@ -641,6 +641,21 @@ export default function TheWork() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="bg-warm-50 py-24 md:py-28 px-6 lg:px-12">
+        <div className="max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <p className="font-display text-[0.7rem] tracking-[0.3em] uppercase text-gold-400 mb-5 text-center">
+              {c('faq', 'eyebrow')}
+            </p>
+            <h2 className="font-display font-normal text-navy-950 mb-12 leading-[1.25] text-center" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)' }}>
+              {c('faq', 'title')}
+            </h2>
+          </ScrollReveal>
+          <FAQAccordion items={c('faq', 'items') || defaults.faq.items} />
+        </div>
+      </section>
+
       {/* CTA / Conversion */}
       <section className="bg-navy-950 text-warm-50 py-24 md:py-28 px-6 lg:px-12">
         <div className="max-w-[1100px] mx-auto">
