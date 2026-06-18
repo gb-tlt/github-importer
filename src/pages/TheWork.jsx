@@ -31,7 +31,7 @@ const defaults = {
   },
   arc1: {
     eyebrow: "ARC 1 OF 6:\u00a0THE LEADERSHIP CHALLENGE:\u00a0\nWHY EVEN HIGH-PERFORMING LEADERS FRAGMENT UNDER PRESSURE?\n\n",
-    title: "What’s Actually Happening Inside You",
+    title: "The Leadership Challenge: Why High-Performing Leaders Fragment Under Pressure?",
     intro: "McKinsey publishes it. Deloitte cites it. CCL researches it. Every major firm agrees, the real barrier in leadership is the whole human being. And then they run the same behavioural competency workshop they’ve been running for twenty years. Here’s what’s actually happening inside the leaders they keep training.",
     showsUpHeading: 'What Shows Up In The Room',
     showsUp: [
@@ -79,7 +79,7 @@ const defaults = {
   },
   arc3: {
     eyebrow: 'ARC 3 OF 6: INTEGRATION COACHING BEGINS WITH UNDERSTANDING FRAGMENTATION',
-    title: "You’re Not Broken. The Western Framework Is. And They Know It.",
+    title: "Integration Coaching Begins with Understanding Fragmentation",
     paragraphs: [
       'This is fragmentation. And it is not a character flaw. It is what happens when a well-designed human being is asked to operate inside a framework never built for the whole of them.',
       "The Western professional model split the leader in two: the person who shows up at work, and the person who exists everywhere else. You were rewarded for sustaining that split. And you’ve been paying the cost of it ever since.",
@@ -100,16 +100,16 @@ const defaults = {
     ],
   },
   arc4: {
-    eyebrow: 'Arc 4 of 6: The Solution',
+    eyebrow: 'ARC 4 OF 6: THE SOLUTION',
     title: 'How Integration Coaching Works',
     intro: 'This is not mindfulness repackaged for boardrooms. It is not motivation. It is a rigorous, evidence-grounded methodology that works at the layer where fragmentation actually lives, and where every other approach stops short.',
     intro2: "A leader is not a professional unit with a leadership gap. A leader is a human being, with a nervous system already running on chronic activation, a full life outside the office that doesn’t stay outside the office, an emotional history that shows up in every high-stakes room, and an identity shaped by years of performing what the corporate environment rewarded. Whole-person integration starts from this reality. Not from a competency framework. Not from a job description. From the actual human being in front of us.",
     pillars: [
       { tab: 'Nervous System', title: 'The Nervous System First', text: "Most coaching starts with what you think and what you say. This work starts with what your body is doing, because a nervous system in chronic activation cannot produce authentic leadership regardless of what the mind decides. Dr. Stephen Porges’ Polyvagal Theory establishes that calm authority and genuine connection are only accessible from a state of physiological regulation. Not from willpower. Not from better frameworks. From a regulated body." },
-      { tab: 'Whole Life', title: 'Your Whole Life Is the Actual Context', text: "You don’t walk into a high-stakes meeting as a ‘professional.’ You walk in as a person who may not have slept, who had friction at home, who is carrying financial pressure, whose health has been quietly deteriorating. An approach that ignores this context is working on a version of you that doesn’t exist. Integration has to hold inside the actual life you are living, not in an idealised environment where none of those variables apply." },
-      { tab: 'Trauma-Informed', title: 'Trauma-Informed Means Precise, Not Therapy', text: 'Many leadership patterns, hypervigilance, freeze responses, the need to control, chronic people-pleasing, are not character flaws. They are adaptive responses encoded in the nervous system, now running automatically in professional contexts where they no longer serve. Working with these patterns requires understanding their origin and physiological mechanism, not just their surface behaviour. Without this precision, coaching addresses the symptom. The pattern returns. Every time. Deeply based on work done by Raghu Ananthanarayanan and others.' },
-      { tab: 'Somatic Work', title: 'Somatic Work Is Not Alternative Medicine', text: 'The way a leader breathes, holds tension, occupies physical space, or collapses under scrutiny, these are not cosmetic details. They are the operating system. And they cannot be changed through cognitive insight alone. This practice is evidence-backed, drawn from somatic experiencing work by Anuradha, Sacred paths, yoga therapy, and performance science used in military and Olympic environments.' },
-      { tab: 'Inner Intelligence', title: 'Inner Intelligence Over External Prescription', text: "Your capacity for clear judgment, authentic presence, and wise leadership is already in you, obscured by accumulated stress responses, inherited patterns, and years of performing a version of yourself that the corporate environment reinforced. The work is not construction. It is excavation. Robert Kegan’s research at Harvard establishes clearly: the difference between a leader who knows what to do and one who does it under pressure is not more information, it is a different order of inner development." },
+      { tab: 'Whole Life', title: 'Whole-Life Integration', text: "You don’t walk into a high-stakes meeting as a ‘professional.’ You walk in as a person who may not have slept, who had friction at home, who is carrying financial pressure, whose health has been quietly deteriorating. An approach that ignores this context is working on a version of you that doesn’t exist. Integration has to hold inside the actual life you are living, not in an idealised environment where none of those variables apply." },
+      { tab: 'Trauma-Informed', title: 'Trauma-Informed Leadership Development', text: 'Many leadership patterns, hypervigilance, freeze responses, the need to control, chronic people-pleasing, are not character flaws. They are adaptive responses encoded in the nervous system, now running automatically in professional contexts where they no longer serve. Working with these patterns requires understanding their origin and physiological mechanism, not just their surface behaviour. Without this precision, coaching addresses the symptom. The pattern returns. Every time. Deeply based on work done by Raghu Ananthanarayanan and others.' },
+      { tab: 'Somatic Work', title: 'Somatic and Body-Based Practices', text: 'The way a leader breathes, holds tension, occupies physical space, or collapses under scrutiny, these are not cosmetic details. They are the operating system. And they cannot be changed through cognitive insight alone. This practice is evidence-backed, drawn from somatic experiencing work by Anuradha, Sacred paths, yoga therapy, and performance science used in military and Olympic environments.' },
+      { tab: 'Inner Intelligence', title: 'Developing Inner Intelligence', text: "Your capacity for clear judgment, authentic presence, and wise leadership is already in you, obscured by accumulated stress responses, inherited patterns, and years of performing a version of yourself that the corporate environment reinforced. The work is not construction. It is excavation. Robert Kegan’s research at Harvard establishes clearly: the difference between a leader who knows what to do and one who does it under pressure is not more information, it is a different order of inner development." },
     ],
     closingHeading: 'One standard applies to everything we do: does it hold when pressure arrives?',
     closingBody: 'Not in the coaching session. Not in a calm moment of self-reflection. In the room where the stakes are real, the eyes are on you, and the decision cannot wait. Integration that only works in ideal conditions is not integration. This is the bar.',
@@ -177,9 +177,12 @@ export default function TheWork() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(240,222,160,0.06) 0%, transparent 60%)' }} />
         <div className="relative z-[2] max-w-[900px] mx-auto">
           <ScrollReveal>
-            <p className="font-display text-warm-50/80 leading-[1.5] mb-8" style={{ fontSize: 'clamp(1rem, 1.7vw, 1.2rem)' }}>
+            <p className="font-display text-warm-50/80 leading-[1.5] mb-6" style={{ fontSize: 'clamp(1rem, 1.7vw, 1.2rem)' }}>
               {c('hero', 'badge')}
             </p>
+            <h1 className="font-display text-warm-50 leading-[1.3] mb-8" style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.2rem)' }}>
+              Integration Coaching for CXOs, Founders and Senior Leaders
+            </h1>
             {(c('hero', 'lines') || []).map((line, i) => (
               <p key={i} className="font-display font-normal text-warm-50 leading-[1.3] mb-3" style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)' }}>
                 {line}
