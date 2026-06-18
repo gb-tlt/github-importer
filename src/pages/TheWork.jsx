@@ -25,6 +25,10 @@ const defaults = {
     pivot: 'But, your nervous system is running the show.',
     closing: "That gap, where your body tightens, your words vanish, and the room feels what you're hiding, is where your leadership quietly collapses.",
   },
+  definition: {
+    eyebrow: 'A Definition',
+    title: 'What Is Integration Coaching?',
+  },
   arc1: {
     eyebrow: 'Arc 1 of 6: The Challenge',
     title: "What’s Actually Happening Inside You",
