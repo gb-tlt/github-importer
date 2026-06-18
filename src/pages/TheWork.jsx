@@ -30,7 +30,7 @@ const defaults = {
     title: 'What Is Integration Coaching?',
   },
   arc1: {
-    eyebrow: 'Arc 1 of 6: The Challenge',
+    eyebrow: "ARC 1 OF 6:\u00a0THE LEADERSHIP CHALLENGE:\u00a0\nWHY EVEN HIGH-PERFORMING LEADERS FRAGMENT UNDER PRESSURE?\n\n",
     title: "What’s Actually Happening Inside You",
     intro: "McKinsey publishes it. Deloitte cites it. CCL researches it. Every major firm agrees, the real barrier in leadership is the whole human being. And then they run the same behavioural competency workshop they’ve been running for twenty years. Here’s what’s actually happening inside the leaders they keep training.",
     showsUpHeading: 'What Shows Up In The Room',
@@ -78,7 +78,7 @@ const defaults = {
     note: "Sources: Jeffrey Pfeffer, Stanford, Leadership B.S. Gabor Maté / Dr. Stephen Porges, Polyvagal Theory and Trauma-Informed approaches to performance. Robert Kegan, In Over Our Heads; Immunity to Change. Sage Journal, research on the Ideal Worker norm. Georgenson (1982) and subsequent meta-analyses on training transfer failure.",
   },
   arc3: {
-    eyebrow: 'Arc 3 of 6: The Reframe',
+    eyebrow: 'ARC 3 OF 6: INTEGRATION COACHING BEGINS WITH UNDERSTANDING FRAGMENTATION',
     title: "You’re Not Broken. The Western Framework Is. And They Know It.",
     paragraphs: [
       'This is fragmentation. And it is not a character flaw. It is what happens when a well-designed human being is asked to operate inside a framework never built for the whole of them.',
@@ -101,7 +101,7 @@ const defaults = {
   },
   arc4: {
     eyebrow: 'Arc 4 of 6: The Solution',
-    title: 'A Different Model: How This Work Is Actually Built',
+    title: 'How Integration Coaching Works',
     intro: 'This is not mindfulness repackaged for boardrooms. It is not motivation. It is a rigorous, evidence-grounded methodology that works at the layer where fragmentation actually lives, and where every other approach stops short.',
     intro2: "A leader is not a professional unit with a leadership gap. A leader is a human being, with a nervous system already running on chronic activation, a full life outside the office that doesn’t stay outside the office, an emotional history that shows up in every high-stakes room, and an identity shaped by years of performing what the corporate environment rewarded. Whole-person integration starts from this reality. Not from a competency framework. Not from a job description. From the actual human being in front of us.",
     pillars: [
@@ -117,7 +117,7 @@ const defaults = {
   },
   arc5: {
     eyebrow: 'Arc 5 of 6: The Promise',
-    title: 'What Leaders Say After This Work',
+    title: "What Leaders Say\u00a0\nAfter Integration Coaching\n\n",
     quote: "I came in because I was good in every meeting except the ones that mattered. The moment the CEO walked in, something in me shifted, my voice changed, my sentences got longer, I started explaining when I should have been stating. I knew exactly what was happening and couldn’t stop it.\n\nWhat changed wasn’t a technique. The work went somewhere I didn’t expect, into the version of me that had decided, a long time ago, that being too visible was dangerous. Once that moved, the room stopped being something I had to manage. I just showed up.\n\nWhat I didn’t expect: I became a better father. Not because we worked on that. Because the same thing that made me shrink in the boardroom was making me unavailable at home. When one shifted, both did.\n\nThis is for leaders who know the problem isn’t skill. Who have tried the obvious things and are ready to go somewhere different.",
     attribution: 'VP, Taxation, Financial Services',
     detail: '14 years experience',
