@@ -255,7 +255,7 @@ export default function Home() {
               <p className="font-display text-[0.62rem] tracking-[0.3em] uppercase text-gold-400 mb-7">
                 {c('presence', 'label')}
               </p>
-              <h3 className="sr-only">{c('presence', 'seoHeadline')}</h3>
+              <div className="sr-only">{c('presence', 'seoHeadline')}</div>
               <h2 className="font-display font-normal leading-[1.35] text-navy-950 mb-6" style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)' }}>
                 {c('presence', 'heading')}
                 <em className="text-gold-400 italic">{c('presence', 'headingEmphasis')}</em>
