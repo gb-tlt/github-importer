@@ -150,6 +150,17 @@ const defaults = {
     callBridge: 'If what you see in the results matches what you already suspected, a 45-minute clarity call will tell you exactly where to start and whether this is the right path for you.',
     callCta: 'Book a Clarity Call',
   },
+  faq: {
+    eyebrow: 'Frequently Asked Questions',
+    title: 'Common Questions About Integration Coaching',
+    items: [
+      { q: 'What is integration coaching in leadership coaching?', a: 'Integration coaching is a leadership development approach that helps senior leaders align their inner world — values, identity, awareness — with their outer performance. It goes beyond skills training to address who you are as a leader, not just what you do.' },
+      { q: 'How is integration coaching different from conventional executive coaching?', a: "An example: Your communication is a consequence of clarity and conviction. Integration coaching for leaders works at this level of inner alignment for clarity and conviction. Naturally, your communication would improve. We see this time and again with every leader we work with. Conventional executive coaching or leadership coaching typically focuses on specific performance goals and behavioral skills — these vanish under pressure. Integration coaching goes deeper — it works with a leader's inner operating system, emotional patterns, and sense of purpose to create lasting transformation, not just short-term improvement." },
+      { q: 'Who needs integration coaching?', a: "This coaching is ideal for CXOs, founders, and senior leaders who are high achievers on the outside but feel a lack of inner solidity, sense an inner restlessness, disconnection, or lack of fulfilment. It suits those ready to grow beyond competence into wholeness. This is where leadership becomes natural and effortless, while producing meaningful impact." },
+      { q: 'What results can I expect from integration coaching?', a: "Results are subjective.\n\nAfter 6-8 weeks of this work, we have seen our participant leader gets called in and offered ESOPs along with increment; we have seen CFOs calling their VP in to discuss CFO succession plans; we have seen CEO (-1) recognising the director and promoting this leader.\n\nThe Leadership Tattva does not claim their results — these results were perhaps long overdue. What worked is an alignment, their presence & how they impacted in that moment.\n\nOur leaders feel a certain satisfaction and a sense of 'this is how it's meant to be'. Typically, leaders who undergo integration coaching also experience greater clarity in decision-making, improved relationships with their teams and families, a stronger sense of purpose, and a more sustainable leadership style that does not depend on constant pressure or external validation." },
+      { q: 'How long does integration coaching take?', a: "The duration depends on the individual's goals and depth of work. Our limited numbers cohort engagement runs for 10 weeks. Our 1-1 engagements go from 4 months to 6 months depending on the nature of work we engage with. The pace of these structured one-on-one sessions are designed to support real integration — not rushed change." },
+    ],
+  },
 }
 
 export default function TheWork() {
