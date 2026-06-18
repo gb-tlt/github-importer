@@ -426,8 +426,8 @@ export default function Home() {
                   </div>
                   <h3 className="font-display text-[1rem] font-medium text-navy-950 leading-[1.3] mb-3">{service.title}</h3>
                   <p className="text-[0.85rem] leading-[1.75] text-navy-950/55 mb-5">{service.description}</p>
-                  <Link to={service.link} className="font-display text-[0.75rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
-                    Learn More →
+                  <Link to={service.link} aria-label={`Explore our ${service.title} program`} className="font-display text-[0.75rem] tracking-[0.08em] uppercase text-gold-400 hover:tracking-[0.14em] transition-all duration-300 inline-block">
+                    Explore {service.title} <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </ScrollReveal>
