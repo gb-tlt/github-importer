@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import CountUp from '../components/ui/CountUp'
 import DisclosureRow from '../components/ui/DisclosureRow'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import FAQAccordion from '../components/ui/FAQAccordion'
 import { useContent } from '../hooks/useContent'
 
 const parseStat = (raw = '') => {
