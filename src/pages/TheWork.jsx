@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CountUp from '../components/ui/CountUp'
@@ -155,6 +156,17 @@ export default function TheWork() {
 
   return (
     <>
+      <Helmet>
+        <title>Integration Coaching for Senior Leaders | The Leadership Tattva</title>
+        <meta name="description" content="The Leadership Tattva's integration coaching helps senior leaders enhance self-awareness, navigate complexity, and lead with authenticity." />
+        <link rel="canonical" href="https://hug-a-repo-79.lovable.app/the-work" />
+        <meta property="og:url" content="https://hug-a-repo-79.lovable.app/the-work" />
+        <meta property="og:title" content="Integration Coaching for Senior Leaders | The Leadership Tattva" />
+        <meta property="og:description" content="The Leadership Tattva's integration coaching helps senior leaders enhance self-awareness, navigate complexity, and lead with authenticity." />
+        <meta name="twitter:title" content="Integration Coaching for Senior Leaders | The Leadership Tattva" />
+        <meta name="twitter:description" content="The Leadership Tattva's integration coaching helps senior leaders enhance self-awareness, navigate complexity, and lead with authenticity." />
+      </Helmet>
+
       {/* Hero */}
       <section className="relative bg-navy-950 text-warm-50 py-28 md:py-36 px-6 lg:px-12 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url(/images/bg-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3 }} />
