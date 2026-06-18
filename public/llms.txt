@@ -1,0 +1,21 @@
+# The Leadership Tattva
+
+> Leadership integration coaching for CXOs, founders, and senior leaders — blending Eastern wisdom with modern leadership development to stop fragmentation under pressure.
+
+The Leadership Tattva is the executive coaching practice of Gowtham Balaji, offering integration coaching for senior leaders, founders, and CXOs who experience fragmentation under pressure. The methodology combines Eastern wisdom traditions — including Advaita Vedanta, Yoga Sutras, somatic work, and energy healing — with contemporary leadership coaching across five layers: Body, Energy, Mind, Judgment/Values, and Identity/Purpose. The site provides information about the coaching approach, three structured programs, resources for leaders, and a contact pathway to book discovery calls.
+
+## Pages
+
+- [Home](/): Hero, leadership presence narrative, five-layer operating system, programs, testimonials, and trusted-by logos.
+- [About](/about): Gowtham Balaji’s story, credentials, coaching philosophy, and the founder’s journey.
+- [The Work](/the-work): The six-arc integration coaching methodology, how it works, and frequently asked questions.
+- [Services](/services): Overview of all coaching programs with descriptions and entry points.
+- [F.I.T. Leadership Cohort](/services/fit-cohort): Group coaching program details — 10 weeks, 5–8 leaders, curriculum, and outcomes.
+- [One-on-One Coaching](/services/one-on-one): Premium individual coaching — 16 sessions over 4 months, limited to 6 clients.
+- [Life Coaching](/services/life-coaching): Whole-life alignment coaching — custom 4-month engagement for personal and professional integration.
+- [Resources](/resources): Articles, tools, assessments, and leadership development resources for senior executives.
+- [Contact](/contact): Pre-qualification application form and calendar booking for discovery calls.
+
+## Optional
+
+- [Admin](/admin): Internal content management panel for site administrators.
