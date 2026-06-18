@@ -55,11 +55,12 @@ export default function ProgramCard({ service, index = 0, dark = false, icon }) 
 
         <Link
           to={service.link}
+          aria-label={`Explore our ${service.title} program`}
           className={`inline-flex items-center gap-2 font-semibold transition-colors mt-auto ${
             isGold ? 'text-gold-400 hover:text-gold-300' : 'text-gold-400 hover:text-gold-300'
           }`}
         >
-          Learn More <ArrowRight className="w-4 h-4" />
+          Explore our {service.title} program <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
     </ScrollReveal>
