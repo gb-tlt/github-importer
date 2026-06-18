@@ -31,7 +31,7 @@ const defaults = {
   },
   arc1: {
     eyebrow: "ARC 1 OF 6:\u00a0THE LEADERSHIP CHALLENGE:\u00a0\nWHY EVEN HIGH-PERFORMING LEADERS FRAGMENT UNDER PRESSURE?\n\n",
-    title: "What’s Actually Happening Inside You",
+    title: "The Leadership Challenge: Why High-Performing Leaders Fragment Under Pressure?",
     intro: "McKinsey publishes it. Deloitte cites it. CCL researches it. Every major firm agrees, the real barrier in leadership is the whole human being. And then they run the same behavioural competency workshop they’ve been running for twenty years. Here’s what’s actually happening inside the leaders they keep training.",
     showsUpHeading: 'What Shows Up In The Room',
     showsUp: [
@@ -79,7 +79,7 @@ const defaults = {
   },
   arc3: {
     eyebrow: 'ARC 3 OF 6: INTEGRATION COACHING BEGINS WITH UNDERSTANDING FRAGMENTATION',
-    title: "You’re Not Broken. The Western Framework Is. And They Know It.",
+    title: "Integration Coaching Begins with Understanding Fragmentation",
     paragraphs: [
       'This is fragmentation. And it is not a character flaw. It is what happens when a well-designed human being is asked to operate inside a framework never built for the whole of them.',
       "The Western professional model split the leader in two: the person who shows up at work, and the person who exists everywhere else. You were rewarded for sustaining that split. And you’ve been paying the cost of it ever since.",
