@@ -1,29 +1,61 @@
-## Add FAQ Section to Home Page
+# What Is Integration Coaching? — New Section on /the-work
 
-Append a new FAQ section to `src/pages/Home.jsx`, placed just before the final CTA section (`#final-cta`), using a light cream/warm background to fit the existing alternating section style.
+Insert a new section directly after the Hero (before "Arc 1, The Challenge") on `src/pages/TheWork.jsx`.
 
-### Content
-Five Q&A items provided by the user, covering:
-1. What leadership coaching for CXOs means at The Leadership Tattva
-2. Who the coaching is designed for
-3. How TLT's approach differs (removing clutter vs. adding layers)
-4. Outcomes senior leaders can expect
-5. Coaching for organizations and leadership teams
+## Layout
 
-### Implementation
-- Reuse the existing `FAQAccordion` component (`src/components/ui/FAQAccordion.jsx`) with `dark={false}` for the light theme (white cards on warm background, navy text, gold chevrons).
-- Reuse `SectionHeading` for the section title with a small eyebrow label.
-- Wrap in a `<section>` with `bg-warm-50` (or white) padding consistent with other Home sections.
-- Add an `sr-only` `<h2>` SEO tag matching the pattern used for the other sections ("Frequently Asked Questions About Leadership Coaching").
-- Define the 5 FAQ items as a local `const homeFAQ = [...]` array at the top of the Home component (kept inline since these are Home-specific, not part of the shared `faq` collection).
+A two-column split on desktop, stacking on mobile.
 
-### Structure
-- Eyebrow: "FAQs"
-- Heading: "Frequently Asked Questions"
-- Subtitle: short line about senior leadership coaching
-- `<FAQAccordion items={homeFAQ} />`
+```text
++---------------------------+----------------------------+
+| LEFT (text, ~55%)         | RIGHT (diagram, ~45%)      |
+|                           |                            |
+| Eyebrow: A DEFINITION     |   [ Identity / Purpose ]   |
+|                           |          |                 |
+| H2: What Is Integration   |   [ Judgment & Values ]    |
+|     Coaching?             |          |                 |
+|                           |   [    Mind            ]   |
+| Gold accent line          |          |                 |
+|                           |   [   Energy           ]   |
+| Paragraph (provided copy, |          |                 |
+| with key phrases —        |   [    Body            ]   |
+| "whole human being",      |                            |
+| "under pressure" —        |   Caption: The Five Layers |
+| highlighted in gold)      |                            |
++---------------------------+----------------------------+
+```
 
-### Files changed
-- `src/pages/Home.jsx` — add the new section + FAQ data array (no other files modified)
+## Visual diagram (right column)
 
-No new components, data files, or schema changes needed.
+A vertical stack of 5 pill-shaped cards, one per layer, in the order Identity/Purpose → Judgment & Values → Mind → Energy → Body (top to bottom, mirroring the layered "human operating system" metaphor used elsewhere on the site).
+
+- Each pill: navy-950 border, warm-50 background, small gold icon dot on the left, layer name in Cinzel.
+- Subtle vertical connector line (1px, gold-400 at 30% opacity) running through all five, conveying integration.
+- Soft drop shadow + 3D float on hover (matches `floatAnim` pattern already in `index.css`).
+- ScrollReveal wraps the diagram for the standard fade-in-up.
+
+## Styling
+
+- Section background: `bg-warm-50` (beige) — creates a calm pause between the dark hero and the white Arc 1 section.
+- Vertical padding: `py-24 md:py-28`, max width `1100px`.
+- Eyebrow: `font-display text-[0.7rem] tracking-[0.3em] uppercase text-gold-400`.
+- H2: `font-display text-navy-950 text-3xl md:text-4xl leading-tight`.
+- Gold accent line: 60px × 2px, `bg-gold-400`, margin-bottom 6.
+- Body paragraph: Source Serif Pro, `text-navy-950/80`, `leading-[1.85]`, ~1.05rem. Wrap "whole human being" and "under pressure" in `<span className="text-gold-400 font-semibold">`.
+
+## Content (verbatim from user)
+
+- Eyebrow: `A DEFINITION`
+- Title: `What Is Integration Coaching?`
+- Paragraph: `Integration Coaching is a leadership development approach that works with the whole human being, not just leadership skills. It helps leaders align their body, nervous system, emotions, judgment, values, and purpose so they can show up consistently under pressure. Unlike traditional executive coaching, integration coaching addresses the deeper patterns that shape leadership behaviour.`
+
+## Technical details
+
+- File touched: `src/pages/TheWork.jsx` (single file; insert new `<section>` between the existing Hero `</section>` at line ~192 and the `{/* Arc 1, The Challenge */}` comment at line ~194).
+- Defaults block: add a new `definition` key inside the existing `defaults` object so the section is editable later via the CMS (matching the page's existing `c('section','key')` pattern). No schema/admin wiring changes in this pass — content uses the `defaults` fallback exactly the way every other section on the page does until a CMS schema entry is added.
+- No new dependencies. Uses existing Tailwind tokens, `ScrollReveal`, and the icon image paths already in `public/images/icons/` (peace-alignment, decision-making, mental-peace, flow-state, physical-vitality) for the 5 pills.
+- No changes to routing, Helmet, or any other section.
+
+## Verification
+
+After the edit: run `npm run build` and visually confirm via preview that the section sits between the navy hero and the white Arc 1 section, the diagram aligns vertically with the text on desktop, and stacks cleanly on mobile.

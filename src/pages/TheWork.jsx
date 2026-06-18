@@ -191,6 +191,66 @@ export default function TheWork() {
         </div>
       </section>
 
+      {/* What Is Integration Coaching? */}
+      <section className="bg-warm-50 py-24 md:py-28 px-6 lg:px-12 border-y border-navy-950/5">
+        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1.15fr_1fr] gap-14 md:gap-20 items-center">
+          {/* LEFT: copy */}
+          <ScrollReveal>
+            <p className="font-display text-[0.7rem] tracking-[0.3em] uppercase text-gold-400 mb-5">
+              {c('definition', 'eyebrow')}
+            </p>
+            <h2 className="font-display text-navy-950 text-3xl md:text-4xl leading-tight mb-6">
+              {c('definition', 'title')}
+            </h2>
+            <div className="w-[60px] h-[2px] bg-gold-400 mb-7" />
+            <p className="text-navy-950/80 leading-[1.85]" style={{ fontSize: '1.05rem' }}>
+              Integration Coaching is a leadership development approach that works with the{' '}
+              <span className="text-gold-400 font-semibold">whole human being</span>, not just leadership skills. It helps leaders align their body, nervous system, emotions, judgment, values, and purpose so they can show up consistently{' '}
+              <span className="text-gold-400 font-semibold">under pressure</span>. Unlike traditional executive coaching, integration coaching addresses the deeper patterns that shape leadership behaviour.
+            </p>
+          </ScrollReveal>
+
+          {/* RIGHT: five-layer diagram */}
+          <ScrollReveal>
+            <div className="relative mx-auto max-w-[360px]">
+              {/* vertical connector */}
+              <span
+                aria-hidden="true"
+                className="absolute left-1/2 -translate-x-1/2 top-5 bottom-14 w-px"
+                style={{ background: 'linear-gradient(to bottom, rgba(250,110,35,0) 0%, rgba(250,110,35,0.45) 15%, rgba(250,110,35,0.45) 85%, rgba(250,110,35,0) 100%)' }}
+              />
+
+              <ul className="relative space-y-3">
+                {[
+                  { label: 'Identity & Purpose', icon: '/images/icons/peace-alignment.png' },
+                  { label: 'Judgment & Values', icon: '/images/icons/decision-making.png' },
+                  { label: 'Mind', icon: '/images/icons/mental-peace.png' },
+                  { label: 'Energy', icon: '/images/icons/flow-state.png' },
+                  { label: 'Body', icon: '/images/icons/physical-vitality.png' },
+                ].map((layer, i) => (
+                  <li
+                    key={layer.label}
+                    className="group relative flex items-center gap-4 bg-white border border-navy-950/10 rounded-full pl-3 pr-6 py-3 shadow-[0_4px_14px_rgba(9,1,52,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(9,1,52,0.1)] hover:border-gold-400/40"
+                    style={{ marginLeft: `${Math.abs(i - 2) * 8}px`, marginRight: `${Math.abs(i - 2) * 8}px` }}
+                  >
+                    <span className="flex-shrink-0 w-10 h-10 rounded-full bg-warm-50 border border-gold-400/30 flex items-center justify-center overflow-hidden">
+                      <img src={layer.icon} alt="" className="w-7 h-7 object-contain" />
+                    </span>
+                    <span className="font-display text-navy-950 text-[0.95rem] tracking-wide">
+                      {layer.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-6 text-center font-display text-[0.7rem] tracking-[0.25em] uppercase text-navy-950/50">
+                The Five Layers
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Arc 1, The Challenge */}
       <section className="bg-white py-28 px-6 lg:px-12">
         <div className="max-w-[1100px] mx-auto">
