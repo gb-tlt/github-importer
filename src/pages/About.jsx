@@ -158,7 +158,7 @@ export default function About() {
           <ScrollReveal>
             <p className="font-display text-[0.72rem] tracking-[0.3em] uppercase text-gold-400 mb-8">{c('hero', 'badge')}</p>
             <h1 className="font-display font-normal text-warm-50 leading-[1.25] mb-6" style={{ fontSize: 'clamp(1.7rem, 3.6vw, 2.8rem)' }}>
-              {c('hero', 'title')}
+              <span className="sr-only">About Gowtham Balaji: </span>{c('hero', 'title')}
             </h1>
             <p className="font-display italic text-gold-300 leading-[1.4] mb-8" style={{ fontSize: 'clamp(1.05rem, 2vw, 1.35rem)' }}>
               {c('hero', 'subtitle')}
